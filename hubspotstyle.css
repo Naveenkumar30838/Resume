@@ -220,7 +220,7 @@ body{
 .footer{
     background-color: rgb(33,51,67);
     width: 98.7vw;
-    height: 72vh;
+    height: 74vh;
 }
 /* footer top section Styling starts from here  */
  .fts_table{
@@ -386,7 +386,7 @@ body{
 
 .fcopyright_button{
     font-size: 0.9em;
-    padding: 23px 0px 0px 25px ;
+    padding: 16px 0px 0px 25px ;
     color: rgb(182, 199, 214);
 
 }
