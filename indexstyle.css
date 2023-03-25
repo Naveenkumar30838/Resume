@@ -62,9 +62,20 @@ p {
     font-size: 1.4vw;
     margin-left: 9%;
     color: aliceblue;
+    padding: 4px; 
+}
+.projects_link:hover{
+    background-color: rgb(46, 46, 251);
+    border: 0px solid red;
+    border-radius: 80px;
+    text-decoration: underline;
+    font-size: 1.405vw;
+    margin-left: 9%;
+    color: aliceblue;
     padding: 4px;
     
 }
+
 
 #table {
     border: 9cm;
