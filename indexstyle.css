@@ -272,7 +272,8 @@ font-size: 1.05em;
     float: center;
 }
 .fbd_innerdiv{
-  color: white;
+    width:48vw;
+    color: white;
   position: relative;
   left: 35vw;
   top: 3vw;
