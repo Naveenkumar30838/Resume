@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Roboto&family=Tilt+Prism&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
 *{ 
-    transition-duration="0.2s";
+    transition-duration:"0.2s";
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -10,9 +10,8 @@
     background-color: blue;
     position: fixed;
     z-index: 2;
-    width: 99.9vw;
+    width: 98vw;
     height: 9.6vh;
-   
 }
 
 body{
@@ -22,20 +21,10 @@ body{
 tr {
     background-color: white;
 }
-
-.topnavouterdiv{
-    min-width: 98vw;
-    height: 9vh;
-    /* overflow: hidden; */
-    /* border: 2px solid white; */
-
-}
 .topnav_li_img{
     width: 2vw;
     display: inline;
     list-style: none;
-   
-   
 }
 
 .topnav_div_img img{
@@ -51,11 +40,9 @@ tr {
     position: relative;
     z-index: 1;
     left: 10.5vh; 
-    /* padding: 10px; */
     text-transform: capitalize;
     color: white;
     display: inline;
-    /* border: 1px solid red; */
     margin-right:3px ;  
     top: 1.9vh;
    
@@ -63,19 +50,12 @@ tr {
 
 .topnav_div_a{
     display: inline-block;
-    /* width:9vw; */
-    /* background-color: blue; */
     font-size: 1.8vw;
     font-weight: 400;
     font-family: 'Roboto', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     /* font-family: 'Sedgwick Ave Display', cursive; */
     color: rgb(212, 232, 249);
-    /* border:1px solid white;
-    border-radius: 20px;
-    border-bottom: 4px; */
-    /* margin: 2px 2px 2px 2vw; */
     position: relative;
-    /* top: 10px; */
     text-decoration: none;
     box-sizing: border-box;
     padding: 4px; 
@@ -97,7 +77,7 @@ tr {
 
 @media screen and (max-width:600px) {
     .topnav_div_a{
-        font-size: 3.3vw;
+        font-size: 3.2vw;
         padding: 2px;
 
     }
@@ -112,7 +92,7 @@ tr {
             background-color: rgb(33, 33, 241);
             box-shadow: 0px 0px 4px white , -0px -0px 1.2px white;
             transition-duration: 10ms;
-            font-size: 3.35vw;
+            font-size: 3.25vw;
             font-weight: 400;
             color: rgb(212, 232, 249);
             position: relative;
@@ -123,10 +103,12 @@ tr {
 
     }
 }
-
+.education_otr_div{
+    width: 50vw;
+}
 .header{
     
-    margin-top:4.6vh;
+    margin-top:4.8vh;
     margin-left: 8px;
     margin-bottom: 8px;
 }
@@ -139,9 +121,7 @@ main{
    
     text-transform: capitalize;
     margin-top: 8px;
-    /* border:2px solid red; */
-    /* font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
-}
+  }
 #skills li{
     list-style: none;
     line-height: 1.3rem;
@@ -155,20 +135,19 @@ p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .projects_table{
+    display: block;
     width: 50vw;
    
 }
 .projects_outrdiv{
     margin: 10px 5px 10px;
     position: relative;
-    /* right: 100px; */
-    /* border: 2px solid red; */
+
 }
 .project_innerdiv{
     display: inline;
     list-style: none;
     position: relative;
-   /* left: -110px; */
    margin-right: 20px;
    border-radius: 80px;
   
