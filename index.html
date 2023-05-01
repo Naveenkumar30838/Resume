@@ -12,25 +12,23 @@
 
 <body>
     <nav class="topnav">
-        <table class="topnav_table">
-            <tr>
-                <td colspan="2"><img id="naveenphoto" src="Naveen1.jpg" alt="naveen kumar's image ">
-                </td>
-                <td class="topnav_td" ><a href="#Education">Education</a> </td>
-                <td class="topnav_td" ><a href="#projects">Projects</a></td>
-                <td class="topnav_td" ><a href="#skills">skills</a></td>
-                <td class="topnav_td" ><a href="#Signin">Sign In</a></td>
-                <td class="topnav_td" ><a href="#footer">Help</a></td>
-                <td class="topnav_td" ><a href="newhubspot.html">Latest Project</a></td>
-            </tr>
-        </table>
+        <div class="topnavouterdiv">
+             <div class="topnav_div_img" colspan="2"><img id="naveenphoto" src="Naveen1.jpg" alt="naveen kumar's image "> </div>
+             <div class="topnav_div" ><a class="topnav_div_a" href="#Education">Education</a> </div>
+             <div class="topnav_div" ><a class="topnav_div_a" href="#projects">Projects</a></div>
+             <div class="topnav_div" ><a class="topnav_div_a" href="#skills">skills</a></div>
+             <div class="topnav_div" ><a class="topnav_div_a" href="#Signin">Sign In</a></div>
+             <div class="topnav_div" ><a class="topnav_div_a" href="#footer">Help</a></div>
+             <div class="topnav_div" ><a class="topnav_div_a" href="newhubspot.html">Latest Project</a></div>
+            
+    </div>
     </nav>
     <br>
     <!-- header starts -->
-    <header>
+    <header class="header">
          <br>
         <p >
-        <h1>NAVEEN KUMAR</h1>
+        <h1 >NAVEEN KUMAR</h1>
         <p>Hi , This page is developed and maintained by Mr. <a href="Naveen1.jpg">Naveen kumar</a> </p>
         </p>
     </header>
@@ -44,11 +42,11 @@
         <section id="Education">
             <h2>Education</h2>
 
-            <table id="table">
+            <table id="table" class="education_tbl">
                 <colgroup>
-                    <col span="3" style="background-color:rgb(255, 0, 106)">
-                </colgroup>
-
+                
+                <col class="tablecol" span="3">
+            </colgroup>
                 <tr>
                     <th>Institution</th>
                     <th>Degree/Class</th>
@@ -70,20 +68,18 @@
                     <td>pursuing</td>
                 </tr>
             </table>
-            </p>
+         
         </section>
         <section id="projects">
             <h2>Projects</h2>
             <p> Here are some of the small projects made by me</p>
-            <table class="projects_table">
-                <tr>
-                    <td><a class="projects_link"  target="_blank" href="devpractical.html">Dev Practical clone </a></td>
-                    <td><a class="projects_link" target="_blank" href="SSC_form.html">click for ssc form</a></td>
-                    <td><a class="projects_link" target="_blank" href="tables_replication.html">click for a table</a></td>
-                    <td><a class="projects_link" href="newhubspot.html">Hubspot Clone</a></td>
-                </tr>
-            </table>
-        </section>
+            <div class="projects_outrdiv">
+                <div class="project_innerdiv"> <a class="projects_link"  target="_blank" href="devpractical.html">Dev Practical clone </a></div>
+                <div class="project_innerdiv" ><a class="projects_link" target="_blank" href="SSC_form.html">click for ssc form</a></div>
+                <div class="project_innerdiv"><a class="projects_link" target="_blank" href="tables_replication.html">click for a table</a></div>
+                <div class="project_innerdiv"><a class="projects_link" href="newhubspot.html">Hubspot Clone</a></div>
+            </div>
+            </section>
         <section id="skills">
             <h2>skills </h2>
             <ul>
@@ -99,46 +95,35 @@
                 <li>Image editing</li>
                 <li>Github</li>
             </ul>
-
+                
     </section>
-    
+   
+    </main>
      <!-- here is a main footer -->
  <footer class="footer" id="footer">
    <!-- top section of footer -->
-              <div class="footer_tsection_div">
-                <table class="fts_table">
-                    <tr>
-                        <td>
-                       <div class="footer_leftdiv">
+            <div class="ftrmaindiv">
+                <div class="ftrtopdiv">
+                    <!-- ftd means footer top div -->
+           
+                       <div class="ftd_innerdiv">
+                           <h3><span class="footer_headings">Also Check </span> </h3>
                             <ul>
-                              <h3 ><span class="footer_headings">Also Check </span> </h3>
                               <li><a target="_blank" href="https://naveenkumar30838.github.io/Resume/index.html" class="footer_links">My Resume</a></li>
+                              <li><a target="_blank" href="https://github.com/Naveenkumar30838" class="footer_links">My Github</a></li>
+                              <li><a target="_blank" href="https://www.linkedin.com/in/naveen-kumar-7a4566223/" class="footer_links">My LinkedIn</a></li>
                               <li><a target="_blank" href="https://blog.hubspot.com/website/html-websites" class="footer_links">Official site</a></li>
                               <li><a target="_blank" href="https://naveenkumar30838.github.io/Resume/hubspotclone.html" class="footer_links">Old Hubspot</a></li>
-                             
                               <li><a target="_blank" href="index.html" class="footer_links">To Home </a></li>
                               <li><a target="_blank" href="#" class="footer_links">To Top</a></li>
+                               
+
                             </ul>
-                        </div>
-                       </td>
-                       <td>
-                        <div class="vertical_line"></div>
-                       </td>
-                        <td>
-                           <div class="footer_centerdiv">
-                            <h3 ><span class="footer_headings">Social media</span> </h3>
-                            <ul>
-                                <li><a target="_blank" href="https://www.linkedin.com/in/naveen-kumar-7a4566223/" class="footer_links">Linked In</a></li>
-                                <li><a target="_blank" href="mailto :naveenkumar30838@gmail.com" class="footer_links">Mail us</a></li>
-                                <li><a target="_blank" href="https://github.com/Naveenkumar30838" class="footer_links">My Github</a></li>
-                                <li><a  target="_blank" href="tel:919350583348" class="footer_links">Whatsapp</a></li>
-                            </ul>
-                           </div>
-                        </td>
-                        <td><div class="vertical_line"></div></td>
-                        <td> 
-                          <div class="footer_brightdiv">
-                            <h3><span class="footer_headings">Developer Site</span></h3>
+                       </div>
+                      
+                    <div class="vertical_line"></div>
+                        <div class="ftd_innerdiv">
+                            <h3><span class="footer_headings">Popular Sites</span></h3>
                             <ul>
                                 <li><a target="_blank"  class="footer_links"  href="https://leetcode.com/">Leetcode</a></li>
                                 <li><a target="_blank" class="footer_links"  href="https://www.geeksforgeeks.org/">Geeksforgeeks</a></li>
@@ -146,51 +131,57 @@
                                 <li><a target="_blank" class="footer_links"  href="github.com">Github</a></li>
                                 <li><a target="_blank" class="footer_links" href="https://www.hackerrank.com/">Hackerrank</a></li>
                                 <li><a target="_blank" class="footer_links"  href="https://www.w3schools.com/">W3 Schools</a></li>
+                                <li><a target="_blank" class="footer_links"  href="https://developer.mozilla.org/en-US/">Mdn_</a></li>
+                                
                             </ul>
-                          </div>
-                        </td>
-                        <td><div class="vertical_line"></div></td>
-                        <td>
-                            <div class="footer_rightdiv">
-                            <h3><span class="footer_headings">Coding Youtube channels</span></h3>
+                        </div>
+                   
+                    <div class="vertical_line"></div>
+                        <div class="ftd_innerdiv">
+                            <h3><span class="footer_headings">Popular Blogs</span></h3>
                             <ul>
-                                <li><a href="https://www.youtube.com/@ApnaCollegeOfficial" class="footer_links">Apna college</a></li>
-                                <li><a href="https://www.youtube.com/@codingshuttle" class="footer_links">Coding shuttle</a></li>
-                                <li><a href="https://www.youtube.com/@CodeWithHarry" class="footer_links">Code with Harry</a></li>
-                                <li><a href="https://www.youtube.com/@JennyslecturesCSIT" class="footer_links">Jenny's lecture</a></li>
-                                <!-- <li><a href="https://www.youtube.com/@LoveBabbar" class="footer_links">LoveBabbar</a></li> -->
-                                <li><a href="https://www.youtube.com/@wscubetech" class="footer_links">Ws cube Tech</a></li>
-                                <li><a href="https://www.youtube.com/@programmingwithmosh" class="footer_links">Programming with Mosh</a></li>
-                                <li><a href="https://www.youtube.com/@CodeHelp" class="footer_links">Code Help</a></li>
+                                <li><a href="https://github.blog/" class="footer_links">Github blog</a></li>
+                                <li><a href="https://stackoverflow.blog/?blb=1" class="footer_links">Stackoverflow Blog</a></li>
+                                <li><a href="https://www.freecodecamp.org/" class="footer_links">freecodecamp</a></li>
+                                <li><a href="https://www.smashingmagazine.com/" class="footer_links">Smashingmagazine</a></li>
+                                <li><a href="https://blog.codinghorror.com/" class="footer_links">CodingHorror</a></li>
+                                <li><a href="https://dzone.com/" class="footer_links">D Zone</a></li>
+                                <li><a href="https://www.producthunt.com/" class="footer_links">Product Hunt</a></li>
                             </ul>
-                         </div>
-                        </td>
-                    </tr>
-                </table>
-              </div>     
+                        </div>
+                    <div class="vertical_line"></div>
+                        <div class="ftd_innerdiv">
+                            <h3><span class="footer_headings">Learn coding</span></h3>
+                            <ul>
+                                <li><a href="https://www.youtube.com/@codingshuttle" class="footer_links">Codingshuttle</a></li>
+                                <li><a href="https://www.youtube.com/@CodeWithHarry" class="footer_links">CodewithHarry</a></li>
+                                <li><a href="https://www.youtube.com/@JennyslecturesCSIT" class="footer_links">Jenny'slecture</a></li>
+                                <!-- <li><a href="https://www.youtube.com/@LoveBabbar" class="footer_links">LoveBabbar</a></li> -->
+                                <li><a href="https://www.youtube.com/@wscubetech" class="footer_links">WscubeTech</a></li>
+                                <li><a href="https://www.youtube.com/@programmingwithmosh" class="footer_links">ProgrammingMosh</a></li>
+                                <li><a href="https://www.youtube.com/@CodeHelp" class="footer_links">CodeHelp</a></li>
+                                <li><a href="https://www.youtube.com/c/freecodecamp" class="footer_links">FreeCodecamp</a></li>
+                            </ul>
+                        </div>
+                </div>     
    <!-- bottom section of footer -->
          <div class="footer_bsection_div">
-                   <table class="footer_bt_table">
-                    <tr>
-                        <td ><div class="horizontal_ln1"></div></td>
-                        <td class="fshare_button">Share On</td>
-                        <td><div class="horizontal_ln1"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="horizontal_ln2"></div></td>
-                        <td><a href="https://web.whatsapp.com/" class="fsharelink"><img src="whatsappo.jpeg" alt="Share to whatsapp" class="fshare_link_img"></a>
-                            <a href="https://www.facebook.com/" class="fsharelink"><img src="facebook_logo.png" alt="share to facebook" class="fshare_link_img"></a>
-                            <a href="https://www.instagram.com/" class="fsharelink"><img src="instagramLogoe.jpg" alt="share to instagram" class="fshare_link_img"></a>
-                            <a href="https://twitter.com/" class="fsharelink"><img src="twitternew.png" alt="Share to twitter" class="fshare_link_img"></a>
-                       </td>
-                        <td><div class="horizontal_ln2"></div></td>
-                    </tr>
-                    <tr>
-                        <td ><div class="horizontal_ln3"></div></td>
-                        <td class="fcopyright_button">Copyright @Naveenkumar </td>
-                        <td><div class="horizontal_ln3"></div></td>
-                    </tr>
-                   </table>    
+
+                    <div class="fbd_innerdiv" >
+                       <h3 class="fbd_id_h3">Share On</h3>
+                    </div>
+
+                    <div class="fbd_innerdiv">
+                            <a href="https://web.whatsapp.com/" class="fshare_link"><img src="whatsappo.jpeg" alt="Share to whatsapp" class="fshare_link_img"></a>
+                            <a href="https://www.facebook.com/" class="fshare_link"><img src="facebook_logo.png" alt="share to facebook" class="fshare_link_img"></a>
+                            <a href="https://www.instagram.com/" class="fshare_link"><img src="instagramLogoe.jpg" alt="share to instagram" class="fshare_link_img"></a>
+                            <a href="https://twitter.com/" class="fshare_link"><img src="twitternew.png" alt="Share to twitter" class="fshare_link_img"></a>
+                    </div>
+                    <div class="fbd_innerdiv">
+                        <p class="fcopyright_button">© Copyright @ Naveenkumar 25 March ,2023 </p>
+                    </div>
+
+                  
               </div>
  </footer>
 </body>
