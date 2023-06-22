@@ -221,7 +221,7 @@ p {
     float: right;
     position: relative;
     right: 5vw;
-    height: 65vh;
+    height: 68vh;
     padding-top: 3vh;
     box-shadow: 1px 1px 10px rgb(117, 113, 113) , -1px -1px 10px rgb(117, 113, 113);
 
@@ -241,6 +241,22 @@ p {
     text-shadow: 1px 1px 10px ;
     background: linear-gradient(to top right ,rgb(172, 167, 167) ,rgb(255, 244, 179));
 }
+
+@media screen and (max-width:600px) {
+    .advertisementbox p{
+        font-size: 2rem;
+    }
+    .advertisementbox{
+        width: 17vw;
+    }
+    .mainleftcontainer{
+        width: 55vw;
+    }
+    .mainrightdiv{
+        width: 34vw;
+    }
+}
+
 
 .contactusbox{
     width: 150px;
