@@ -16,6 +16,7 @@
     z-index: 2;
     width: 98vw;
     height: 9.6vh;
+    
 }
 
 body{
@@ -49,6 +50,7 @@ tr {
     display: inline;
     margin-right:3px ;  
     top: 1.9vh;
+    margin-bottom: 2px;
    
 }
 
@@ -107,9 +109,6 @@ tr {
 
     }
 }
-.education_otr_div{
-    width: 50vw;
-}
 .header{
     
     margin-top:4.8vh;
@@ -123,7 +122,7 @@ tr {
 }
 .mainleftcontainer{
     /* border: 2px solid green; */
-    width: 60vw;
+    width: 65vw;
     overflow: hidden;
     display: inline-block;
     position: relative;
@@ -132,20 +131,53 @@ tr {
 }
 .mainrightdiv{
     /* border: 2px solid green; */
-    width: 38vw;
+    width: 33vw;
     overflow: hidden;
     display: inline-block;
     position: relative;
-    top: 0vh;
-    height: 76vh;
+    top: 0%;
+    transform: translatey(-30%);
+    
 }
 
 #Education ,#projects ,#skills{
     padding: 4px;
-   
     text-transform: capitalize;
     margin-top: 8px;
   }
+  
+.education_otr_div{
+    width: 100%;
+}
+
+.education_tbl {
+    display: inline-block;
+    text-indent: 2px;
+    margin-top: 8px;
+    /* background-color: #8e0959; */
+    border: 2px solid #8e0959;
+   
+}
+.education_tbl td{
+    display: inline-block;
+    width: 123px;
+    height: 25px;
+    border:2px solid #8e0959;
+    margin: 1px;
+    text-align: center;
+    /* background-color: red; */
+}
+.education_tbl th{
+    display: inline-block;
+    font-family: 'lato' , sans-serif;
+    display: inline-block;
+    width: 123px;
+    height: 25px;
+    border:2px solid #8e0959;
+    margin: 1px;
+    text-align: left;
+    /* background-color: red; */
+}
 #skills li{
     list-style: none;
     line-height: 1.3rem;
@@ -176,53 +208,41 @@ p {
    border-radius: 80px;
    left: 10px;
    top: 5px;
-  
+   padding: 5px;
+   border: 2px solid blue;
 }
+
 .projects_link{
     background-color: rgb(46, 46, 251);
     border-radius: 80px;
     text-decoration: none;
-    font-size: 1.4vw;
+    font-size: 1rem;
     color: aliceblue;
-    padding: 4px; 
+    padding: 2px 4px; 
 }
 .projects_link:hover{
+
     /* background: linear-gradient(to top right, rgb(210, 46, 46) , rgb(141, 3, 3)) ; */
     background-color: rgb(21, 21, 155);
-    border: 0px solid red;
     border-radius: 80px;
-    /* text-decoration: underline; */
     text-decoration-thickness:1px;
-    font-size: 1.405vw;
+    font-size: 1.02rem;
     text-decoration-color: rgb(255, 255, 255);
     color: aliceblue;
-    padding: 4px;
+    padding: 2px 5px ;
     
 }
-@media screen and (max-width:660px) {
-    .projects_link{
-        font-size: 1.9vw;
-    }
-}
 
-
-.education_tbl {
-    display: inline-block;
-    text-indent: 2px;
-    margin-top: 8px;
-    background-color: rgb(142, 9, 89);
-    /* height: 400px; */
-}
 .advertisementbox{
-   width: 20vw;
+    width: 300px;
+    margin: 0px auto;
     text-align: center;
-    background:linear-gradient(to top right ,rgb(151, 145, 145) ,white);
-    /* border: 2px solid blue; */
-    float: right;
+    background:linear-gradient(to top right ,#979191 ,white);
+    /* border: 5px solid blue; */
     position: relative;
-    right: 5vw;
-    height: 68vh;
-    padding-top: 3vh;
+    /* right: 5vw; */
+    height: auto;
+    /* padding-top: 3vh; */
     box-shadow: 1px 1px 10px rgb(117, 113, 113) , -1px -1px 10px rgb(117, 113, 113);
 
 
@@ -230,34 +250,163 @@ p {
 .advertisementbox p{
     /* border: 2px solid purple; */
     position: relative;
-    right: 10%;
-    float: right;
-    width: 13vw;
+    margin: 0px auto;
+    width: 250px;
+    height: 100%;
     text-transform: capitalize;
-    font-size: 4.3rem;
+    font-size: 4rem;
+    line-height: 5rem;
     font-weight: bolder;
     font-family: 'Dancing Script', cursive;
-    text-shadow: 1px 1px 1px white ;
-    text-shadow: 1px 1px 10px ;
-    background: linear-gradient(to top right ,rgb(172, 167, 167) ,rgb(255, 244, 179));
+    text-shadow: 1px 1px 25px yellow  , 1px 1px 2px #2d2424 ;
+    background: linear-gradient(to top right ,#9b999915 ,#faf4d025);
+    padding: 10px 15px;
+    color: #ffffffea;
 }
-
-@media screen and (max-width:600px) {
-    .advertisementbox p{
-        font-size: 2rem;
+@media screen and (max-width:1050px) {
+    .mainleftcontainer{
+        width: 63vw;
+    }
+    .mainrightdiv{
+        width: 35vw;
     }
     .advertisementbox{
-        width: 17vw;
+      width: 290px;
+    }
+    .advertisementbox p{
+        /* font-size: 3.2rem; */
+    }
+    .projects_link{
+        font-size: 0.9rem;
+    }
+    .project_innerdiv{
+       margin-right: 1px;
+       border-radius: 80px;
+       left: 2px;
+       top: 5px;
+       padding: 0px;
+       border: 0px;
+      
+    }
+}
+@media screen and (max-width:810px) {
+  
+    .mainleftcontainer{
+        width: 62vw;
+    }
+    .mainrightdiv{
+        width: 36w;
+        transform: translatey(-50%);
+    }
+    .projects_link{
+        font-size: 0.9rem;
+    }
+    .project_innerdiv{
+        display: block;
+        margin:10px auto;
+    }
+    .education_tbl th {
+        font-size: 0.8rem;
+        width: 100px;
+    }
+    .education_tbl  td {
+        font-size: 0.8rem;
+        width: 100px;
+    }
+
+    .advertisementbox p{
+        font-size:3.7rem ;
+        text-align: center;
+        padding: 8px 15px;
+    }
+    .topnav{
+        height: 11vh;
+
+    }
+    .topnav_div_a{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width:710px){
+    .mainleftcontainer{
+        width: 60vw;
+
+    }
+    .mainrightdiv{
+        width: 38vw;
+    }
+    .advertisementbox{
+        width: 270px;
+
+    }
+    .advertisementbox p{
+        font-size:3.5rem ;
+        text-align: center;
+        padding: 10px 20px;
+    }
+}
+@media screen and (max-width:600px) {
+    .topnav_div_a{
+        font-size: 1rem;
+    }
+    .mainoutercontainer{
+        display: block;
     }
     .mainleftcontainer{
-        width: 55vw;
+        width: 90vw;
+        display: block;
+    }
+    .mainrightdiv{
+        /* border: 5px solid rgb(8, 248, 80); */
+        /* overflow: visible; */
+        display: block;
+        position: relative;
+        margin: 10px 0px;
+        left: 4px;
+        width: 95vw!important;
+
+        transform: translatey(0);
+    }
+    .advertisementbox{
+        width: 90vw;
+        /* padding: 10px 2px; */
+        background:linear-gradient(to right ,#212121 ,#dfd6d6ad ,#212121)
+        
+    }
+
+    
+    .advertisementbox p{
+         padding: 10px 2px;
+        padding:5px auto;
+        width: 100%;
+        font-size: 4rem;
+        padding: 0px!important;
+        line-height: 5rem;
+        margin:0px;
+    }
+    .advertisementbox{
+        /* width: 17vw; */
+    }
+    .mainleftcontainer{
+        width: 80vw;
     }
     .mainrightdiv{
         width: 34vw;
     }
+    .projects_link{
+        font-size: 0.8rem;
+    }
 }
-
-
+@media screen and (max-width:430px) {
+    .education_tbl th {
+        font-size: 0.7rem;
+        width: 85px;
+    }
+    .education_tbl  td {
+        font-size: 0.75rem;
+        width: 85px;
+    }
+}
 .contactusbox{
     width: 150px;
     height: 45px;
