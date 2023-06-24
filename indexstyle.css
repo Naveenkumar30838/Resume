@@ -14,7 +14,7 @@
     background-color: blue;
     position: fixed;
     z-index: 2;
-    width: 98vw;
+    width: 99vw;
     height: 9.6vh;
     
 }
@@ -83,14 +83,14 @@ tr {
 
 @media screen and (max-width:600px) {
     .topnav_div_a{
-        font-size: 3.2vw;
-        padding: 2px;
+        font-size:1rem;
+        padding: 1px;
 
     }
     .topnav_div{
         top: 3.2vh;
-        margin-right: 1px;
-        left:9vh;
+        margin-right: 0.3px;
+        left:10px;
     }
     .topnav_div_a:hover{
        
@@ -118,7 +118,7 @@ tr {
 .mainoutercontainer{
     /* border: 2px solid red; */
     overflow: hidden;
-    min-height: 90vh;
+   
 }
 .mainleftcontainer{
     /* border: 2px solid green; */
