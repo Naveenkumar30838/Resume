@@ -117,10 +117,10 @@ body{
     position: absolute;
 }
 .c1{
-    top: 60px;
-    left: 40px;
+    bottom: 55px;
+    left: 50px;
 }
 .c2{
-    bottom: 55px;
-    right: 50px;
+    top: 60px;
+    right: 40px;
 }
