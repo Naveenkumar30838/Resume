@@ -23,6 +23,7 @@
     justify-content: flex-start;
     gap: 13px;
     overflow: hidden;
+    align-items: center;
     position: fixed;
     top: 0.1px;
     z-index: 3;
@@ -32,25 +33,7 @@
     border-radius: 70px;
     width: 35px;
 }
-@media screen and (max-width:490px) {
-    .invisible{
-        display: none;
-    }
-    .topnavouterdiv{
-        justify-content: space-evenly;
-        gap: 2px;
-    }
-    .topnav_div_a{
-        height: 90%;
-        padding: 1px 5px 3px 1px;
-        /* border: 2px solid red; */
-        box-shadow: 1px 1px 3px rgba(49, 49, 243, 0.637);
-    }
-    .topnav{
-        margin-bottom: 0px;
-     }
-    
-}
+
 .topnav_div_a{
     text-transform: capitalize;
     /* border: 2px solid green; */
@@ -62,24 +45,49 @@
     color: #d4e8f9ee;
     text-decoration: none;
     text-shadow: 1px 1px 2px black;
+    box-shadow: 1px 1px 3px #2525b981;
+    padding: 5px;
+    /* backdrop-filter: blur(5px); */
 }
 .topnav_div_a:hover{
-    display: inline-block;
-    background-color: rgb(33, 33, 241);
-    /* box-shadow: 0px 0px 2px white , -0px -0px 1px white; */
-    transition-duration: 10ms;
-    font-size: 1.83vw;
-    font-weight: 400;
-    color: rgb(212, 232, 249);
-    position: relative;
-    text-decoration: none;
-    box-sizing: border-box;
-    padding: 4px; 
+    padding: 5.9px;
+    font-weight: 600;
+    box-shadow: 1px 1px 3px #2929e32f;
 }
+
+@media screen and (max-width:490px) {
+    .invisible{
+        display: none;
+    }
+    .topnavouterdiv{
+        width: 99vw;
+       
+        column-gap: 7px;
+        padding: 7px 5px 1px 4px ;
+    }
+    .topnav_div_a{
+        /* border: 2px solid red; */
+        padding: 5px;
+        box-shadow: 1px 1px 3px #1717c9ad;
+    }
+    .topnav_div_a:hover{
+
+        box-shadow: 1px 1px 3px #3131f388;
+    }
+    .topnav{
+        margin-bottom: 0px;
+     }
+    
+}
+
 .header{  
-    margin-left: 8px;
-    margin-bottom: 8px;
+    margin: 60px 5px 0px;
 }
+.header h1{
+    font-family: 'Sedgwick' ,Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 3px;
+}
+
 body{
     background-color: rgb(202, 227, 249);
 
@@ -236,6 +244,15 @@ p {
     padding: 10px 15px;
     color: #ffffffea;
 }
+.blurred{
+    display: inline-block;
+    color: transparent;
+    text-shadow: 1px 1px 15px rgba(0, 179, 255, 0.637) ;
+}
+.blurred:hover{
+    color:black;
+    text-shadow: 1px 1px 20px yellow  , 1px 1px 2px #2d2424 ;
+}
 @media screen and (max-width:1050px) {
     .mainleftcontainer{
         width: 63vw;
@@ -280,12 +297,9 @@ p {
         text-align: center;
         padding: 8px 15px;
     }
-    .topnav{
-        height: 11vh;
-
-    }
+   
     .topnav_div_a{
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 }
 @media screen and (max-width:710px){
@@ -423,7 +437,7 @@ p {
 .ftrtopdiv{
    display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: row;
     align-items: center;
   
@@ -434,18 +448,19 @@ p {
   /* border: 2px solid red; */
   display: inline-block;
   position: relative;
-  
+
 }
 
 .ftd_innerdiv li{
     list-style-type: none;
+
 }
 .footer_headings{
     font-size: 1.13em;
     text-transform: capitalize;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgba(255, 255, 255, 0.715);
-    text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.42);
+    color: #ffffffb0;
+    /* text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.42); */
     /* text-align: left; */
 
     }
