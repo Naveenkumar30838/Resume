@@ -259,6 +259,10 @@ p {
     left: 9px ;
     
 }
+.projects_c_para a:hover{
+    color:#183bf2;
+    text-decoration:underline;
+}
 .blurred{
     display: inline-block;
     color: transparent;
