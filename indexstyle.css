@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Roboto&family=Tilt+Prism&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Poppins&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&family=Dancing+Script&family=Poppins&display=swap');
+/* here are some utility classes and presets */
 *{ 
     /* transition-duration:"0.2s" ease-out; */
     margin: 0px;
@@ -11,27 +11,49 @@
     box-sizing: border-box;
    
  }
+ body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #cae3f9;
+
+ }
  a{
     text-decoration: none;
  }
+ h2 , h3 , h4 {
+    color: #0a154a;
+ }
+ li ,p {
+    color: #05051fd3;
+    font-size: 1rem;
+ }
+ .flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .container{
+
+    border: 2px solid red;
+    margin: 0px auto;
+ }
  .topnav{
     margin-bottom: 20px;
- }
+    
+}
 
- .topnavouterdiv{
-    display: flex;
+.topnavouterdiv{
+     background: linear-gradient(to right ,#0000ffd6 ,#5ccbf1d2 ,#0000ffd3);
+   
     width: 100vw;
-    background: linear-gradient(to right ,#0000ffd6 ,#5ccbf1d2 ,#0000ffd3);
     /* border: 2px solid red; */
     padding: 7px 0px 1px 7px ;
-    justify-content: flex-start;
-    gap: 13px;
+    gap: 23px;
     overflow: hidden;
     align-items: center;
     position: fixed;
     top: 0.1px;
     z-index: 3;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
 }
 .topnav_div_img img{
     border-radius: 70px;
@@ -84,52 +106,20 @@
     
 }
 
-.header{  
-    margin: 60px 5px 0px;
+.header{
+    background: linear-gradient(to right ,#cae3f9 , #8ac1f1,#cae3f9);  
+    text-align: center;
+    margin: 49px 5px 0px;
+    padding-block: 5px;
 }
 .header h1{
-    font-family: 'Sedgwick' ,Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 3px;
+    font-family:'Bodoni Moda', serif;
+       padding: 3px;
 }
-
-body{
-    background-color: rgb(202, 227, 249);
-
-}
-
 
 tr {
     background-color: white;
 }
-.mainoutercontainer{
-    /* border: 2px solid red; */
-    overflow: hidden;
-    display: flex;
-    /* min-height: 90vh; */
-    flex-wrap: wrap-reverse;
-    align-items: flex-end;
-}
-.mainleftcontainer{
-    /* border: 2px solid green; */
-    width: 65vw;
-    overflow: hidden;
-    display: inline-block;
-    position: relative;
-    top: 0px;
-    
-}
-.mainrightdiv{
-    display: flex;
-  
-    /* border: 2px solid green; */
-    width: 33vw;
-    overflow: hidden;
-    align-items: stretch;  
-
-    /* transform: translatey(-30%); */
-    
-}
-
 #Education ,#projects ,#skills{
     padding: 4px;
     text-transform: capitalize;
@@ -144,7 +134,7 @@ tr {
     cursor:vertical-text;
     display: inline-block;
     text-indent: 2px;
-    margin-top: 8px;
+    margin-block: 8px;
     /* background-color: #8e0959; */
     border: 2px solid #8e0959;
    
@@ -171,8 +161,10 @@ tr {
 }
 #skills li{
     list-style: none;
-    line-height: 1.3rem;
+    line-height: 1.4rem;
     text-indent: 5px;
+     font-size: 1.03rem;
+     padding-block: 5px;
 }
 h2 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -220,71 +212,6 @@ p {
     padding: 5px ;
     
 }
-
-.projects_container{
-    width: 90%;
-    /* border: 2px solid red; */
-    background:linear-gradient(to top right ,#e9e3e3 ,#dbd7d7c8);    position: relative;
-    box-shadow: 1px 1px 10px rgb(117, 113, 113) , -1px -1px 10px rgb(117, 113, 113);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 5px 10px;
-    border-radius: 3px;
-
-    
-   
-
-}
-.projects_content{
-    width: 95%;
-    border-radius: 10px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 10px 5px;
-    /* border: 1px  black; */
-  
-}
-.projects_content a{
-    border-radius: 5px;
-    position: relative;
-    background-color: black;
-    background:linear-gradient(#33333359 , #212121), url(images/usability_hub_clone.png);
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 100px;  box-shadow: 0px 0px 10px #212121;
-
-   
-    /* border: 2px solid green; */
-}
-
-.projects_c_para{
-    background:linear-gradient(to right, #41404044 #282626cb, #37363631);
-    backdrop-filter: blur(10px);
-   width: 95%;
-    font-family: 'poppins' ,sans-serif;
-    line-height: normal;
-    font-size: 0.8rem;
-    text-align: left;
-    position: absolute;
-    color: white;
-    bottom: 5px;    
-    left: 9px ;
-    background-repeat: no-repeat;
-    
-}
-.blurred{
-    display: inline-block;
-    color: transparent;
-    text-shadow: 1px 1px 15px rgba(0, 179, 255, 0.637) ;
-}
-.blurred:hover{
-    color:black;
-    text-shadow: 1px 1px 20px yellow  , 1px 1px 2px #2d2424 ;
-}
 @media screen and (max-width:1050px) {
     .mainleftcontainer{
         width: 63vw;
@@ -300,14 +227,6 @@ p {
 
 }
 @media screen and (max-width:810px) {
-  
-    .mainleftcontainer{
-        width: 62vw;
-    }
-    .mainrightdiv{
-        width: 36w;
-        /* transform: translatey(-50%); */
-    }
     .projects_link{
         font-size: 0.9rem;
     }
@@ -323,41 +242,10 @@ p {
         font-size: 1.3rem;
     }
 }
-@media screen and (max-width:710px){
-    .mainleftcontainer{
-        width: 60vw;
 
-    }
-    .mainrightdiv{
-        width: 38vw;
-    }
-  
-}
 @media screen and (max-width:600px) {
     .topnav_div_a{
         font-size: 1rem;
-    }
-    .mainoutercontainer{
-        display: block;
-    }
-    .mainleftcontainer{
-        width: 90vw;
-        display: block;
-    }
-    .mainrightdiv{
-        position: relative;
-        margin: 10px 0px;
-        left: 4px;
-        width: 92vw!important;
-
-        transform: translatey(0);
-    }
-   
-    .mainleftcontainer{
-        width: 80vw;
-    }
-    .mainrightdiv{
-        width: 34vw;
     }
 
 }
@@ -369,6 +257,53 @@ p {
     .education_tbl  td {
         font-size: 0.75rem;
         width: 85px;
+    }
+}
+
+/* containers styling starts from here */
+.main-container{
+    margin-top: 30px;
+    /* border: 2px solid red; */
+    column-gap: 200px;
+    row-gap: 30px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+.main-left{
+    /* border:2px solid peru; */
+}
+.main-right{
+    float: right;
+    /* border:2px solid yellow; */
+    padding: 5px  ;
+    position: sticky;
+    top: 164px;
+    
+
+}
+.advertisement{
+   
+    background: linear-gradient(to bottom ,#cae3f9 , #aac7e1,#cae3f9);
+    width: 300px;
+    /* border: 2px solid purple; */
+    padding: 10px 25px ;
+    /* border: 2px solid grey; */
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.6rem;
+    font-weight: 550;
+    margin-right: 5px;
+    
+}
+@media  screen and (max-width:910px) {
+    .advertisement{
+        width: 100%;
+        background: linear-gradient(to right ,#cae3f9 , #8ac1f1,#cae3f9);
+    }
+    .main-container{
+        justify-content: center;
     }
 }
 .contactusbox{
@@ -418,7 +353,78 @@ p {
     display: inline-block;
     
 
-}/* footer styling starts here *//*/////////////////////////////////////////////////////////*/
+}
+/* styling of the draft Section starts from here   */
+.draft{
+    margin: 20px 0px 40px 0px;  
+}
+.draft-header h2{
+    text-align: center;
+    font-family: 'Bodoni Moda' ,serif;
+    font-size: 2rem;
+    text-transform:capitalize ;
+    font-weight: 900;
+    color: #083851bd;
+}
+.draft-content{ 
+    margin-block:25px;
+    flex-wrap: wrap;
+   gap: 20px;
+   justify-content: center;
+   align-items: flex-end;
+
+}
+.draft-card{
+    border-radius: 10px;
+   background-color: black;
+    column-gap: 30px;
+    row-gap: 30px;
+    min-width: 170px;
+    width: 20%;
+    height: 270px;
+    background-color: black;
+    background:linear-gradient(#1b101040 , #000000f4) , url(images/usability_hub_clone.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    position: relative;     
+}
+.draft-card:hover{
+    background:linear-gradient(#1b101040 , #150f0ff4) , url(images/usability_hub_clone.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    position: relative;     
+    box-shadow: 0px 0px 5px black;
+
+ 
+}
+.draft-card h4{
+    color: rgba(255, 255, 255, 0.836);
+    position: absolute; 
+    left: 10px;
+    bottom: 5px;
+    right: 10px;
+    text-align: center;
+    
+}
+.draft-card h4:hover{
+    font-size: 1.02rem;
+    text-decoration: underline;
+}
+.draft-card:nth-child(2){
+     background:linear-gradient(#1b101040 , #150f0ff4) , url(images/images/portfolio.png);
+}
+.draft-card:nth-child(3){
+    background:linear-gradient(#1b101040 , #150f0ff4) , url(images/images/login.png);
+
+}
+.draft-card:nth-child(4){
+    background:linear-gradient(#1b101040 , #150f0ff4) , url(images/images/galleyimages-screenshot.png);
+
+}
+
+/* footer styling starts here *//*/////////////////////////////////////////////////////////*/
 .footer{
     background-color: rgb(33,51,67);
     width: 100vw;
