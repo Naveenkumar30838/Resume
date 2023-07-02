@@ -297,7 +297,7 @@ p {
     margin-right: 5px;
     
 }
-@media  screen and (max-width:910px) {
+@media  screen and (max-width:1010px) {
     .advertisement{
         width: 100%;
         background: linear-gradient(to right ,#cae3f9 , #8ac1f1,#cae3f9);
