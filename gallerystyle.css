@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+.banner{
+    background:linear-gradient(to right , #156ae0cb ,#409ac658 ,#156ae0d5);
+   padding-block: 15px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.gallery{
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(4 , 22%);
+    gap: 10px;
+    justify-content: center;
+}
+div img{
+
+    max-width: 200px;
+    max-height: 250px;
+    box-shadow: 0px 0px 5px black;
+    width: auto;
+}
+div img:hover{
+    max-width: 210px;
+    max-height: 260px;
+}
