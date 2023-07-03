@@ -24,12 +24,12 @@ a:hover{
 }
 div img{
 
-    max-width: 200px;
-    max-height: 250px;
+    width: 200px;
+    height: 245px;
     box-shadow: 0px 0px 5px black;
     width: auto;
 }
 div img:hover{
-    max-width: 210px;
-    max-height: 260px;
+    width: 211px;
+    height: 247px;
 }
