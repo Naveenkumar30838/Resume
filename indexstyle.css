@@ -36,24 +36,39 @@
     border: 2px solid red;
     margin: 0px auto;
  }
- .topnav{
-    margin-bottom: 20px;
-    
-}
+ /* USTILITY CLASSES ENDED HERE */
+ .banner{
+    width: 100vw;
+    text-align: center;
+    position: fixed;
+    z-index: 5;
+    background: linear-gradient(to right ,red , red) ;
+ }
+ .banner p{
+    color: #212121;
+    font-size: 1.1rem;
+    z-index: 4;
+    text-align: center;
+    padding: 3.2px;
+ }
 
 .topnavouterdiv{
-     background: linear-gradient(to right ,#0000ffd6 ,#5ccbf1d2 ,#0000ffd3);
-   
+     background: linear-gradient(to bottom ,#ff0000de ,#ff00006c  ,#5cccf115);
+     /* background: linear-gradient(to bottom ,black , white) ,url(images/Naveen1.jpg); */
+    
+     border-radius:0px 0px 100px 100px;
     width: 100vw;
     /* border: 2px solid red; */
-    padding: 7px 0px 1px 7px ;
+    padding: 7px 0px 7px 7px ;
     gap: 23px;
     overflow: hidden;
     align-items: center;
     position: fixed;
-    top: 0.1px;
+    top: 30px;
     z-index: 3;
     backdrop-filter: blur(3px);
+    box-shadow: 0px 0px 10px #333;
+    transition: linear 0.5s;
 }
 .topnav_div_img img{
     border-radius: 70px;
@@ -72,7 +87,7 @@
     text-decoration: none;
     text-shadow: 1px 1px 2px black;
     box-shadow: 1px 1px 3px #2525b981;
-    padding: 5px;
+    padding: 7px;
     /* backdrop-filter: blur(5px); */
 }
 .topnav_div_a:hover{
@@ -81,16 +96,27 @@
     box-shadow: 1px 1px 3px #2929e32f;
 }
 
+@media screen and (max-width:890px) {
+    .invisible{
+        display: none;
+    }
+    .topnavouterdiv{
+        width: 100vw;
+        top: 25px;
+        column-gap: 7px;
+        padding: 7px 10px 1px 10px ;
+    }
 @media screen and (max-width:490px) {
     .invisible{
         display: none;
     }
     .topnavouterdiv{
-        width: 99vw;
-       
-        column-gap: 7px;
-        padding: 7px 5px 1px 4px ;
+        width: 100vw;
+        top: 26px;
+        column-gap: 5px;
+        padding: 7px 15px 1px 7px ;
     }
+}
     .topnav_div_a{
         /* border: 2px solid red; */
         padding: 5px;
@@ -103,14 +129,18 @@
     .topnav{
         margin-bottom: 0px;
      }
+     .banner p{
+        font-size: 0.9rem;
+     }
     
 }
 
 .header{
     background: linear-gradient(to right ,#cae3f9 , #8ac1f1,#cae3f9);  
     text-align: center;
-    margin: 49px 5px 0px;
+    margin: 0px 5px 0px;
     padding-block: 5px;
+    margin-top: 90px;
 }
 .header h1{
     font-family:'Bodoni Moda', serif;
@@ -120,14 +150,17 @@
 tr {
     background-color: white;
 }
-#Education ,#projects ,#skills{
-    padding: 4px;
+#Education,#projects ,#skills{
+    width: 100%;
     text-transform: capitalize;
+    text-align: center;
+    font-family: 'poppins';
     margin-top: 8px;
   }
   
 .education_otr_div{
     width: 100%;
+    text-align: center;
 }
 
 .education_tbl {
@@ -160,6 +193,7 @@ tr {
     /* background-color: red; */
 }
 #skills li{
+    text-align: center;
     list-style: none;
     line-height: 1.4rem;
     text-indent: 5px;
@@ -168,18 +202,21 @@ tr {
 }
 h2 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 }
 
 p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: inline-block;
 }
 
 .projects_outrdiv{
+   
     margin-top: 10px;
     /* border: 2px solid red; */
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     /* justify-content: space-around; */
     align-items: center;
     column-gap: 10px;
@@ -188,11 +225,13 @@ p {
 }
 
 .project_innerdiv{
+   
     border: 2px solid #2e2efb;
     border-radius: 80px;
     padding: 7px 4.5px;
 }
 .projects_link{
+   
     background-color: #2e2efb;
     border-radius: 80px;
     text-decoration: none;
@@ -261,25 +300,62 @@ p {
 }
 
 /* containers styling starts from here */
+.backgound-design{
+    background: linear-gradient(to bottom ,#ffffff46 , #ffffffa3 ,#ffffff46);
+    /* background-color: #ffffff81; */
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px #333;
+    padding: 15px;
+    margin-block: 10px;
+}
+.about{ 
+       padding: 40px;
+        }
+.about h2{
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 800;
+    font-family: 'poppins' ,serif;
+}
+.about h3{
+    text-align: center;
+    color: #212121;
+}
+.about-content{
+    padding: 20px 10px;
+    font-size: 1.13rem;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+   justify-content: flex-start;
+    column-gap: 10px;
+    row-gap: 15px;
+    align-items: flex-start;
+    text-align: center;
+}
 .main-container{
     margin-top: 30px;
     /* border: 2px solid red; */
-    column-gap: 200px;
+    /* column-gap: 200px; */
     row-gap: 30px;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: flex-start;
     flex-wrap: wrap;
     padding-bottom: 20px;
 }
 .main-left{
     /* border:2px solid peru; */
+    width: 70%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
 }
 .main-right{
-    float: right;
+  
     /* border:2px solid yellow; */
     padding: 5px  ;
     position: sticky;
-    top: 164px;
+    top: 140px;
     
 
 }
@@ -297,7 +373,7 @@ p {
     margin-right: 5px;
     
 }
-@media  screen and (max-width:1010px) {
+@media  screen and (max-width:910px) {
     .advertisement{
         width: 100%;
         background: linear-gradient(to right ,#cae3f9 , #8ac1f1,#cae3f9);
