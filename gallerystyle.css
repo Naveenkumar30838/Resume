@@ -27,8 +27,12 @@ div img{
     width: 200px;
     height: 245px;
     box-shadow: 0px 0px 5px black;
-    width: auto;
 }
+}
+img{
+widht:200px;
+    height:245px;
+    
 div img:hover{
     width: 211px;
     height: 247px;
