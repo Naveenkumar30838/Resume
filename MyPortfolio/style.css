@@ -121,15 +121,7 @@ p{
 
     background-position: 0 -180px;
 }
-@media screen and (max-width:700px) {
-    .container{
-        flex-wrap: wrap-reverse;
-    }
-    .img p{
-        font-size: 1rem;
-        left: 22%;
-    }
-}
+
 .banner{
     background-color: #082108;
     width: 100vw;
@@ -141,5 +133,32 @@ p{
     top: 0px;
     left: 0px;
 }
+@media screen and (max-width:700px) {
+    .banner{
+        height: 70px;
+    }
+    .container{
+        flex-direction: column;
+        justify-content: none;
+        align-items: none;
 
+    }
+    .img p{
+        font-size: 1rem;
+        left: 22%;
+    }
+    .gallery{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(7 , 200px);
+        width: 100vw;
+        border: 2px solid red;
+    }
+    .img{
+        border:2px solid red;
+        height: 200px;
+        grid-column: span 3;
+        grid-row: span 1;
+
+    }
+}
 
