@@ -16,6 +16,10 @@
     background-color: #cae3f9;
 
  }
+ ::selection{
+    
+    background-color: transparent;
+ }
  a{
     text-decoration: none;
  }
@@ -36,7 +40,7 @@
     border: 2px solid red;
     margin: 0px auto;
  }
- /* USTILITY CLASSES ENDED HERE */
+ /* UTILITY CLASSES ENDED HERE */
  .banner{
     width: 100vw;
     text-align: center;
@@ -66,9 +70,9 @@
     position: fixed;
     top: 30px;
     z-index: 3;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(4px);
     box-shadow: 0px 0px 10px #333;
-    transition: linear 0.5s;
+    transition:all 1s ease-in-out;
 }
 .topnav_div_img img{
     border-radius: 70px;
@@ -96,59 +100,19 @@
     box-shadow: 1px 1px 3px #2929e32f;
 }
 
-@media screen and (max-width:890px) {
-    .invisible{
-        display: none;
-    }
-    .topnavouterdiv{
-        width: 100vw;
-        top: 25px;
-        column-gap: 7px;
-        padding: 7px 10px 1px 10px ;
-    }
-@media screen and (max-width:490px) {
-    .invisible{
-        display: none;
-    }
-    .topnavouterdiv{
-        width: 100vw;
-        top: 26px;
-        column-gap: 5px;
-        padding: 7px 15px 1px 7px ;
-    }
-}
-    .topnav_div_a{
-        /* border: 2px solid red; */
-        padding: 5px;
-        box-shadow: 1px 1px 3px #1717c9ad;
-    }
-    .topnav_div_a:hover{
-
-        box-shadow: 1px 1px 3px #3131f388;
-    }
-    .topnav{
-        margin-bottom: 0px;
-     }
-     .banner p{
-        font-size: 0.9rem;
-     }
-    
-}
-
 .header{
-    background: linear-gradient(to right ,#cae3f9 , #8ac1f1,#cae3f9);  
+    background: linear-gradient(to bottom ,#cae3f9c3 , #8ac1f1,#a7cef094); 
+    border-radius:100px 100px 0px 0px ;
     text-align: center;
     margin: 0px 5px 0px;
     padding-block: 5px;
-    margin-top: 90px;
+    padding-inline: 10px;
+    margin-top: 93px;
+   box-shadow: 0px 0px 3px #212121a0;
 }
 .header h1{
     font-family:'Bodoni Moda', serif;
        padding: 3px;
-}
-
-tr {
-    background-color: white;
 }
 #Education,#projects ,#skills{
     width: 100%;
@@ -157,41 +121,7 @@ tr {
     font-family: 'poppins';
     margin-top: 8px;
   }
-  
-.education_otr_div{
-    width: 100%;
-    text-align: center;
-}
 
-.education_tbl {
-    cursor:vertical-text;
-    display: inline-block;
-    text-indent: 2px;
-    margin-block: 8px;
-    /* background-color: #8e0959; */
-    border: 2px solid #8e0959;
-   
-}
-.education_tbl td{
-    display: inline-block;
-    width: 123px;
-    height: 25px;
-    border:2px solid #8e0959;
-    margin: 1px;
-    text-align: center;
-    /* background-color: red; */
-}
-.education_tbl th{
-    display: inline-block;
-    font-family: 'lato' , sans-serif;
-    display: inline-block;
-    width: 123px;
-    height: 25px;
-    border:2px solid #8e0959;
-    margin: 1px;
-    text-align: left;
-    /* background-color: red; */
-}
 #skills li{
     text-align: center;
     list-style: none;
@@ -200,6 +130,24 @@ tr {
      font-size: 1.03rem;
      padding-block: 5px;
 }
+
+.grid-container{
+    width: 100%;
+    padding: 3px;
+    display: grid;
+    /* border: 2px solid #6f2f02; */
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 30px;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(to right ,#fbf8f843  , rgba(112, 232, 88, 0.126) ,rgba(255, 255, 255, 0.482));
+}
+.grid-box{
+    border: 2px solid #6f2f02;
+
+}
+
 h2 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     
@@ -251,62 +199,15 @@ p {
     padding: 5px ;
     
 }
-@media screen and (max-width:1050px) {
-    .mainleftcontainer{
-        width: 63vw;
-    }
-    .mainrightdiv{
-        width: 35vw;
-    }
-   
- 
-    .projects_link{
-        font-size: 0.9rem;
-    }
-
-}
-@media screen and (max-width:810px) {
-    .projects_link{
-        font-size: 0.9rem;
-    }
-    .education_tbl th {
-        font-size: 0.8rem;
-        width: 100px;
-    }
-    .education_tbl  td {
-        font-size: 0.8rem;
-        width: 100px;
-    }
-    .topnav_div_a{
-        font-size: 1.3rem;
-    }
-}
-
-@media screen and (max-width:600px) {
-    .topnav_div_a{
-        font-size: 1rem;
-    }
-
-}
-@media screen and (max-width:430px) {
-    .education_tbl th {
-        font-size: 0.7rem;
-        width: 85px;
-    }
-    .education_tbl  td {
-        font-size: 0.75rem;
-        width: 85px;
-    }
-}
-
 /* containers styling starts from here */
 .backgound-design{
     background: linear-gradient(to bottom ,#ffffff46 , #ffffffa3 ,#ffffff46);
-    /* background-color: #ffffff81; */
+    background-color: #ffffff81;
     border-radius: 12px;
     box-shadow: 0px 0px 10px #333;
     padding: 15px;
     margin-block: 10px;
+    /* border: 2px solid red ; */
 }
 .about{ 
        padding: 40px;
@@ -336,22 +237,25 @@ p {
 .main-container{
     margin-top: 30px;
     /* border: 2px solid red; */
+    padding: 20px;
     /* column-gap: 200px; */
     row-gap: 30px;
-    justify-content: space-around;
+    justify-content: center;
+
     align-items: flex-start;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     padding-bottom: 20px;
+
 }
 .main-left{
-    /* border:2px solid peru; */
-    width: 70%;
+    /* border:2px solid blue; */
     flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
+    align-items: center;
+    padding: 10px;
+    max-width: 100vw;
 }
 .main-right{
-  
+    /* flex-basis: 20%; */
     /* border:2px solid yellow; */
     padding: 5px  ;
     position: sticky;
@@ -373,15 +277,7 @@ p {
     margin-right: 5px;
     
 }
-@media  screen and (max-width:910px) {
-    .advertisement{
-        width: 100%;
-        background: linear-gradient(to right ,#cae3f9 , #8ac1f1,#cae3f9);
-    }
-    .main-container{
-        justify-content: center;
-    }
-}
+
 .contactusbox{
     width: 150px;
     height: 45px;
@@ -607,4 +503,210 @@ font-size: 1.055em;
     color: rgba(255, 255, 255, 0.523);
     font-family: serif;
     font-size: 0.7rem;
+}
+/* media quaries section starts from here */
+@media screen and (max-width:490px) {
+    .invisible{
+        display: none;
+    }
+    .topnavouterdiv{
+        width: 100vw;
+        top: 26px;
+        column-gap: 5px;
+        padding: 7px 15px 1px 7px ;
+    }
+
+    .topnav_div_a{
+        /* border: 2px solid red; */
+        padding: 5px;
+        box-shadow: 1px 1px 3px #1717c9ad;
+    }
+    .topnav_div_a:hover{
+
+        box-shadow: 1px 1px 3px #3131f388;
+    }
+    .topnav{
+        margin-bottom: 0px;
+     }
+     .banner p{
+        font-size: 0.9rem;
+     }
+    
+    }
+@media  screen and (max-width:910px) {
+    .invisible{
+        display: none;
+    }
+    .topnavouterdiv{
+        width: 100vw;
+        top: 25px;
+        column-gap: 7px;
+        padding: 7px 10px 1px 10px ;}
+    .backgound-design{
+        width: 100%;
+        font-size: 0.9rem;
+    }
+    .main-left{
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .main-container{
+        padding-inline:30px;
+        padding-block: 20px;
+        flex-wrap: wrap;
+    } 
+    .projects_link{
+        font-size: 0.9rem;
+    }
+    .main-right{
+        width: 100vw;
+        text-align: center;
+    }
+    .advertisement{
+        font-size: 4.6rem;
+        width: 70%;
+        background: linear-gradient(to right ,#cae3f9 , #aac7e1,#cae3f9);
+  
+
+    }
+
+}
+@media (width<=768px ) and (width>=430px) {
+    .main-container{
+        padding: 10px;
+    }
+    .ftrtopdiv{
+        flex-wrap: wrap;
+    }
+    .ftd_innerdiv{
+        flex-basis: 45%;
+        text-align: center;
+    }
+    .draft-content{ 
+        margin-block:25px;
+        flex-wrap: wrap;
+       gap: 20px;
+       justify-content: center;
+       align-items: flex-end;
+    
+    }
+    .draft-card{
+        column-gap: 30px;
+        row-gap: 30px;
+        min-width: 170px;
+        width: 40%;
+        height: 270px;
+    }
+   
+}
+@media screen and (max-width:810px) {
+    .projects_link{
+        font-size: 0.9rem;
+    }
+    .topnav_div_a{
+        font-size: 1.3rem;
+    }
+    .main-right{
+        width: 100vw;
+        padding: 0px;
+    }
+    .advertisement{
+        width: 95%;
+        background: linear-gradient(to right ,#00000002,#00000030 , #00000086 , #00000086 ,#ffff0082 ,#ffff0081 , #ffd9006c ,#ffd90013);
+      
+   
+    }
+    .advertisement:hover{
+        background: linear-gradient(to right ,#00000002,#00000030 , #00000039 , #00000058 ,#00000070 ,#00000094 , #ffd9006c ,#ffd90013);
+        transition: all 5s ease-in-out;
+   
+    }
+}
+
+@media screen and (max-width:600px) {
+    .topnav_div_a{
+        font-size: 1rem;
+    }
+    .about{
+        padding: 20px;
+    }
+    .contactusbox h4{
+        font-size: 0.9rem;
+    }
+    .contactusbox p{
+        font-size: 0.7rem;
+    }
+    .contactusbox{
+        width: 130px;
+        height: 45px;
+    }
+
+   
+
+}
+@media screen and (max-width:430px) {
+    .education_otr_div{
+        width: 100vw;
+    }
+    .main-container{
+        padding-inline:10px;
+        justify-content: center;
+    }
+    .about{
+        padding: 10px;
+    }
+    .about-content{
+        font-size: 1rem;
+    }
+    .grid-container{
+        padding: 0px;
+        display: grid;
+        /* border: 2px solid #6f2f02; */
+        grid-template-columns: repeat(3,1fr);
+        /* grid-auto-rows: 30px; */
+        gap: 0.1px;
+        justify-content: center;
+        align-items: stretch;       
+       
+    }
+    .grid-box{
+        border: 0.5px solid;
+        font-size: 0.6rem;
+    }
+    .header h1{
+        font-size: 2rem;
+    }
+    .header p{
+        font-size: 0.8rem;
+    }
+    .advertisement{
+        font-size: 3rem;
+    }
+    .ftd_innerdiv{
+        padding: 0px;
+        text-align: center;
+        flex-basis: 40%;
+        font-size: 1.1rem;
+    }
+    .ftd_innerdiv a{
+        font-size: 0.7rem;
+    }
+    .ftd_innerdiv h3{
+        font-size: 1rem;
+    }
+    .topnavouterdiv{
+        padding-inline: 50px;
+    }
+    
+}
+@media (max-width:370px){
+    .draft-card{
+        width: 80%;
+        height: 150px;
+    }
+    .header h1{
+        font-size: 1.8rem;
+    }
 }
