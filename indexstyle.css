@@ -11,20 +11,32 @@
     box-sizing: border-box;
    
  }
+ :root{
+    --default-padding:40px;
+    --primary-font:'poppins','Bodoni Moda' ,sans-serif;
+    --secondary-font:'Bodoni Moda' ,'Inter' ,'DynaPuff' ,serif;
+    --body-background-color:#cae3f9;
+    --heading-color:#0a154a;
+    --default-shadow-color:#333;
+    --link-hover-color:#00d0ffd6;
+    --footer-background-color:#213343;
+    --faded-text-color:#b6c7d6d4;
+ }
  body{
     font-family: 'Poppins', sans-serif;
-    background-color: #cae3f9;
+    background-color: var(--body-background-color);
 
  }
  ::selection{
     
     background-color: transparent;
  }
+ 
  a{
     text-decoration: none;
  }
  h2 , h3 , h4 {
-    color: #0a154a;
+    color: var(--heading-color);
  }
  li ,p {
     color: #05051fd3;
@@ -111,7 +123,7 @@
    box-shadow: 0px 0px 3px #212121a0;
 }
 .header h1{
-    font-family:'Bodoni Moda', serif;
+    font-family:var(--secondary-font);
        padding: 3px;
 }
 #Education,#projects ,#skills{
@@ -140,6 +152,7 @@
     grid-auto-rows: 30px;
     gap: 3px;
     justify-content: center;
+    row-gap: 10px;
     align-items: center;
     background:linear-gradient(to right ,#fbf8f843  , rgba(112, 232, 88, 0.126) ,rgba(255, 255, 255, 0.482));
 }
@@ -204,7 +217,7 @@ p {
     background: linear-gradient(to bottom ,#ffffff46 , #ffffffa3 ,#ffffff46);
     background-color: #ffffff81;
     border-radius: 12px;
-    box-shadow: 0px 0px 10px #333;
+    box-shadow: 0px 0px 10px var(--default-shadow-color);
     padding: 15px;
     margin-block: 10px;
     /* border: 2px solid red ; */
@@ -264,7 +277,7 @@ p {
 
 }
 .advertisement{
-   
+   color:blue;
     background: linear-gradient(to bottom ,#cae3f9 , #aac7e1,#cae3f9);
     width: 300px;
     /* border: 2px solid purple; */
@@ -398,7 +411,7 @@ p {
 
 /* footer styling starts here *//*/////////////////////////////////////////////////////////*/
 .footer{
-    background-color: rgb(33,51,67);
+    background-color: var(--footer-background-color);
     width: 100vw;
     overflow: hidden;
     padding-bottom: 10px;
@@ -441,7 +454,7 @@ p {
 
     }
 .footer_links{
-    color: #b6c7d6d4;
+    color: var(--faded-text-color);
     text-decoration: none;
     line-height: 1.69em;
     font-size: 1.05rem;
@@ -449,7 +462,7 @@ p {
 }
 /* hovere property of links */
 .footer_links:hover {
-color: rgba(0, 208, 255, 0.838);
+color: var(--link-hover-color);
 text-decoration: underline;
 line-height: 1.69em;
 font-size: 1.055em;
