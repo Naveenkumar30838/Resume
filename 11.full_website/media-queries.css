@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Poppins&display=swap');
+
+@media screen and (max-width:971px) {
+   
+    
+    .nav_right_div{
+        flex-direction: column;
+    }
+    .toggle-button{
+        display: block;
+    }
+    .navigationbar{
+       
+        overflow: initial;
+    }
+    .nav_right_div ul{
+        flex-direction: column;
+        row-gap: 30px;
+    }
+    
+    .nav_right_div{
+        /* border: 2px solid red; */
+        padding-block: 20px;
+        position: absolute;
+     
+        color: black;
+        background-color: white;
+left: 100%;
+        top:25% ;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+         
+
+
+    }
+    .nav_right_div.active{
+        left: 0px;
+    }
+    .toggle-button{
+        display: block;
+        margin-right: 20px;
+    }
+    
+
+    .examples_card{
+        width: 45%;
+        height: 200px;
+    }
+    .examples_card_list{
+        row-gap: 20px;
+        flex-wrap: wrap;
+    }
+    .header{
+        flex-direction: column-reverse;
+        row-gap: 20px;
+    }
+    .header_left_div{
+        width: 100%;
+        /* border: 2px solid red; */
+        text-align: center;   
+    }
+    .header_left_div h1{
+        width: 100%;
+        text-align: center;
+    }
+    .secondary-button{
+        width: 100%;
+        text-align: center;
+    }
+    .company_logo_div{
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 20px;
+        row-gap: 10px;
+    }
+   
+}
+@media (max-width:767px){
+      .feature_ex_div{
+        width: 45%;
+      }
+      .features{
+        padding: 90px var(--padding-inline-section) 20px;
+      }
+      .big_feature_section {
+        flex-direction: column;
+      }
+      .big_feature_image img{
+        width: 80%;
+      }
+      #big_feature_section_2{
+        flex-direction: column;
+      }
+      .big_feature_desk{
+        align-items: center;
+        text-align: center;
+      }
+      .big_feature_desk h5{
+        font-size: 1.3rem;
+        color:var(--primary-color) ;
+      }
+      .footer-container{
+        flex-wrap: wrap;
+        justify-content: space-between  ;
+        gap: 20px;
+        overflow: hidden;
+      }
+     .footer-linklist{
+        width: 47%;
+     }
+     .footer-linklist h5 ,a{
+        align-items: center;
+     }
+      .subfooter-content{
+        flex-wrap: wrap;
+        row-gap: 10px;
+      }
+      .subfooter-sharelink{
+        row-gap: 10px;
+        flex-wrap: wrap;
+      }
+      
+    }
+    @media (max-width:470px){
+       
+        .container{
+            width: 95vw;
+            overflow: visible;
+            /* padding-inline: 10px; */
+        }
+        h2{
+            font-size: 2rem;
+        }
+        h3{
+            font-size: 1.6rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+        .header_left_div  h1{
+            font-size:2.4rem;
+            line-height: 2.45rem;
+        }
+        .header_left_div p{
+            font-size: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+        .companies_para{
+            text-align: center;
+        }
+        
+        .examples_card_list{
+            gap: 8PX;
+            justify-content: center;
+            /* border: 2px solid red; */
+
+        }
+        .examples_card{
+            height: 230px;
+            width: 99%;
+            /* border: 2px solid red; */
+
+        }
+        .footer-container{
+            justify-content: center;
+            
+        }
+        .footer-linklist{
+            width: 90%;
+        }
+        .feature_examples{
+            row-gap: 30px;
+            /* border: 3px solid green; */
+        }
+        .feature_ex_div{
+        row-gap: 15px;
+            width: 100%;
+            /* border: 2px solid red; */
+            
+        }
+        .subfooter-content{
+            column-gap: 10px;
+        }
+
+    }
