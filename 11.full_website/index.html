@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My website</title>
-    <link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="media-queries.css">  
 </head>
 <body>
     <div class="topbanner">
@@ -21,23 +22,26 @@
                     <img src="assets/asset 1.png" alt="homeimage">
                 </a>
         </div>
-        <div class="nav_right_div flex">
-            <a href="#" class="navlinks">Product</a>
-            <a href="https://usabilityhub.com/customers" class="navlinks">Customers</a>
-            <a href="https://usabilityhub.com/pricing" class="navlinks">Pricing</a>
-            <a href="#" class="navlinks">Resources</a>
-            <a href="#" class="navlinks primary-button">Sign in</a>
-            <a href="#" class="navhover secondary-button">Sign up</a>
-        </div>
+        <div class="nav_right_div  active flex" id="nav_right_div">
+            <ul class="flex">
+            <li> <a href="#" class="navlinks hover-links">Product</a></li>
+            <li> <a href="https://usabilityhub.com/customers" class="hover-links navlinks">Customers</a></li>
+            <li> <a href="https://usabilityhub.com/pricing" class="hover-links navlinks">Pricing</a></li>
+            <li> <a href="#" class="navlinks hover-links">Resources</a></li>
+            <li> <a href="#" class="navlinks hover-links primary-button">Sign in</a></li>
+            <li> <a href="#" class="navhover navlinks hover-links secondary-button">Sign up</a></li>
+        </ul>
+    </div>
+    <a href="#" class="toggle-button hover-links" id="toggle-button"> <i class="fa-solid fa-bars"> </i></a>
     </nav>
     <div class="header container flex">
 
       <div class="header_left_div flex">
-       <div class="header_left_inner_div">
+      
         <h1>Design confidently.</h1>
         <p>UsabilityHub is a remote user research platform that takes the guesswork out of design decisions by validating them with real users.</p>
-        <a href=""><div class="secondary-button hld_button"> Get started</div></a>
-       </div>
+        <a class="secondary-button hld_button"> Get started</a>
+     
        </div>
       <div class="header-right_div">
         <img src="assets/asset 2.jpeg" alt="">
@@ -50,9 +54,9 @@
         <div class="company_logo_div flex">
             <img src="assets/asset 3.png" alt="amazon-log">
             <img src="assets/asset 4.png" alt="google_log">
-            <img src="assets/asset 5.png" style="width: 145px;" alt="task_rabbit_logo">
-            <img src="assets/asset 6.png" style="width: 145px;" alt="airtable_log">
-            <img src="assets/asset 7.png" style="width: 50px;" alt=" box_log">
+            <img src="assets/asset 5.png" style="width: 150px;" alt="task_rabbit_logo">
+            <img src="assets/asset 6.png" style="width: 150px;" alt="airtable_log">
+            <img src="assets/asset 7.png" style="width: 55px;" alt=" box_log">
             <img src="assets/asset 8.svg" alt="Go_daddy_log">
             <img src="assets/asset 9.png" alt="asanalogo">
       </div>
@@ -136,7 +140,7 @@
           </section>
         <!-- section 2 starts from here -->
         <section class="big-feature-outer-section">
-            <div  class="big_feature_section  container flex " style="flex-direction: row-reverse;" >
+            <div  class="big_feature_section  container flex " id="big_feature_section_2" >
    
               <div class="big_feature_image">
                   <img src="assets/asset 21.png" alt="">
@@ -231,24 +235,31 @@
         </div>
     </div>
   </footer>
-    <div class="final-footer">
-        <div class="subfooter container ">
-            <div class="subfooter-container flex">
+   
+        <div class="subfooter-container">
+            <div class="subfooter-content flex">
                 <div class="subfooter_div"><a href="#">Privacy Policy</a></div>
                 <div class="subfooter_div"><a href="#">Terms & Conditions</a></div>
                 <div class="subfooter_div"><a href="#">Security Information</a></div>
             </div>
-            <div class="subfooter-sharelink">
-                <div class="subfooter_div">
+            <div class="subfooter-sharelink flex">
+              
                     <a href="#"><img style="width: 20px;" src="assets/asset 28.png" alt="facebook logo"></a>
                     <a href="#"><img style="width: 20px;" src="assets/asset 29.png" alt="facebook logo"></a>
                     <a href="#"><img style="width: 20px;" src="assets/asset 30.png" alt="facebook logo"></a>
                     <a href="#"><img style="width: 20px;" src="assets/asset 31.png" alt="facebook logo"></a>
-                </div>
+              
             </div>
-        </div>
     </div>
+   
     <!-- <div class="spacer" style="height: 100vh;background-color: rgba(21, 20, 20, 0)(21, 20, 20);"> </div> -->
     <script src="https://kit.fontawesome.com/b842128030.js" crossorigin="anonymous"></script>
+    <script>
+        const toggleButton =document.getElementById('toggle-button');
+        const navLinks=document.getElementById('nav_right_div');
+        toggleButton.addEventListener('click' , ()=>{
+            navLinks.classList.toggle('active');
+        })
+    </script>
 </body>
 </html>
