@@ -58,6 +58,9 @@ p{
     word-spacing: 1.5px;
     letter-spacing: 0.4px;
 }
+ul li{
+    list-style-type: none;
+}
 a{
     display: inline-block;
     text-decoration: none;
@@ -99,15 +102,21 @@ a{
 }
 .container{
     /* border: 2px solid red; */
-    max-width: 1170px;
-    /* justify-content: center; */
+    width: 85vw;
+    overflow: hidden;
+
+    justify-content: center;
     align-items: center;
     margin-inline: auto;
    
 }
-
+.hover-links:hover{
+    color: var(--accent-color);
+}
+/* utility classes ended here */
 /* styling starts from here */
 .bnnr_inr_bx{
+    text-align: center;
 width: 100%;
 justify-content: center;
 background:url(/learncss/11.full_website/assets/asset\ 32.png);
@@ -124,10 +133,17 @@ height: 50px;
 }
 /* banner style ended */
 .navigationbar{
+   
     justify-content: space-between;
     /* border: 2px solid red; */
     padding: 2px;
-    margin-block:17px;
+    margin-block:20px;
+}
+.navul{
+    list-style-type: none;
+}
+.toggle-button{
+    display: none;
 }
 .nav_left_div a img{
     width: 170px;
@@ -144,9 +160,7 @@ height: 50px;
     /* border: 2px solid purple; */
     margin-inline: 5px;
 }
-.navlinks:hover{
-    color: var(--accent-color);
-}
+
 .navhover{
     line-height:30px ;
     margin-inline: 5px;
@@ -156,15 +170,14 @@ height: 50px;
 /* header style starts here */
 .header{
     /* border: 2px solid rgb(222, 45, 45); */
-    justify-content: space-between;
+    justify-content: center;
     margin-block: 30px;
 }
 .header_left_div{
     padding: 5px;
-    height:400px;
-    /* border: 2px solid blue; */
-    align-items: center;
-    /* padding-inline: 40px; */
+    flex-direction: column;
+    width: 40vw;
+    align-items: flex-start;    
 }
 .header_left_div h1{
 font-size: 2.8rem;
@@ -175,6 +188,7 @@ font-size: 2.8rem;
     line-height: 27px;
     width: 90%;
     margin-block:10px ;
+  
 }
 .hld_button{
     padding: var(--padding-inline-section);
@@ -183,7 +197,7 @@ font-size: 2.8rem;
 } 
 .header-right_div img{
     
-   width: 620px;
+   width: 100%;
     /* border: 2px solid black; */
     padding-block: 10px;
     padding-inline: var(--padding-inline-section);
@@ -197,10 +211,11 @@ font-size: 2.8rem;
     margin-bottom:20px;
 }
 .company_logo_div{
-    justify-content: space-between;
+    justify-content: center;
+    column-gap: 2.5vw;
 }
 .company_logo_div img{
-    width: 100px;
+    width: 105px;
 }
 .features{
     padding: 90px var(--padding-inline-section);
@@ -219,7 +234,8 @@ font-size: 2.8rem;
     margin-top: 10px;
     padding: 40px var(--padding-inline-section) 10px;
     flex-wrap: wrap;
-    gap: 40px 30px;
+    gap: 4
+    0px 30px;
     /* border: 2px solid rgb(0, 255, 213); */
 }
 .feature_ex_div{
@@ -233,29 +249,35 @@ font-size: 2.8rem;
     width: 60px;
 }
 /* big feature styling starts from here */
-.big-feature-section{
+.big_feature_section{
     padding: 30px var(--padding-inline-section);
+    /* border: 2px solid red ; */
 }
 .big_feature_section{
     gap: 30px;
+   
+}
+#big_feature_section_2{
+    flex-direction: row-reverse;
 }
 .big_feature_image img{
-    width: 100%;
+    width: 45vw;
 }
 .big_feature_desk{
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
+    row-gap: 10px;
+   
 }
-.big_feature_desk p{
-          padding-right: 90px;
-}
+
 .examples{
     margin-top: 50px;
 }
 .examples_card_list{
     margin-top: 30px;
     position: relative;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .examples_card{
     position: relative;
@@ -301,6 +323,8 @@ font-size: 2.8rem;
      right: 5px;
 }
 .Cta{
+    
+  
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -335,25 +359,20 @@ font-size: 2.8rem;
 .footer a:hover{
     color: var(--accent-color);
 }
-.final-footer{
-    background-color: #b9cde4;
-}
-.subfooter{
+/* subfooter styling starts from here */
+.subfooter-container{
+    background-color: #a8b8cbd1;  
+     /* width: 95vw; */
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: flex-start;
     /* border: 2px solid red;  */
     padding: 20px 0px;
-    gap: 130px;
 }
-.subfooter-container{
-    gap: 20px;
-    /* border: 2px solid green; */
+.subfooter-content{
+    column-gap: 20px;
 }
-.subfooter-container{
-    /* border: 2px solid green; */
-}
-.subfooter-container{
-    /* justify-content: center; */
-    gap: 30px;
+.subfooter-sharelink{
+  column-gap: 10px;
 }
