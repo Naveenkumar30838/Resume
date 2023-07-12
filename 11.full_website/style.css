@@ -8,6 +8,9 @@
     box-sizing: border-box;
 }
 :root{
+    --primary-text-color:#183b56;
+    --secondary-text-color:#333333;
+
     --primary-color:#58636b;
     --secondary-color:#577592;
     --accent-color:#2294ed;
@@ -17,6 +20,16 @@
     --new-font: 'Poppins', sans-serif;
     --new-font-heavier:
 }
+.dark{
+    --secondary-text-color:#ffffff;
+    --footer-color:#1d1e20;
+    --primary-text-color:#fff;
+    background-color: #212121;
+    --primary-color:#eaf2f8;
+    --secondary-color:#dce4ea;
+    --accent-color:#2294ed;
+    --accent-color-dark:#1d69a3;
+}
 body{
     font-family: 'Poppins', sans-serif;
     color: var(--primary-color);
@@ -24,26 +37,26 @@ body{
 }
 h1{
     font-size: 3rem;
-    color: #183b56;
+    color: var(--primary-text-color);
 }
 h2{
     font-size: 2.4rem;
-    color: #183b56;
+    color: var(--primary-text-color);
 }
 h3{
     font-size: 1.9rem;
-    color: #183b56;
+    color:var(--primary-text-color);
 }
 h4{
     font-size: 1.5rem;
-    color: #183b56;
+    color: var(--primary-text-color);
 }
 h5{
     font-size: 1.2rem;
-    color: #183b56;
+    color: var(--primary-text-color);
     line-height: 30px;
 }
-p{
+p{   color: var(--primary-text-color);
     font-family: 'poppins',sans-serif;
     color: var(--secondary-color);
     word-spacing: normal;
@@ -53,15 +66,17 @@ p{
     line-height: 27px;
 }
 .para_small{
+    color: var(--primary-text-color);
     font-size: 1.1rem;
-    color: #183b56;
+    color: var(--primary-text-color);
     word-spacing: 1.5px;
     letter-spacing: 0.4px;
 }
 ul li{
+    color: var(--primary-text-color);
     list-style-type: none;
 }
-a{
+a{     color: var(--primary-text-color);
     display: inline-block;
     text-decoration: none;
     color: var(--primary-color);
@@ -69,11 +84,12 @@ a{
 }
 /* utility classess */
 .primary-button{
+    color: var(--primary-text-color);
     font-weight: 600;
     border-radius: 3px ;
     padding:9px 19px ;
     text-align: center;
-    color: #333333;
+    color: var(--secondary-text-color);
     border: 1px solid var(--secondary-color);
 }
 .primary-button:hover{
@@ -102,7 +118,7 @@ a{
 }
 .container{
     /* border: 2px solid red; */
-    width: 85vw;
+    width: 90vw;
     overflow: hidden;
 
     justify-content: center;
@@ -113,8 +129,18 @@ a{
 .hover-links:hover{
     color: var(--accent-color);
 }
-/* utility classes ended here */
-/* styling starts from here */
+/* utility classes ended here */  
+/* styling starts from here *//*////////////////////////////////////////////////////////////////////////////////*/
+.darkmode-div{
+    cursor:pointer;
+    position: fixed;
+    width: 30px;
+    text-align: center;
+    height: 30px;
+    left: 20px ;
+    top: 10px;
+    background-color: white;
+}
 .bnnr_inr_bx{
     text-align: center;
 width: 100%;
@@ -145,7 +171,7 @@ height: 50px;
 .toggle-button{
     display: none;
 }
-.nav_left_div a img{
+.nav_left_div  img{
     width: 170px;
     height: auto;
 }
@@ -177,8 +203,11 @@ height: 50px;
     padding: 5px;
     flex-direction: column;
     width: 40vw;
-    align-items: flex-start;    
+    align-items: flex-start;  
+  
 }
+
+
 .header_left_div h1{
 font-size: 2.8rem;
 }
@@ -212,14 +241,15 @@ font-size: 2.8rem;
 }
 .company_logo_div{
     justify-content: center;
-    column-gap: 2.5vw;
+    column-gap: 1vw;
+    padding-inline: var(--padding-inline-section);
 }
 .company_logo_div img{
     width: 105px;
 }
 .features{
     padding: 90px var(--padding-inline-section);
-    background-image: url(assets/asset\ 34.svg);
+    /* background-image: url(assets/asset\ 34.svg); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: 70%;
@@ -234,8 +264,7 @@ font-size: 2.8rem;
     margin-top: 10px;
     padding: 40px var(--padding-inline-section) 10px;
     flex-wrap: wrap;
-    gap: 4
-    0px 30px;
+    gap: 40px 30px;
     /* border: 2px solid rgb(0, 255, 213); */
 }
 .feature_ex_div{
@@ -337,7 +366,7 @@ font-size: 2.8rem;
 }
 .footer{
     padding: 80px var(--padding-inline-section) 80px;
-    background-color: #ebf2fa;
+    background-color: var(--footer-color);
 }
 .footer-container{
     justify-content: space-between;
