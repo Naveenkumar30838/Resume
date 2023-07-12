@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="style.css">  
     <link rel="stylesheet" href="media-queries.css">  
 </head>
-<body>
+<body id="body" >
+    <div id="dark-button" class="darkmode-div">
+      <abbr title="dark-mode">  <i  class="fa-sharp fa-solid fa-moon"></i></abbr>
+    </div>
     <div class="topbanner">
         <div class="bnnr_inr_bx flex">
                 <div class="container ">
@@ -17,12 +20,11 @@
     </div>
     <!-- navigation bar starts -->
     <nav class="navigationbar flex container">
-        <div class="nav_left_div">
-                <a href="https://usabilityhub.com">
+       
+                <a class="nav_left_div" href="https://usabilityhub.com">
                     <img src="assets/asset 1.png" alt="homeimage">
                 </a>
-        </div>
-        <div class="nav_right_div  active flex" id="nav_right_div">
+    <div class="nav_right_div " id="nav_right_div">
             <ul class="flex">
             <li> <a href="#" class="navlinks hover-links">Product</a></li>
             <li> <a href="https://usabilityhub.com/customers" class="hover-links navlinks">Customers</a></li>
@@ -34,6 +36,7 @@
     </div>
     <a href="#" class="toggle-button hover-links" id="toggle-button"> <i class="fa-solid fa-bars"> </i></a>
     </nav>
+    <!-- nav ends here -->
     <div class="header container flex">
 
       <div class="header_left_div flex">
@@ -259,6 +262,13 @@
         const navLinks=document.getElementById('nav_right_div');
         toggleButton.addEventListener('click' , ()=>{
             navLinks.classList.toggle('active');
+        })
+    </script>
+     <script>
+        const body =document.getElementById('dark-button');
+        const dark_button=document.getElementById('body');
+        body.addEventListener('click' , ()=>{
+            dark_button.classList.toggle('dark');
         })
     </script>
 </body>
