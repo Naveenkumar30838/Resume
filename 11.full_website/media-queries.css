@@ -11,33 +11,36 @@
         display: block;
     }
     .navigationbar{
-       
+        display: relative;
+        /* border: 2px solid green; */
         overflow: initial;
     }
     .nav_right_div ul{
         flex-direction: column;
         row-gap: 30px;
+        justify-content: center;
+        /* border: 2px solid red; */
+        padding-block: 20px;
     }
     
     .nav_right_div{
+        height: 100vh;
         /* border: 2px solid red; */
-        padding-block: 20px;
         position: absolute;
-     
         color: black;
-        background-color: white;
-left: 100%;
-        top:150px ;
+        background-color: rgba(255, 255, 255, 0.619);
+        backdrop-filter: blur(50px);
+        left: 200%;
+        top:-100px ;
+        display: none;
         width: 100%;
-        transition: all 0.3s ease-in-out;
-        display:none;
-         
-
-
     }
     .nav_right_div.active{
+        display: block;
+        display: fixed;
+        top: 110px;
         left: 0px;
-        display:visible;
+        transition: all 1s ease-in;
     }
     .toggle-button{
         display: block;
@@ -79,6 +82,9 @@ left: 100%;
    
 }
 @media (max-width:767px){
+      .container{
+        width: 90vw;
+      }
       .feature_ex_div{
         width: 45%;
       }
@@ -127,7 +133,7 @@ left: 100%;
     @media (max-width:470px){
        
         .container{
-            width: 95vw;
+            width: 97vw;
             overflow: visible;
             /* padding-inline: 10px; */
         }
