@@ -27,15 +27,17 @@
         color: black;
         background-color: white;
 left: 100%;
-        top:25% ;
+        top:150px ;
         width: 100%;
         transition: all 0.3s ease-in-out;
+        display:none;
          
 
 
     }
     .nav_right_div.active{
         left: 0px;
+        display:visible;
     }
     .toggle-button{
         display: block;
