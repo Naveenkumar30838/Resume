@@ -222,6 +222,10 @@ p {
     margin-block: 10px;
     /* border: 2px solid red ; */
 }
+.backgound-design:active{
+    animation: left-right;
+    animation-duration: 3s;
+}
 .about{ 
        padding: 40px;
         }
@@ -289,6 +293,9 @@ p {
     font-weight: 550;
     margin-right: 5px;
     
+}
+.advertisement::first-letter{
+    font-size: 5.4rem;
 }
 
 .contactusbox{
@@ -516,6 +523,22 @@ font-size: 1.055em;
     color: rgba(255, 255, 255, 0.523);
     font-family: serif;
     font-size: 0.7rem;
+}
+.footer a:visited{
+    color: #f49f0080;
+}
+/* here is a small animation  */
+@keyframes left-right{
+    from{
+        transform:rotateX(20deg);
+       
+        background-color: transparent;
+       
+    }
+    to{
+        transform: rotateZ(25deg);
+        
+    }
 }
 /* media quaries section starts from here */
 @media screen and (max-width:490px) {
