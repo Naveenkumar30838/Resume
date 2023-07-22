@@ -1,0 +1,501 @@
+@media (width<=1270px){
+    .background-image{
+        margin-bottom: 540px;
+    }
+    .heroes{
+        margin-bottom: 0px;
+    }
+}
+@media (max-width:1200px){
+    h2{
+        font-size: 20px;
+
+    }
+    h3{
+        font-size: 1.2rem;
+    }
+    h4{
+        font-size: 0.7rem;
+    }
+    p{
+        font-size:12px ;
+    }
+    .search-box input{
+        width: 520px;
+    }
+    .Account p{
+        font-size: 0.7rem;
+    }
+    .heroes-grid-box{
+        
+       padding: 10px;
+    }
+    .heroes{
+        margin-bottom: 580px;
+    }
+    .box3-images {
+        align-items: flex-start;
+         row-gap: 10px;
+        margin-block: 10px;
+    }
+    .box3-images div{
+        width: 44%;        
+    }
+    .box3-images img{
+        height: 110px;
+    }
+    
+    .more-shop-content img{
+        width: 110px;
+        height: 130px;
+    }
+}
+@media (max-width:1070px){
+    .heroes{
+        margin-bottom: 600px;
+    }
+    .search-box input{
+        width: 500px;
+    }
+}
+@media (max-width:1000px){
+    .search-box input{
+        width: 400px;
+    }
+    .background-image{
+        margin-bottom: 650px;
+    }
+    h4{
+        font-size: 0.9rem;
+    }
+    p{
+        font-size:12px ;
+    }
+    .top-nav{
+        justify-content: center;
+    }
+    .company-logo a img{
+        width: 80px;
+        height: 38px;
+    }
+    .Account{
+        padding: 4px;
+    }
+    .small-text{
+        font-size: 0.7rem;
+    }
+    .medium-text{
+        font-size: 0.75rem;
+        line-height: 12px;
+    }
+}
+@media (max-width:840px){
+    .top-nav{
+        justify-content: space-evenly;
+    }
+    .search-box input{
+        width: 250px;
+    } 
+    .top-nav-location a{
+        padding: 1px 2px; 
+        column-gap: 3px;
+    
+    }  
+    .location-content p{
+        font-size: 11px;
+    }
+    .country{padding-inline: 2px;}
+    .Account{
+        padding: 2px;
+    }
+    .return{
+        padding: 3px;
+    }
+    .Cart{
+        padding: 2px;
+    }
+    .small-text{
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+    h4{
+        font-size: 0.6rem;
+    }
+   
+    h2{
+        font-size: 1.12rem;
+    }
+    h3{
+        font-size: 1.1rem;
+        line-height: 20px;
+        font-weight: 600;
+    }
+  
+    .medium-text{
+        font-size: 0.65rem;
+        line-height: 10px;
+        font-weight: 400;
+        word-spacing: 1px;
+    }
+    .heroes-grid{
+        grid-template-columns: repeat(4 ,1fr);
+        grid-template-rows: 100px 150px 250px;
+        column-gap: 12px;
+    }
+    .heroes-grid-box p{
+        font-size: 0.6rem;
+    }
+    .heroes-grid-box a{
+        font-size: 0.7rem;
+    }
+    .box3-images{
+        row-gap: 12px;
+        column-gap: 8px;
+        margin-block: 5px;
+    }
+    .box3-images div{
+        width: 45%;
+    }
+    .box3-images img{
+        height: 55px;
+    }
+    .box4 {
+        row-gap: 5px;
+    }
+    .box4 h3{
+        font-size: 1rem;
+        line-height: 1.2rem;
+    }
+    .box4 button{
+        font-size: 0.9rem;
+    }
+    .box6 div , .box7 div , .box8 div{
+
+        height: 70%;
+    }
+    .more-shop-content img{
+        width: 80px;
+        height: 100px;
+    }
+    .background-image{
+        margin-bottom: 350px;
+    }
+    .heroes{
+        margin-bottom: 0px;
+    }
+
+    .bfooter-container{
+        padding: 30px 60px;
+    }
+}
+@media (max-width:770px){
+   
+    .background-image{
+        margin-bottom: 380px;
+    }
+}
+@media (max-width:730px){
+    .background-image{
+        margin-bottom: 420px;
+    }
+    .tfooter-container{
+        row-gap: 20px;
+        flex-wrap: wrap;
+    }
+    .tfooter-card{
+        width: 48%;
+    }
+}
+@media (max-width:630px){
+    .company-logo a img{
+        width: 60px;
+        height: 35px;
+    }
+    .location-content p{
+        font-size: 8px;
+    }
+    .search-category{
+        height: 35px;
+    }
+    .search-box input{
+        width: 180px;
+        font-size: 0.7rem;
+        height: 35px;
+        margin-top: 4.5px;
+    }
+
+    .search-enter{
+        height: 35px;
+        width: 35px;
+        font-size: 1.1rem;
+    }
+    .Account{
+        padding: 1px;
+        width: 70px;
+    }
+    .background-image{
+        margin-bottom: 450px;
+    }
+    .box4 button{
+        font-size: 0.7rem;
+    }
+    .highlighter{
+        padding: 2px ;
+    }
+    h6{
+        font-size: 0.8rem;
+    }
+    .more-shop-container{
+        padding: 10px 4px;
+    }
+    .more-shop-content{
+        padding: 10px 2px ;
+    }
+    .more-shop-content img{
+        width: 60px;
+        height: 80px;
+    }
+
+    .big-sm-card{
+        height:350px;
+        padding: 15px 12px;
+        row-gap: 10px;
+    }
+    .big-sm-card img{
+        height:200px;
+    }
+    .nav-container{
+        justify-content: flex-start;
+        column-gap: 5px;
+    }
+    
+    .nav-link{
+        padding: 4px;
+        font-size: 0.9rem;
+    }
+
+}
+@media (max-width:550px){
+    .company-logo a img{
+        width: 45px;
+        height: 28px;
+    }
+    .small-text{
+        font-size: 0.6rem;
+        font-weight: 400;
+    }
+.medium-text{
+        font-size: 0.5rem;
+        line-height: 10px;
+        font-weight: 400;
+        word-spacing: 0.9px;
+    }
+    h3{
+        font-size: 0.9rem;
+        font-weight: 400;
+    }
+    .heroes-grid-box{
+        padding: 8px;
+    }
+    .box3-images{
+        row-gap: 2px;
+    }
+    .box3-images div img{
+        height: 50px;
+    }
+    .country{
+        height: 40px;
+    }
+    .background-image{
+        margin-bottom: 470px;
+    }
+    .more-shop-content img{
+        width: 40px;
+        height: 60px;
+    }
+    .bfooter-container{
+        padding: 25px 10px;
+    }
+    .bfooter-flex{
+        justify-content: flex-start;
+        column-gap: 40px;
+    }
+    .footer-copyright-container p{
+        font-size: 0.8rem;
+
+    }
+}
+@media (width<=470px){
+    .company-logo a img{
+        width: 50px;
+        height: 30px;
+    }
+    .location-content p{
+        font-size: 8px;
+    }
+    .location-content h4{
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+    .search-category{
+        height: 30px;
+    }
+    .search-category div{
+        width: 30px;
+        justify-content: center;
+    }
+    .search-box input{
+        width: 150px;
+        font-size: 0.5rem;
+        height: 30px;
+        margin-top: 7px;
+    }
+
+    .search-enter{
+        height: 30px;
+        width: 30px;
+        font-size: 1.1rem;
+    }
+    .Account{
+        padding: 1px;
+        width: 50px;
+    }
+    .Account p{
+       font-size: 0.5rem;
+    }
+    .nav-link a{
+        font-size: .7rem;
+    }
+    .background-image{
+        margin-bottom: 450px;
+    }
+    p{
+        font-size: 0.6rem;
+    }
+
+    .heroes-grid{
+        grid-template-columns: repeat(3 ,1fr);
+        grid-template-rows: 100px 150px 250px;
+       
+    }
+    .background-image{
+        margin-bottom: 750px;
+    }
+    .big-shop-more{
+        flex-wrap: wrap;
+        row-gap: 4px;
+    }
+    .big-sm-card{
+        width: 48%;
+        justify-content: flex-start;
+        height:320px;
+        padding: 15px 12px;
+        row-gap: 12px;
+    }
+    .big-sm-card img{
+        height:190px;
+    }
+    .bfooter-container{
+        padding: 25px 15px;
+    }
+    .bfooter-flex{
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        column-gap: 20px;
+    }
+    .footer-grid-content{
+        width: 70px;
+     
+    }
+    .footer-sign-in-container a button{
+        width: 200px;
+    }
+    .footer-grid-content:hover{
+        width: 70px;
+        box-shadow: 0px 0px 3px var(--active-color);
+    }
+}
+@media (width<=425px){
+    .search-box input{
+        width: 130px;
+    }
+    .Account p{
+        font-size: 0.4rem;
+     }
+     .location-content p{
+        font-size: 0.4rem;
+    }
+    .location-content h4{
+        font-size: 0.6rem;
+        font-weight: 400;
+    }
+    .return{
+        display: none;
+    }
+    .Cart{
+        display: none;
+    }
+    .background-image{
+        margin-bottom: 750px;
+    }
+    .box3-images div p{
+        font-size: 0.5rem;
+    }
+}
+@media (width<=370px){
+    .nav-container{
+        column-gap: 2px;
+    }
+    .background-image{
+        margin-bottom: 750px;
+    }
+    .box3-images div p{
+        font-size: 0.4rem;
+    }
+    .heroes-grid-box{
+        padding: 8px;
+    }
+    .heroes-grid-box h3{
+        font-size: 0.8rem;
+    }
+    .box3-images{
+        row-gap: 2px;
+    }
+    .box3-images div{
+        width: 40%;
+    }
+    .box3-images div img{
+        height: 44px;
+    }
+}
+@media (width<=330px){
+    .heroes-grid{
+        padding-top: 10px;
+    }
+    .nav-link a{
+        font-size: .5rem;
+    }
+    p{
+        font-size: 0.5rem;
+    }
+    .background-image{
+        margin-bottom: 770px;
+    }
+    .country{
+        display: none;
+    }
+}
+@media (width<=300px){
+    .background-image{
+        margin-bottom: 790px;
+    }
+    .more-shop-content img{
+        width: 30px;
+        height: 50px;
+    }
+}
+@media (width<=280px){
+    .background-image{
+        margin-bottom: 820px;
+    }
+}
