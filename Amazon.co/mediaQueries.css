@@ -441,6 +441,8 @@
     .box3-images div p{
         font-size: 0.5rem;
     }
+    .container{
+margin-left:8px;
 }
 @media (width<=370px){
     .nav-container{
