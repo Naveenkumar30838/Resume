@@ -152,7 +152,7 @@
     grid-auto-rows: 30px;
     gap: 3px;
     justify-content: center;
-    row-gap: 10px;
+    row-gap: 15px;
     align-items: center;
     background:linear-gradient(to right ,#fbf8f843  , rgba(112, 232, 88, 0.126) ,rgba(255, 255, 255, 0.482));
 }
@@ -201,7 +201,7 @@ p {
     padding:4px; 
 }
 .projects_link:hover{
-
+    transform:scale(1.1);
     /* background: linear-gradient(to top right, rgb(210, 46, 46) , rgb(141, 3, 3)) ; */
     background-color: rgb(21, 21, 155);
     border-radius: 80px;
@@ -223,8 +223,7 @@ p {
     /* border: 2px solid red ; */
 }
 .backgound-design:active{
-    animation: left-right;
-    animation-duration: 3s;
+transform:scaleY(1.1);
 }
 .about{ 
        padding: 40px;
@@ -526,19 +525,6 @@ font-size: 1.055em;
 }
 .footer a:visited{
     color: #f49f0080;
-}
-/* here is a small animation  */
-@keyframes left-right{
-    from{
-        transform:rotateX(20deg);
-       
-        background-color: transparent;
-       
-    }
-    to{
-        transform: rotateZ(25deg);
-        
-    }
 }
 /* media quaries section starts from here */
 @media screen and (max-width:490px) {
