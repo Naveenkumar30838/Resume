@@ -22,7 +22,7 @@
              <div class="topnav_div" ><a class="topnav_div_a" href="#skills">skills</a></div>
              <div class="topnav_div" ><a class="topnav_div_a" href="Signindex.html">Sign In</a></div>
              <div class="topnav_div" ><a class="topnav_div_a" href="#connect">Help</a></div>
-             <div class="topnav_div" ><a class="topnav_div_a" href="Amazon.co/index.html">Latest Project</a></div>
+             <div class="topnav_div" ><a class="topnav_div_a" href="MyPortfolio/index.html">Latest Project</a></div>
             
     </div>
     </nav>
@@ -118,6 +118,23 @@
     </div>
     
 </div>
+ <!-- here is a pop aside section  -->
+ <aside>
+    <div class="popup" id="popup-button">
+      
+        <i class="fa-solid fa-circle-xmark " id="cross-button"></i>
+
+        <div class="popup-box flex">
+            <p>This site use cookies to give you a better experience, Accept cookies to proceed ....</p>
+            <div class="cookie-container flex">
+                <div class="cookies-button">Accept All</div>
+                <div class="cookies-button">Neccessory only</div>
+            </div>
+        </div>
+
+        
+    </div>
+</aside>
 <!-- here is a draft's section -->
 <div class="draft">
     <div class="draft-header">
@@ -133,7 +150,7 @@
 </div>
 
 </main>
-<!-- main ends Here -->
+<!-- main ends Here😂😁😁😀😀 -->
 <!-- here is a contact info aside -->
     <aside>
         <div class="contactusbox">
@@ -226,10 +243,19 @@
                              <p class="fcopyright_button">© Copyright @ Naveenkumar 25 March ,2023  & </p>
                            
                              <p class="fcopyright_button">  Last updated 18/07/2023</p>
-                         </div>
-     
-                       
-                   </div>
-      </footer>
+                            </div>
+                            
+                            
+                        </div>
+                    </footer>
+                   
+                    <script src="https://kit.fontawesome.com/b842128030.js" crossorigin="anonymous"></script>
+                    <script>
+                        const popupButton =document.getElementById('popup-button');
+                        const crossbutton=document.getElementById('cross-button');
+                        crossbutton.addEventListener('click' , ()=>{
+                            popupButton.classList.toggle('disappear');
+                        })
+                    </script>
 </body>
 </html>
