@@ -58,6 +58,7 @@
     text-align: center;
     position: fixed;
     z-index: 5;
+    animation: nav-anime 2s;
     background: linear-gradient(to right ,red , red) ;
  }
  .banner p{
@@ -66,6 +67,7 @@
     z-index: 4;
     text-align: center;
     padding: 3.2px;
+
  }
 
 .topnavouterdiv{
@@ -74,7 +76,7 @@
     
      border-radius:0px 0px 100px 100px;
     width: 100vw;
-    /* border: 2px solid red; */
+    animation: nav-anime 2s;
     padding: 7px 0px 7px 7px ;
     gap: 23px;
     overflow: hidden;
@@ -152,7 +154,7 @@
     grid-auto-rows: 30px;
     gap: 3px;
     justify-content: center;
-    row-gap: 15px;
+    row-gap: 10px;
     align-items: center;
     background:linear-gradient(to right ,#fbf8f843  , rgba(112, 232, 88, 0.126) ,rgba(255, 255, 255, 0.482));
 }
@@ -201,7 +203,7 @@ p {
     padding:4px; 
 }
 .projects_link:hover{
-    transform:scale(1.1);
+
     /* background: linear-gradient(to top right, rgb(210, 46, 46) , rgb(141, 3, 3)) ; */
     background-color: rgb(21, 21, 155);
     border-radius: 80px;
@@ -222,9 +224,7 @@ p {
     margin-block: 10px;
     /* border: 2px solid red ; */
 }
-.backgound-design:active{
-transform:scaleY(1.1);
-}
+
 .about{ 
        padding: 40px;
         }
@@ -296,6 +296,68 @@ transform:scaleY(1.1);
 .advertisement::first-letter{
     font-size: 5.4rem;
 }
+
+/* here is the style of the popup */
+.popup{
+    width: 350px;
+    height: 200px;
+    background-color: white;
+    animation: popup 0.1s forwards;
+    position: fixed;
+    z-index: 29;
+    bottom: 20px;
+    left:20px;
+    border-radius: 10px;
+    row-gap: 10px;  
+    align-items: center;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.404);
+    padding: 5px;
+
+}
+.popup-box{
+    /* background:linear-gradient(to right ,#00000027 , black , #615e5e13 ,black, #00000028); */
+    border-radius: 10px;
+    color: yellow;
+    /* background-color: red; */
+    margin-top: 30px;
+    padding: 10px;
+    flex-direction: column;
+
+}
+
+#cross-button{
+
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: auto;
+
+    
+    position: absolute;
+    top: 0px ;
+    right: 0px;
+  
+}
+#cross-button:hover{
+    cursor: pointer;
+}
+.disappear{
+    display: none;
+}
+.cookie-container{
+    margin-top: 20px;
+    column-gap: 20px;
+}
+.cookies-button{
+    background-color: #09b0f1;
+    padding: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+
+}
+.cookies-button:hover{
+    background-color: #025e82;
+}
+
 
 .contactusbox{
     width: 150px;
@@ -405,13 +467,21 @@ transform:scaleY(1.1);
 }
 .draft-card:nth-child(2){
      background:linear-gradient(#1b101040 , #150f0ff4) , url(images/images/portfolio.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .draft-card:nth-child(3){
     background:linear-gradient(#1b101040 , #150f0ff4) , url(images/images/login.png);
-
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .draft-card:nth-child(4){
     background:linear-gradient(#1b101040 , #150f0ff4) , url(images/images/galleyimages-screenshot.png);
+     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
 }
 
@@ -525,6 +595,38 @@ font-size: 1.055em;
 }
 .footer a:visited{
     color: #f49f0080;
+}
+@keyframes nav-anime{
+    0%{
+        transform: translateY(-100px);
+
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+/* here is a another animation for popup */
+@keyframes popup{
+    0%{
+        
+       scale: 0;
+    }
+    50%{
+        scale: 0;
+    }
+    51%{
+        scale: 1;
+    }
+    80% {
+        scale: 1.1;
+        padding: 5px ;
+        box-shadow: 0px 0px 12px white;
+        transform: translateY(2px);
+    }
+    85% {
+        scale: 1;
+    }
 }
 /* media quaries section starts from here */
 @media screen and (max-width:490px) {
