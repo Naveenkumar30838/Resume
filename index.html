@@ -4,29 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width:device-width initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naveen's Resume</title>
    <link rel="stylesheet" href="indexstyle.css">
+   <link rel="stylesheet" href="indexMediaQueries.css">
     <link rel="shortcut icon" href="favicon.ico">
 </head>
 
 <body>
+    <div class="top-container">
     <div class="banner">
         <p>Don't forget to connect with me on linked in 🎉</p>
     </div>
     <nav class="topnav flex">
         <div class="topnavouterdiv flex">
-             <div class="topnav_div_img topnav_div" colspan="2"><img id="naveenphoto" src="images/profile-pic (2).png" alt="naveen kumar's image "> </div>
-             <div class="topnav_div invisible" ><a class="topnav_div_a" href="#Education">Education</a> </div>
-             <div class="topnav_div" ><a class="topnav_div_a" href="#projects">Projects</a></div>
-             <div class="topnav_div" ><a class="topnav_div_a" href="#skills">skills</a></div>
+             <div class="topnav_div_img topnav_div .topnav_content.active" colspan="2"><img id="naveenphoto" src="images/profile-pic (2).png" alt="naveen kumar's image "> </div>
+             <div class="topnav_content flex">
+                <div class="topnav_div" ><a class="topnav_div_a" href="./index.html">Home</a> </div>
+             <div class="topnav_div" ><a class="topnav_div_a" href="#about">About</a></div>
+             <div class="topnav_div" ><a class="topnav_div_a" href="#projects">Project</a></div>
              <div class="topnav_div" ><a class="topnav_div_a" href="Signindex.html">Sign In</a></div>
-             <div class="topnav_div" ><a class="topnav_div_a" href="#connect">Help</a></div>
+             <div class="topnav_div" ><a class="topnav_div_a" href="#connect">Contact</a></div>
              <div class="topnav_div" ><a class="topnav_div_a" href="MyPortfolio/index.html">Latest Project</a></div>
+            
+             </div>
+             <div class="topnav_div" ><a id="hamburger" class="hamburger"><i class="fa-solid fa-bars"></i></a></div>
+             
+           
             
     </div>
     </nav>
-    
+    </div>
     <!-- header starts -->
     <header class="header">
         <h1 >NAVEEN KUMAR</h1>
@@ -41,7 +49,7 @@
      <div class="main-container flex">
         <div class="main-left flex">
             <div class="about backgound-design">
-                <h2>About</h2>
+                <h2 id="#about">About</h2>
                 <h3 >Hi ,</h3>
                 <div class="about-content">
                     <div>
@@ -255,6 +263,13 @@
                         const crossbutton=document.getElementById('cross-button');
                         crossbutton.addEventListener('click' , ()=>{
                             popupButton.classList.toggle('disappear');
+                        })
+                    </script>
+                    <script>
+                        const dark_button=document.getElementById('dark-button');
+                        const body=document.getElementById('body');
+                        dark_button.addEventListener('click' , ()=>{
+                            body.classList.toggle('dark');
                         })
                     </script>
 </body>
