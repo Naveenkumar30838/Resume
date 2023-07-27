@@ -1,0 +1,59 @@
+@media (width<971px){
+    .top-container{
+    }
+    .topnav_div_a{
+        /* display: none; */
+    }
+    .topnavouterdiv{
+        padding-inline: 40px;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        transition-duration: 1s;
+        justify-content: space-between;
+        
+    }
+    .topnav_content{
+       
+       display: none;
+    }
+    .topnav_div_a {
+        transition: none;
+        box-shadow: none;
+        color: var(--text-black);
+    }
+    .hamburger{
+      color: black;
+    }
+    .topnav_content.active{
+        background:linear-gradient(to bottom ,var(--light-background) , var(--light-background));
+        position: absolute;
+        right: 0px;
+        box-shadow: none;
+        width: 200px;
+        top: 40px;
+        display: block;
+        flex-direction: column;
+        animation: hamburger 1s ease-in-out; 
+        
+    }
+
+
+    .hamburger{
+        display: block;
+        color: var(--text-black);
+        font-size: 1.2rem;
+    }
+    .about-container{
+        flex-direction: column;
+    }
+    
+}
+/* here is a simple animation for hamburger */
+@keyframes hamburger{
+    0%{
+        right: -200px;
+    }
+   {
+        right: 8px;
+    }
+}

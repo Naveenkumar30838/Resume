@@ -7,28 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naveen's Resume</title>
    <link rel="stylesheet" href="indexstyle.css">
-   <link rel="stylesheet" href="indexMediaQueries.css">
+   <link rel="stylesheet" href="indexmediaQueries.css">
     <link rel="shortcut icon" href="favicon.ico">
 </head>
 
-<body>
-    <div class="top-container">
+<body><div class="top-container">
     <div class="banner">
-        <p>Don't forget to connect with me on linked in 🎉</p>
+        <p>Don't forget to connect with me on linked in  🎉</p>
     </div>
     <nav class="topnav flex">
         <div class="topnavouterdiv flex">
              <div class="topnav_div_img topnav_div .topnav_content.active" colspan="2"><img id="naveenphoto" src="images/profile-pic (2).png" alt="naveen kumar's image "> </div>
-             <div class="topnav_content flex">
+             <div class="topnav_content flex" id="topnav_content">
                 <div class="topnav_div" ><a class="topnav_div_a" href="./index.html">Home</a> </div>
              <div class="topnav_div" ><a class="topnav_div_a" href="#about">About</a></div>
              <div class="topnav_div" ><a class="topnav_div_a" href="#projects">Project</a></div>
              <div class="topnav_div" ><a class="topnav_div_a" href="Signindex.html">Sign In</a></div>
              <div class="topnav_div" ><a class="topnav_div_a" href="#connect">Contact</a></div>
-             <div class="topnav_div" ><a class="topnav_div_a" href="MyPortfolio/index.html">Latest Project</a></div>
+             <div class="topnav_div " ><a class="topnav_div_a" href="MyPortfolio/index.html">Latest Project</a></div>
             
              </div>
-             <div class="topnav_div" ><a id="hamburger" class="hamburger"><i class="fa-solid fa-bars"></i></a></div>
+             <div class="topnav_div " ><a id="hamburger" class="hamburger"><i class="fa-solid fa-bars"></i></a></div>
              
            
             
@@ -36,9 +35,14 @@
     </nav>
     </div>
     <!-- header starts -->
-    <header class="header">
-        <h1 >NAVEEN KUMAR</h1>
-        <p>Hi , This is a Dummy portfolio Website for learning purpose developed and Maintained by Mr. <a href="images/profile-pic (3).png">Naveen kumar</a> </p>
+    <header class="header container flex">
+        <div class="header-content">
+        <h1 >Hi , There I'm NAVEEN <span>KUMAR </span></h1>
+         <h2>Front End Developer</h2>
+    </div>
+    <div class="header-image">
+            <img src="images/photo_2023-07-28_00-47-09.jpg" alt="">
+        </div>
        </header>
 
     <!-- header ends -->
@@ -46,51 +50,40 @@
     <!-- main starts -->
 
     <main>
-     <div class="main-container flex">
-        <div class="main-left flex">
-            <div class="about backgound-design">
-                <h2 id="#about">About</h2>
-                <h3 >Hi ,</h3>
+        <div class="main-left">
+            <div class="about backgound-design container">
+                <h2 id="#about"><i class="fa-solid fa-user"></i> About <span>Me</span></h2>
+                <div class="about-container flex">
+                    <div class="about-image header-image"><img src="images/profile-pic (2).png" alt=""></div>
+                
                 <div class="about-content">
-                    <div>
-                        I am Naveen Kumar a determined tech enthusiast and a good Listener. Currently I am gaining   DSA and Web Development skills by Studying Books
+                    <h3 >Hi , I'm Naveen Kumar</h3>
+                    <p>
+                    I am fronted web developer and a determined tech enthusiast . Currently I am Learning  Date Structure and Algorithms in java and Web Development skills 
+                    <br> 
+                    Currently i am in my graduation final year .I passed my 10 <sup>th</sup> and 12 <sup>th </sup> with 92% grades                 </p>
+                    <br>
+                    With  multitude of projects spanning various domains , I consistently pushes myself to do something new everyday and learn something new everyday
                     </div>
-                    <div>
-                        • After taking a lot of learnings from my failure i decides to pursue my career in Software Industry
-                    </div>
-                    <div>
-                        • While not particullary fond of traditional academics i firmly believes in the power of practical learning and learning from Scratch
-                        
-                    </div>
-                    <div>
-                        • With  multitude of projects spanning various domains , I consistently pushes myself to do something new everyday and learn something new everyday
-              
-                    </div>   
                 </div>
             </div>
-          <section id="Education">
-            <div class="education_otr_div backgound-design">
-             
-                <h2>Education </h2>
-                <br>
-               <div class="grid-container">
-                <div class="grid-box gb1"><h3>Institution</h3></div>
-                <div class="grid-box"><h3>Degree/class</h3></div>
-                <div class="grid-box"><h3>passes(marks)</h3></div>
-                <div class="grid-box">NHHS,M.GARH</div>
-                <div class="grid-box">10th</div>
-                <div class="grid-box">passed(92%)</div>
-                <div class="grid-box">MSSS, M.GARH</div>
-                <div class="grid-box">12TH</div>
-                <div class="grid-box">passed(92%)</div>
-                <div class="grid-box">Gc ,Ateli</div>
-                <div class="grid-box">B.sc</div>
-                <div class="grid-box">Pursuing</div>
-
+          <section >
+          <div class="skills container">
+               <h2> <i class="fa-solid fa-laptop-code"></i> Skills & Abilities </h2>
+               <div class="flex">
+                   <div>Java </div>
+                   <div>DSA </div>
+                   <div>Html</div>
+                   <div>Css</div>
+                   <div>Python</div>
+                   <div>JavaScript</div>
+                   <div>Git and Github</div>
+                   <div>Video editing</div>
+                  
                </div>
-            </div>
+             </div>      
            </section>
-           <section id="projects" class="backgound-design">
+                <section id="projects" class="backgound-design">
                <h2>Projects</h2>
                <p> Here are some of the small projects made by me</p>
                <div class="projects_outrdiv">
@@ -100,30 +93,7 @@
                    <div class="project_innerdiv"><a class="projects_link" href="newhubspot.html">Hubspot Clone</a></div>
                </div>
             </section>
-           <section id="skills" class="backgound-design">
-               <h2>skills </h2>
-               <ul>
-                   <li>Java (completed)</li>
-                   <li>DSA (Intermediate)</li>
-                   <li>Html(completed)</li>
-                   <li>Css(Completed)</li>
-                   <li>Video editing(medium)</li>
-                   <li>PCM(completed)</li>
-                   <li>Youtube(completed)</li>
-                   <li>English(completed)</li>
-                   <li>Communication(completed)</li>
-                   <li>Ms office</li>
-                   <li>Image editing</li>
-                   <li>Github</li>
-               </ul>
-                   
-           </section>
-    </div>
-    <div class="main-right flex">
-         <div class="advertisement">
-           Hey ,This is the Place to show your Ads
-         </div>
-    </div>
+          
     
 </div>
  <!-- here is a pop aside section  -->
