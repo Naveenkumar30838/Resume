@@ -1,0 +1,70 @@
+*{ 
+    /* transition-duration:"0.2s" ease-out; */
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+   
+ }
+h1::selection , a::selection{
+    background-color: transparent;
+    color: transparent;
+ }
+ h1{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.1rem ;
+ }
+ a{
+    font-size: 1.2rem;
+    color: aqua;
+    text-decoration: none;
+ } 
+ a:hover, a:visited{
+    color: red;
+    font-weight: 800;
+    font-size: 1.3rem;
+
+ }
+ a.active{
+    color: transparent;
+ }
+ .flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ body{
+    row-gap: 20px;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/Githubupload/images/stars_image.jpeg);
+ }
+ .sun{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: rgb(255, 217, 0);
+ }
+ .container img{
+    animation: astronaut-anime;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    scale: 1.1;
+ }
+.container{
+    width: 30vw;
+    height: 30vw;
+    background-color: #f8efac50;
+    border-radius: 100%;
+
+}
+@keyframes astronaut-anime {
+    0%{
+        transform: translate(15px ,30px);
+    }
+    100%{
+        transform: translate(-25px ,-40px);
+    }
+}

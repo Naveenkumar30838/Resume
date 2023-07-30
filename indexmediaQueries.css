@@ -1,8 +1,6 @@
 @media (width<971px){
-    .top-container{
-    }
-    .topnav_div_a{
-        /* display: none; */
+    :root{
+        --default-padding:30px;
     }
     .topnavouterdiv{
         padding-inline: 40px;
@@ -36,24 +34,263 @@
         animation: hamburger 1s ease-in-out; 
         
     }
-
-
-    .hamburger{
+   .hamburger{
         display: block;
         color: var(--text-black);
         font-size: 1.2rem;
     }
+    .header-content{
+        width: 100%;
+    }
+    .header-image img{
+        width: 80%;}
+    .header h1{
+        font-size: 3rem;}
     .about-container{
         flex-direction: column;
     }
+    .invisible{
+        display: none;
+    }
+    .topnavouterdiv{
+        width: 100vw;
+        top: 25px;
+        column-gap: 7px;
+        padding: 7px 10px 1px 10px ;}
+    .project_outrdiv{
+        width: 85%;;
+    }
     
 }
+/* media quaries section starts from here */
+@media (width<=768px ) and (width>=430px) {
+    .header h1{
+        text-align: left;
+        font-size: 2rem;
+    }
+    .header-content{
+        padding: 0px;
+    }
+    .about-content{
+        width: 65%;}
+    
+    .draft-content{ 
+        margin-block:25px;
+        flex-wrap: wrap;
+       gap: 20px;
+       justify-content: center;
+       align-items: flex-end;
+    
+    }
+    .draft-card{
+        column-gap: 30px;
+        row-gap: 30px;
+        min-width: 170px;
+        width: 40%;
+        height: 270px;
+    }
+    .ftd_innerdiv:nth-child(1){
+        padding: 8px;
+        text-align: center;
+        width: 100%;
+    }
+   
+}
+@media screen and (max-width:810px) {
+    .header{
+        flex-wrap: wrap-reverse;
+    }
+    .header-image img{
+        width: 50%;
+    }
+    .projects_link{
+        font-size: 0.9rem;
+    }
+    .topnav_div_a{
+        font-size: 1.3rem;
+    }
+    .projects_outrdiv{
+        width: 88%;
+    }
+    .ftd_innerdiv:nth-child(1){
+        width: 100%;
+    }
+    .ftd_innerdiv p{
+        max-width: 100%;}
+}
+
+@media screen and (max-width:600px) {
+    .topnav_div_a{
+        font-size: 1rem;
+    }
+    .about{
+        padding: 20px;
+    }
+    .about-content{
+        width: 85%;
+    }
+    .contactusbox h4{
+        font-size: 0.9rem;
+    }
+    .contactusbox p{
+        font-size: 0.7rem;
+    }
+    .contactusbox{
+        width: 130px;
+        height: 45px;
+    }
+    .projects_outrdiv{
+        width: 95%;
+        padding: 0px;
+    }
+     .ftd_innerdiv:nth-child(1){
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:490px) {
+    .invisible{
+        display: none;
+    }
+    .topnavouterdiv{
+        width: 100vw;
+        top: 26px;
+        column-gap: 5px;
+        padding: 7px 15px 1px 7px ;
+    }
+
+    .topnav_div_a{
+        /* border: 2px solid red; */
+        padding: 5px;
+        box-shadow: 1px 1px 3px #1717c9ad;
+    }
+    .topnav_div_a:hover{
+
+        box-shadow: 1px 1px 3px #3131f388;
+    }
+    .topnav{
+        margin-bottom: 0px;
+     }
+     .banner p{
+        font-size: 0.9rem;
+     }
+     .header{
+        padding-inline: 8px;
+        min-height: 65vw;
+     }
+     .header-content{
+        padding: 0px;
+     }
+     .header h1 ,.header h2{
+       
+        font-size: 1.5rem;
+    }
+    .about-content{
+        width: 100%;}
+    .skills div{
+    
+            gap: 30px 15px ;
+    
+    }
+    .project_innerdiv_content_para_button{
+        padding-inline:5px;
+        padding-block: 5px;
+    }
+    }
+@media screen and (max-width:430px) {
+    .about{
+        padding: 10px;
+    }
+    .about-content{
+        font-size: 1rem;
+    }
+  
+    .header h1 ,.header h2{
+       
+        font-size: 1.3rem;
+    }
+    .ftd_innerdiv{
+        text-align: center;
+    }
+    .ftd_innerdiv h3{
+        font-size: 1rem;
+    }
+    .topnavouterdiv{
+        padding-inline: 50px;
+    }
+    .skills div  div {
+        padding: 15px;
+    }
+    .popup{
+        width: 330px;
+        height: 220px;
+    }
+    
+}
+@media (max-width:370px){
+    .draft-card{
+        width: 80%;
+        height: 150px;
+    }
+    .skill div{
+        column-gap: 10px;
+    }
+    .skills div  div {
+        padding: 8px;
+    }
+    .popup{
+        max-width: 300px;
+    }
+    .cookies-button{
+        background-color: #09b0f1;
+        padding: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+    
+    }
+    .fcopyright_button{
+        padding-inline:30px;
+        text-align: center;
+
+    }
+   }
+/* From here the animation section starts */
 /* here is a simple animation for hamburger */
 @keyframes hamburger{
     0%{
         right: -200px;
     }
-   {
+   100%{
         right: 8px;
+    }
+}
+
+@keyframes nav-anime{
+    0%{
+        transform: translateY(-100px);
+
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+/* here is a another animation for popup */
+@keyframes popup{
+    0%{
+        
+       scale: 0;
+    }
+    51%{
+        scale: 1;
+    }
+    80% {
+        scale: 1.12;
+        padding: 5px ;
+        box-shadow: 0px 0px 12px var(--text-black);
+        transform: translateY(-4px);
+    }
+    85% {
+        scale: 1.1;
     }
 }

@@ -7,24 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naveen's Resume</title>
    <link rel="stylesheet" href="indexstyle.css">
-   <link rel="stylesheet" href="indexmediaQueries.css">
+   <link rel="stylesheet" href="indexMediaQueries.css">
     <link rel="shortcut icon" href="favicon.ico">
 </head>
 
-<body><div class="top-container">
+<body id="body"  oncontextmenu="return false;" >
+   
+    <div class="top-container">
     <div class="banner">
-        <p>Don't forget to connect with me on linked in  🎉</p>
+        <p> <a href="https://www.linkedin.com/in/naveen-kumar-7a4566223/">Don't forget to connect with me on linked in</a>  🎉</p>
     </div>
     <nav class="topnav flex">
         <div class="topnavouterdiv flex">
              <div class="topnav_div_img topnav_div .topnav_content.active" colspan="2"><img id="naveenphoto" src="images/profile-pic (2).png" alt="naveen kumar's image "> </div>
              <div class="topnav_content flex" id="topnav_content">
-                <div class="topnav_div" ><a class="topnav_div_a" href="./index.html">Home</a> </div>
-             <div class="topnav_div" ><a class="topnav_div_a" href="#about">About</a></div>
+                <div class="topnav_div" ><a class="topnav_div_a" href="#">Home</a> </div>
              <div class="topnav_div" ><a class="topnav_div_a" href="#projects">Project</a></div>
-             <div class="topnav_div" ><a class="topnav_div_a" href="Signindex.html">Sign In</a></div>
-             <div class="topnav_div" ><a class="topnav_div_a" href="#connect">Contact</a></div>
-             <div class="topnav_div " ><a class="topnav_div_a" href="MyPortfolio/index.html">Latest Project</a></div>
+             <div class="topnav_div" ><a class="topnav_div_a" href="/learncss/9.miniproject/loginindex.html">Sign In</a></div>
+             <div class="topnav_div" ><a class="topnav_div_a" href="#footer">connect</a></div>
+             <div class="topnav_div " ><a class="topnav_div_a" href="Amazon.co/index.html">Latest Project</a></div>
+             <div class="topnav_div pointer" id="yellow_mode_button"><a class="topnav_div_a" > <abbr title="High contrast / yellow "><i class="fa-regular fa-eye"></i></abbr></a></div>
+             <div class="topnav_div pointer" id="dark_mode_button"><a class="topnav_div_a" > <abbr title="Dark/light"><i class="fa-solid fa-circle-half-stroke"></i></abbr></a></div>
+
             
              </div>
              <div class="topnav_div " ><a id="hamburger" class="hamburger"><i class="fa-solid fa-bars"></i></a></div>
@@ -50,9 +54,8 @@
     <!-- main starts -->
 
     <main>
-        <div class="main-left">
-            <div class="about backgound-design container">
-                <h2 id="#about"><i class="fa-solid fa-user"></i> About <span>Me</span></h2>
+            <div class="about backgound-design container" id="#About">
+                <h2> <i class="fa-solid fa-user"></i> About <span>Me</span></h2>
                 <div class="about-container flex">
                     <div class="about-image header-image"><img src="images/profile-pic (2).png" alt=""></div>
                 
@@ -61,9 +64,10 @@
                     <p>
                     I am fronted web developer and a determined tech enthusiast . Currently I am Learning  Date Structure and Algorithms in java and Web Development skills 
                     <br> 
-                    Currently i am in my graduation final year .I passed my 10 <sup>th</sup> and 12 <sup>th </sup> with 92% grades                 </p>
+                    Currently i am in my graduation final year .I passed my 10 <sup>th</sup> and 12 <sup>th </sup> with 92% grades 
                     <br>
                     With  multitude of projects spanning various domains , I consistently pushes myself to do something new everyday and learn something new everyday
+                    </p>
                     </div>
                 </div>
             </div>
@@ -83,17 +87,43 @@
                </div>
              </div>      
            </section>
-                <section id="projects" class="backgound-design">
-               <h2>Projects</h2>
-               <p> Here are some of the small projects made by me</p>
-               <div class="projects_outrdiv">
-                   <div class="project_innerdiv"> <a class="projects_link"  target="_blank" href="MyPortfolio/index.html">portfolio Gallery </a></div>
-                     <div class="project_innerdiv" ><a class="projects_link" href="Signindex.html">Sign In</a></div>
-                  <div class="project_innerdiv" ><a class="projects_link" href="11.full_website/index.html">Usability Hub</a></div>
-                   <div class="project_innerdiv"><a class="projects_link" href="newhubspot.html">Hubspot Clone</a></div>
-               </div>
-            </section>
-          
+           <section id="projects" class="projects flex">
+            <div><h2>Projects</h2></div>
+            <div class="projects_outrdiv flex">
+                <div class="project_innerdiv" id="project_innerdiv" >
+                    <!-- <img src="images/usability_hub_clone.png" alt="usability_hub_images"> -->
+                    <div class="project_innerdiv_content" id="project_innerdiv_content">
+                        <h4>Usability Hub Clone</h4>
+                       <div class="project_innerdiv_content_para_button flex"> <p>Here is a clone of usability hub named website.It designed when i was learning about media queries</p>
+                       <button> <a class="projects_link" href="https://naveenkumar30838.github.io/Resume/11.full_website/index.html"><p>Visit Site</p></a></button>
+                       <button> <a class="projects_link" href="https://github.com/Naveenkumar30838/Resume/blob/6c584f932c363e5bb168ccda6d17f0b3602b8c8d/11.full_website/index.html"><p>View Code</p></a></button>
+                  
+                       </div>
+                    </div>
+                </div>
+               
+                <div class="project_innerdiv" id="project_innerdiv_2" >
+                    <div class="project_innerdiv_content" id="project_innerdiv_content_2">
+                        <h4>Amazon clone</h4>
+                       <div class="project_innerdiv_content_para_button flex"> <p>Here is clone of Amazon.com Designed by me for learning purpose </p>
+                       <button> <a class="projects_link" href="https://naveenkumar30838.github.io/Resume/Amazon.co/index.html"><p>Visit Site</p></a></button>
+                       <button> <a class="projects_link" href="https://github.com/Naveenkumar30838/Resume/tree/6c584f932c363e5bb168ccda6d17f0b3602b8c8d/Amazon.co"><p>View Code</p></a></button>
+                  
+                       </div>
+                    </div>
+                </div>
+                <div class="project_innerdiv" id="project_innerdiv_3" >
+                    <div class="project_innerdiv_content" id="project_innerdiv_content_3">
+                        <h4>Resume Project</h4>
+                       <div class="project_innerdiv_content_para_button flex"> <p>This is the project which you  are watching  live i.e My resume project  , I created it Just for You  </p>
+                       <button> <a class="projects_link" href="#"><p>Visit Site</p></a></button>
+                       <button> <a class="projects_link" href="https://github.com/Naveenkumar30838/Resume/blob/6c584f932c363e5bb168ccda6d17f0b3602b8c8d/index.html"><p>View Code</p></a></button>
+                  
+                       </div>
+                    </div>
+                </div>
+            </div>
+         </section>
     
 </div>
  <!-- here is a pop aside section  -->
@@ -103,10 +133,10 @@
         <i class="fa-solid fa-circle-xmark " id="cross-button"></i>
 
         <div class="popup-box flex">
-            <p>This site use cookies to give you a better experience, Accept cookies to proceed ....</p>
+            <p>We value Your privacy But this site use cookies to give you a better experience, Accept cookies to proceed ....</p>
             <div class="cookie-container flex">
-                <div class="cookies-button">Accept All</div>
-                <div class="cookies-button">Neccessory only</div>
+                <div class="cookies-button"><a href="HomeAnime/homeAnime.html">Accept All</a></div>
+                <div class="cookies-button"><a href="HomeAnime/homeAnime.html">Neccessory only</a></div>
             </div>
         </div>
 
@@ -120,10 +150,10 @@
     </div>
     <!-- examples header ends here -->
     <div class="draft-content flex ">
-        <a class="draft-card" href="https://naveenkumar30838.github.io/Resume/11.full_website/index.html"><h4 >Check out this Project usability Hub</h4></a>
-        <a class="draft-card" href="https://naveenkumar30838.github.io/Resume/MyPortfolio/index.html"><h4>Another Project Using Css Grid Property</h4></a>
-        <a class="draft-card" href="https://naveenkumar30838.github.io/Resume/Signindex.html"><h4>Click here to see a Sign Up Screen</h4></a>
-        <a class="draft-card" href="https://naveenkumar30838.github.io/Resume/galleryindex.html"><h4> Click to Check out images Gallery</h4></a>
+        <a class="draft-card" href="animation/index.html"><p >Check out this Animation page</p></a>
+        <a class="draft-card" href="https://naveenkumar30838.github.io/Resume/MyPortfolio/index.html"><p>Another Project Using Css Grid Propepy</p></a>
+        <a class="draft-card" href="https://naveenkumar30838.github.io/Resume/Signindex.html"><p>Click here to see a Sign Up Screen</p></a>
+        <a class="draft-card" href="https://naveenkumar30838.github.io/Resume/galleryindex.html"><p> Click to Check out images Gallery</p></a>
     </div>
 </div>
 
@@ -132,10 +162,9 @@
 <!-- here is a contact info aside -->
     <aside>
         <div class="contactusbox">
-            <h4 >To know more</h4>
-            <p>Connect with me ...</p>
+            <a href="mailto: naveenkumar30838a@gmail.com"><p>Connect with me ...</p></a>
         </div>
-        <aside id="connect" class="connectaside2">
+        <aside  class="connectaside2">
             <a href="mailto: naveenkumar30838a@gmail.com" >
                 <img src="images/downloadtelk.jpeg"  class="asidecontactimg"  alt="naveenkumar_image">
             </a>
@@ -152,56 +181,35 @@
                          <!-- ftd means footer top div -->
                 
                             <div class="ftd_innerdiv">
-                                <h3><span class="footer_headings">Also Check </span> </h3>
+                                <h4><span class="footer_headings" id="#connect">Navee's Portfolio </span> </h4>
+                                <p>
+                                    Thank you for visiting my personal portfolio website. Connect with me over socials.
+                                    <br>
+                                    Keep Rising 🚀. Connect with me over linkedin!
+                                </p>
+                                 
+                            </div>
+                            <div class="ftd_innerdiv">
+                                <h4><span class="footer_headings" id="#connect">Connect </span> </h4>
                                  <ul>
-                                   <li><a target="_blank" href="https://naveenkumar30838.github.io/Resume/index.html" class="footer_links">My Resume</a></li>
-                                   <li><a target="_blank" href="https://github.com/Naveenkumar30838" class="footer_links">My Github</a></li>
-                                   <li><a target="_blank" href="https://www.linkedin.com/in/naveen-kumar-7a4566223/" class="footer_links">My LinkedIn</a></li>
-                                   <li><a target="_blank" href="https://blog.hubspot.com/website/html-websites" class="footer_links">Official site</a></li>
-                                   <li><a target="_blank" href="https://naveenkumar30838.github.io/Resume/hubspotclone.html" class="footer_links">Old Hubspot</a></li>
-                                   <li><a target="_blank" href="index.html" class="footer_links">To Home </a></li>
-                                   <li><a target="_blank" href="#" class="footer_links">To Top</a></li>
+                                   <li><a target="_blank" href="https://github.com/Naveenkumar30838" class="footer_links"> <i class="fa-brands fa-github"></i> My Github</a></li>
+                                   <li><a target="_blank" href="https://www.linkedin.com/in/naveen-kumar-7a4566223/" class="footer_links"> <i class="fa-brands fa-linkedin"></i> My LinkedIn</a></li>
+                                   <li><a href="mailto:naveenkumar30838a2gmail.com" class="footer_links"><i  class="fa-solid fa-envelope"></i> Mail</a></li>
+                                 </ul>
+                            </div>
+                            <div class="ftd_innerdiv">
+                                <h4><span class="footer_headings" id="#connect">Quick links </span> </h4>
+                                 <ul>
+                                   <li><a  href="https://github.com/Naveenkumar30838" class="footer_links"><i class="fa-solid fa-circle-chevron-right"></i> Home</a></li>
+                                   <li><a  href="#project" class="footer_links"> <i class="fa-solid fa-circle-chevron-right"></i> projects</a></li>
+                                   <li><a  href="#" class="footer_links"> <i class="fa-solid fa-circle-chevron-right"></i> To Top</a></li>
                                  </ul>
                             </div>
                            
-                             <div class="ftd_innerdiv">
-                                 <h3><span class="footer_headings">Popular Sites</span></h3>
-                                 <ul>
-                                     <li><a target="_blank"  class="footer_links"  href="https://leetcode.com/">Leetcode</a></li>
-                                     <li><a target="_blank" class="footer_links"  href="https://www.geeksforgeeks.org/">Geeksforgeeks</a></li>
-                                     <li><a target="_blank" class="footer_links"  href="https://stackoverflow.com/">Stackoverflow</a></li>
-                                     <li><a target="_blank" class="footer_links"  href="github.com">Github</a></li>
-                                     <li><a target="_blank" class="footer_links" href="https://www.hackerrank.com/">Hackerrank</a></li>
-                                     <li><a target="_blank" class="footer_links"  href="https://www.w3schools.com/">W3 Schools</a></li>
-                                     <li><a target="_blank" class="footer_links"  href="https://developer.mozilla.org/en-US/">Mdn_</a></li>
-                                     
-                                 </ul>
-                             </div>
-                             <div class="ftd_innerdiv">
-                                 <h3><span class="footer_headings">Popular Blogs</span></h3>
-                                 <ul>
-                                     <li><a href="https://github.blog/" class="footer_links">Github blog</a></li>
-                                     <li><a href="https://stackoverflow.blog/?blb=1" class="footer_links">Stackoverflow Blog</a></li>
-                                     <li><a href="https://www.freecodecamp.org/" class="footer_links">freecodecamp</a></li>
-                                     <li><a href="https://www.smashingmagazine.com/" class="footer_links">Smashingmagazine</a></li>
-                                     <li><a href="https://blog.codinghorror.com/" class="footer_links">CodingHorror</a></li>
-                                     <li><a href="https://dzone.com/" class="footer_links">D Zone</a></li>
-                                     <li><a href="https://www.producthunt.com/" class="footer_links">Product Hunt</a></li>
-                                 </ul>
-                             </div>
-                             <div class="ftd_innerdiv">
-                                 <h3><span class="footer_headings">Learn coding</span></h3>
-                                 <ul>
-                                     <li><a href="https://www.youtube.com/@codingshuttle" class="footer_links">Codingshuttle</a></li>
-                                     <li><a href="https://www.youtube.com/@CodeWithHarry" class="footer_links">CodewithHarry</a></li>
-                                     <li><a href="https://www.youtube.com/@JennyslecturesCSIT" class="footer_links">Jenny'slecture</a></li>
-                                     <!-- <li><a href="https://www.youtube.com/@LoveBabbar" class="footer_links">LoveBabbar</a></li> -->
-                                     <li><a href="https://www.youtube.com/@wscubetech" class="footer_links">WscubeTech</a></li>
-                                     <li><a href="https://www.youtube.com/@programmingwithmosh" class="footer_links">ProgrammingMosh</a></li>
-                                     <li><a href="https://www.youtube.com/@CodeHelp" class="footer_links">CodeHelp</a></li>
-                                     <li><a href="https://www.youtube.com/c/freecodecamp" class="footer_links">FreeCodecamp</a></li>
-                                 </ul>
-                             </div>
+                           
+                             
+                             
+                            
                      </div> 
                          <!-- <footer top inner div ends hers!--  --> 
         <!-- bottom section of footer -->
@@ -212,35 +220,24 @@
                          </div>
      
                          <div class="fbd_innerdiv fbd_links">
-                                 <a href="https://web.whatsapp.com/" class="fshare_link"><img src="images/whatsapp.jpeg" alt="Share to whatsapp" class="fshare_link_img"></a>
-                                 <a href="https://www.facebook.com/" class="fshare_link"><img src="images/facebook_logo.png" alt="share to facebook" class="fshare_link_img"></a>
-                                 <a href="https://www.instagram.com/" class="fshare_link"><img src="images/instagramLogoe.jpg" alt="share to instagram" class="fshare_link_img"></a>
-                                 <a href="https://twitter.com/" class="fshare_link"><img src="images/twitternew.png" alt="Share to twitter" class="fshare_link_img"></a>
+                                 <a href="HomeAnime/homeAnime.html" class="fshare_link"><img src="images/whatsapp.jpeg" alt="Share to whatsapp" class="fshare_link_img"></a>
+                                 <a href="HomeAnime/homeAnime.html" class="fshare_link"><img src="images/facebook_logo.png" alt="share to facebook" class="fshare_link_img"></a>
+                                 <a href="HomeAnime/homeAnime.html" class="fshare_link"><img src="images/instagramLogoe.jpg" alt="share to instagram" class="fshare_link_img"></a>
+                                 <a href="HomeAnime/homeAnime.html" class="fshare_link"><img src="images/twitternew.png" alt="Share to twitter" class="fshare_link_img"></a>
                          </div>
                          <div class="fbd_innerdiv">
-                             <p class="fcopyright_button">© Copyright @ Naveenkumar 25 March ,2023  & </p>
-                           
-                             <p class="fcopyright_button">  Last updated 18/07/2023</p>
-                            </div>
+                             <p class="fcopyright_button">© Copyright @ Naveenkumar 25 March ,2023  & Last updated 30/07/2023</p>
+                        </div>
                             
                             
                         </div>
                     </footer>
-                   
+
+
+
+
+                   <script src="script.js"></script>
                     <script src="https://kit.fontawesome.com/b842128030.js" crossorigin="anonymous"></script>
-                    <script>
-                        const popupButton =document.getElementById('popup-button');
-                        const crossbutton=document.getElementById('cross-button');
-                        crossbutton.addEventListener('click' , ()=>{
-                            popupButton.classList.toggle('disappear');
-                        })
-                    </script>
-                    <script>
-                        const dark_button=document.getElementById('dark-button');
-                        const body=document.getElementById('body');
-                        dark_button.addEventListener('click' , ()=>{
-                            body.classList.toggle('dark');
-                        })
-                    </script>
+                    
 </body>
 </html>

@@ -1,0 +1,378 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    perspective: 800px;
+}
+.banner{
+    background:linear-gradient(to right , #156ae0e5 ,#2187ba88 ,#156ae0ee);
+    backdrop-filter: blur(10px);
+    padding-block: 15px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+.container{
+    
+    padding: 40px 100px;
+    background:#333;
+}
+
+.box{
+    margin-block: 5px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: #121212;
+    align-items: center;
+}
+.box h1{
+    font-size: 2.5rem;
+    width: 100%;
+    color: white;
+    margin-block-end: 20px;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* All presets are done and the actual styling for animation will start  */
+/* here isthe first animation for music */
+.anime-1{
+    display: flex;
+    gap: 4px;
+}
+.bar{
+    animation: music-anime;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+    width: 50px;
+    height: 150px;
+    background-color: red;
+}
+.bar:nth-child(2){
+    background-color: green;
+    animation-delay: 0.4s;
+
+}
+.bar:nth-child(3){
+    background-color: yellow;
+    animation-delay: 0.8s;
+    
+}
+.bar:nth-child(4){
+    background-color: blue;
+    animation-delay: 1.2s;
+    
+}
+.bar:nth-child(5){
+    background-color: rgb(244, 59, 244);
+    animation-delay: 1.9s;
+    
+}
+/* Here is another google assistant animation */
+.anime-2{
+   gap: 5px;
+   margin-top: 40px;
+   padding-bottom: 40px;
+}
+.dot{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 10px;
+    animation-name: assistant-anime;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    
+}
+.dot:nth-child(2){
+    animation-delay: 0.2s;
+    background-color: ;
+}
+.dot:nth-child(3){
+    animation-delay: 0.3s;
+    background-color: white;
+}
+.dot:nth-child(4){
+    animation-delay: 0.4s;
+    background-color: yellow;
+}
+/* here is a third animation for orbits  */
+.anime-3{
+    padding: 70px;
+}
+.box2{
+    padding: 20px;
+    width: 300px ;
+    height: 300px;
+    border: 2px solid gold;
+    transition-duration: 1s;
+    border-radius: 100%;
+    animation: rotate-anime;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+   
+}
+.box2:hover{
+    transform: rotate(20deg ,40deg);
+
+}
+.circle{
+       animation-timing-function: linear;
+    /* animation: rotate-anime; */
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: 2px solid white;
+}
+.anime-4{
+    padding: 70px;
+}
+/* here it also works as utility class for box no 5 */
+.box4{
+    padding: 33px;
+    width: 300px ;
+    height: 300px;
+    border: 15px solid gold;
+    /* transition-duration: 10s; */
+    border-radius: 100%;
+    animation: rotate-anime;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.round-line{
+     width: 20px;
+     border: 4px solid black;
+     transform: rotate(-40deg) translatey(-8px);
+}
+/* here is the style of second loader */
+.Loader_dot_container{
+    display: flex;
+    column-gap: 2px;
+}
+.loader_dot{    
+    border: 4px solid red;
+    border-radius: 4px;
+}
+.loader_dot:nth-child(1){
+    transform: translateY(-3px);
+}
+.loader_dot:nth-child(2){
+    transform: translateY(-12px);
+    border-color: rgba(255, 0, 0, 0.804);
+}
+.loader_dot:nth-child(3){
+    transform: translateY(-20px);
+    border-color: rgba(255, 0, 0, 0.37);
+}
+.loader_dot:nth-child(4){
+    transform: translateY(-27px);
+    border-color: rgba(135, 3, 3, 0.342);
+}
+.loader_dot:nth-child(5){
+    transform: translateY(-31px);
+    border-color: rgba(68, 2, 2, 0.484);
+}
+/* here is the animation 6 */
+.anime-6{
+width: 300px;
+height: 400px;
+background-color: #fff;
+border-radius: 5px;
+}
+.anime-6-outerdiv{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.anime-6-container{
+    padding-inline: 15px;
+    padding-block: 15px 5px;
+    /* animation-direction: alternate; */
+
+}
+.anime-6-container:hover{
+    animation: Scroll-anime;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+.anime-6-box{
+    width: 100%;
+    height: 70px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-block: 10px;
+}
+/* hre is animation no 7 */
+.anime7-box{
+    width: 120px;
+    height: 80px;
+    background-color: #352e2eb1;
+    border: 4px solid chocolate;
+    border-top: 4px solid gold;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.anime7-box:hover{
+    animation: magic-box;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.anime-8{
+    margin-top: 30px;
+    height: 400px;
+    position: relative;
+    /* border: 2px solid red; */
+}
+.pacman-container{
+    
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0px;
+}
+.pacman{
+    z-index: 5;
+    width: 200px;
+    height: 80px;
+    /* border: 2px solid red; */
+    /* background-color: black; */
+    background-size: cover;
+    
+    background-position: center;
+    /* animation-direction: alternate; */
+}
+.pacman-eye{
+    background-color: black;
+    right: 40px;
+    bottom: 20px;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    color: red;
+    z-index: 10;
+    position: absolute;
+}
+
+.pacman:nth-child(1){
+    background-image: url(/Githubupload/images/packman-top-removebg-preview.png);
+    animation: pacman-face;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    
+    
+}
+.pacman:nth-child(2){
+    background-image: url(/Githubupload/images/packman-bottom-removebg-preview.png);
+    background-position: -6.9px 0px;
+    background-color: black;
+    background-repeat: no-repeat;
+    animation: pacman-face-bottom;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    /* animation-direction: alternate-reverse; */
+}
+/* here is the style of pacman balls */
+.pacman-balls-container{
+    column-gap: 10px;
+    width: 400px;
+    height: 50px;
+    /* border: 2px solid red; */
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+    left: 30px;
+    top: 60px;
+
+}
+.pacman-ball{
+    position: absolute;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 2px solid white;
+    animation: pacman-ball-anime 4s linear infinite  backwards ;
+   
+}
+.pacman-small-ball{
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    border: 2px solid white;
+}
+.pacman-ball:nth-child(2){
+    animation-delay: 1s;
+}
+.pacman-ball:nth-child(3){
+    animation-delay: 2s;
+}
+.pacman-ball:nth-child(4){
+    animation-delay: 3s;
+}
+/* here is the 9th animation */
+.box9{
+    margin-block: 50px;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    animation-play-state: paused;
+    animation-delay: 1s;
+    animation: box9-anime;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    perspective: 400vmin;
+}
+.box10{
+    margin-top: 50px;
+    animation-iteration-count: infinite;
+    width: 80px;
+    height: 80px;
+    animation-name: box10-anime;
+    animation-duration: 0.5s;
+    background-color: #fff;
+    animation-direction: alternate;
+      animation-delay: 0s;
+    perspective: 400vmin;
+    animation-play-state: paused;
+}
+.box10:hover{
+    animation-play-state: running;
+}
+
+/* little little media queries */
+@media (width<=500px){
+    .container{
+        padding: 0px;
+    }
+    *{
+        padding: 0px;
+    }
+    
+    .pacman-balls-container{
+        width: 250px;
+    }
+}

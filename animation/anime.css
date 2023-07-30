@@ -1,0 +1,182 @@
+/* here is a music anime */
+@keyframes music-anime{
+    0% {
+        transform:scaleY(0.1);
+        transform-origin: bottom ;
+    }
+    50% {
+         transform: scaleY(0.5);
+        transform-origin: bottom ;
+    }
+    100%{
+        transform: scaleY(1);
+        transform-origin: bottom ;
+    }
+
+
+    
+    
+  
+}
+@keyframes assistant-anime{
+    0% ,100%{
+        transform: translateY(0px);
+
+    }
+    50%{
+        transform: translateY(35px);
+    }
+    
+
+}
+/* her is an animation for rotating an element */
+@keyframes rotate-anime{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes Scroll-anime {
+    0% {
+        transform: translate(0px ,0px);
+    }
+    15%{
+        transform-origin: top;
+        transform: translateY(-30px);
+    }
+    95%{
+        transform-origin: top;
+        transform: translateY(-600px);
+    }
+    100%{
+
+        transform-origin: top;
+        transform: scale(0);
+    }
+}
+@keyframes magic-box {
+    0% ,7%, 16% ,24% , 31% ,40%{
+        transform: rotate(16deg);
+        transform-origin: bottom;
+    }
+    
+    4% ,12%,20% ,28% ,34% ,38% ,30% {
+        transform: rotate(-16deg);
+        transform-origin: bottom;
+    }
+    55%,100%{
+        transform: none;
+    }
+    
+}
+@keyframes pacman-face {
+    0% ,100%{
+        transform: rotate(0deg) scale(1) skewX(-3deg);
+        transform-origin: left bottom;
+    }
+    50%{
+        transform: rotate(-10deg) scale(1) skewX(-3deg);
+        transform-origin: left bottom;
+    }
+    
+}
+@keyframes pacman-face-bottom {
+    0% ,100%{
+        transform: rotate(0deg) scale(1) skewX(3deg);
+        transform-origin: left top;
+    }
+    50%{
+        transform: rotate(10deg) scale(1) skewX(3deg);
+        transform-origin: left top;
+    }
+    
+}
+@keyframes pacman-ball-anime {
+    0%{
+        scale: 0;
+    }
+    1%{
+        transform: none;
+    }
+    100%{
+        scale: 1.3;
+        transform: translateX(-300px);
+    }
+    
+}
+@keyframes box9-anime {
+    0% ,100%{
+        scale: 1;
+    }
+    5%{
+        scale: 0.5;
+        border-radius: 100%;
+    }
+    20%{
+        scale: 1.2;
+        border-radius: 10%;
+    }
+    35%{
+        scale: 0.1;
+        border-radius: 100px;
+    }
+    50%{
+        scale: 1.5;
+    }
+    55%{
+        scale: 0.4;
+        background: radial-gradient(green , white , red);
+    }
+    65%{
+    background: radial-gradient(blue , red ,green);
+    scale: 1.2;
+    }
+    80%{
+        background:radial-gradient(purple ,yellow ,black ,);
+        scale: 0.1;
+        rotate: 360deg;
+        transform: rotateX(2deg);
+    }
+    82%{
+        background:radial-gradient(purple ,yellow ,black ,);
+        scale:1.1;
+    }
+    92%{
+        scale: 1.8;
+        background-color: yellow;
+    }
+    94%{
+        scale: 0.2;
+    }
+}
+@keyframes box10-anime 
+{
+/* 0%{
+    transform: none;
+} */
+/* 50%{
+transform: rotate3d(1,0,1, 120deg);
+background: radial-gradient(green ,tomato);
+} */
+0%{
+    transform: skew(-10deg ,-20deg) scaleY(1.1)  ;
+    background: linear-gradient(to right ,red , blue);
+
+    
+}
+    55%{
+
+     transform: skew(10deg ,20deg) scaleY(1.1) ;
+     background: linear-gradient(to right ,blue , red);
+     
+    }
+    99%{
+        transform: rotateY(360deg)  skew(10deg ,20deg) scaleY(1.1);
+    }
+    100%{
+        background-color: rgba(217, 223, 216, 0.194);
+        transform: rotateY(180deg)  skew(10deg ,20deg) scaleY(1.1);
+    }
+}
