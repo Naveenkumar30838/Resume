@@ -402,7 +402,7 @@ p {
     animation: popup 1s both;
     animation-delay: 1s;
     position: fixed;
-    z-index: 29;
+    z-index: 119;
     bottom: 20px;
     left:20px;
     border-radius: 5px;
