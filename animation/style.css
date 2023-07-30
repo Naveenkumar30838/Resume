@@ -278,7 +278,7 @@ border-radius: 5px;
 }
 
 .pacman:nth-child(1){
-    background-image: url(/Githubupload/images/packman-top-removebg-preview.png);
+    background-image: url(images/packman-top-removebg-preview.png);
     animation: pacman-face;
     animation-iteration-count: infinite;
     animation-duration: 1s;
@@ -286,7 +286,7 @@ border-radius: 5px;
     
 }
 .pacman:nth-child(2){
-    background-image: url(/Githubupload/images/packman-bottom-removebg-preview.png);
+    background-image: url(images/packman-bottom-removebg-preview.png);
     background-position: -6.9px 0px;
     background-color: black;
     background-repeat: no-repeat;
