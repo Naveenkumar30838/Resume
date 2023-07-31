@@ -143,8 +143,11 @@
         width: 95%;
         padding: 0px;
     }
+     .ftd_innerdiv{
+       text-align:left;}
      .ftd_innerdiv:nth-child(1){
         width: 100%;
+        text-align:center;
     }
 }
 
