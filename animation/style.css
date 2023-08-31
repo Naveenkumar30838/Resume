@@ -362,7 +362,131 @@ border-radius: 5px;
 .box10:hover{
     animation-play-state: running;
 }
+/* Some more animations added later/*  */ */
 
+.anime11-container{
+    /* background-color: red; */
+    width: 60%;
+    height: 400px;
+    justify-content: center;
+}
+.box11{
+    --measure:200px;
+    width: var(--measure);
+    height: var(--measure);
+    /* background-color: #892be292; */
+    position: relative;
+    animation: box1-anime 3s ease-out infinite alternate ;
+}
+.circle{
+    width: 15px;
+    height: 15px;
+    border-radius: 200px;
+    background-color: white;
+    position: absolute;
+}
+.Green{
+    left: calc(var(--measure)/2 - 5px );
+    background-color: green;
+}
+.Blue{
+  top: calc(var(--measure)/2 - 5px);
+  background-color: red;
+}
+.Yellow{
+    background-color: rgb(255, 191, 0);
+    right: 0;
+    top: calc(var(--measure)/2 - 5px);
+}
+.Purple{
+    background-color: aqua;
+    bottom: 0px;
+    left: calc(var(--measure)/5);
+}
+.white{
+    bottom: 0px;
+    right: calc(var(--measure)/5);
+}
+@keyframes box1-anime {
+    0%{}
+    50%{
+        transform:rotate(360deg);
+    }
+    100%{
+        transform: scale(0.1);
+    }
+}
+/* box 2 animation starts here */
+.box12{
+    --measure:100px;
+    width:calc(var(--measure));
+    height:calc(var(--measure));
+}
+.box2_green{
+    top:0;
+    left: 0px;
+}
+.box2_blue{
+    left:calc(var(--measure) - 5px);
+    top: 0;
+}
+.box2_yellow{
+    left: 0;
+    top: calc(var(--measure) - 5px);
+}
+.box2_purple{
+    left: calc(var(--measure) - 5px);
+    top: calc(var(--measure) - 5px);
+    
+}
+/* box 3 styling */
+.anime13-container{
+    margin-bottom: 100px;
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+.box13{
+    /* background-color: blue; */
+    width: 200px;
+    height: 200px;
+    position: relative;
+    justify-content: center;
+}
+.insider-box{
+    width: 100px;
+    height: 100px;
+    /* background-color: pink; */
+    position: absolute;
+    animation: third-animation 5s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite ;
+    animation-duration: 3s;
+}
+.insider-box:nth-child(2){
+    animation-delay: 0.1s;
+}
+.insider-box:nth-child(3){
+    animation-delay: 0.2s;
+}
+.insider-box:nth-child(4){
+    animation-delay: 0.3s;
+}
+.box13-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+    background-color: white;
+    border: 2px solid white;
+    position: absolute;
+    right: 0px;
+    top: 45px;
+}
+@keyframes third-animation {
+    0%{}
+    100%{
+        transform:rotate(360deg);
+    }
+}
 /* little little media queries */
 @media (width<=500px){
     .container{
