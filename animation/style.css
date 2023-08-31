@@ -18,7 +18,8 @@ body{
     top: 0;
 }
 .container{
-    
+    flex-direction: column;
+    row-gap: 30px;
     padding: 40px 100px;
     background:#333;
 }
@@ -278,15 +279,15 @@ border-radius: 5px;
 }
 
 .pacman:nth-child(1){
-    background-image: url(https://github.com/Naveenkumar30838/Resume/blob/5ee5b6a35a3d88c5d143cab50252ebf2a4a58aee/images/packman-top-removebg-preview.png);
-    animation: pacman-face;
+   background-image:url(images/packman-top-removebg-preview.png);
+   animation: pacman-face;
     animation-iteration-count: infinite;
     animation-duration: 1s;
     
     
 }
 .pacman:nth-child(2){
-    background-image: url(https://github.com/Naveenkumar30838/Resume/blob/5ee5b6a35a3d88c5d143cab50252ebf2a4a58aee/images/packman-bottom-removebg-preview.png);
+    background-image: url(images/packman-bottom-removebg-preview.png);
     background-position: -6.9px 0px;
     background-color: black;
     background-repeat: no-repeat;
@@ -418,6 +419,7 @@ border-radius: 5px;
 }
 /* box 2 animation starts here */
 .box12{
+    margin-top: 40px;
     --measure:100px;
     width:calc(var(--measure));
     height:calc(var(--measure));
@@ -471,7 +473,7 @@ border-radius: 5px;
 .insider-box:nth-child(4){
     animation-delay: 0.3s;
 }
-.box13-circle {
+.box3-circle {
     width: 10px;
     height: 10px;
     border-radius: 20px;
