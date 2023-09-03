@@ -38,7 +38,7 @@ h1::selection , a::selection{
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-image: url(images/stars_image.jpeg);
+    background-image: url(../images/stars_image.jpeg);
  }
  .sun{
     width: 100px;
