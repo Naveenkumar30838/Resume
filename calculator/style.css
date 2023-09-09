@@ -1,0 +1,90 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to right ,black,rgba(0, 0, 0, 0.694) ,white ,rgba(0, 0, 0, 0.703) ,black);
+    
+}
+::selection{
+    background-color: transparent;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    max-width: 100vw;
+    display: flex;
+    /* background-color: red; */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 2px solid white; */
+    height: 100vh;
+    }
+.content{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    
+}
+.form-input{
+    background-color: rgba(11, 11, 11, 0);
+    width: 100%;
+    border: none;
+    border-radius: 2px;
+    font-size: 2rem;
+    transform: scaleY(1.2);
+}
+.form-input:focus{
+    background-color: transparent;
+    border: none;
+    appearance: none;
+}
+.button-container{
+   
+   display: grid;
+   grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+   column-gap: 10px;
+    gap: 2px;
+}
+.button{
+    padding: 30px 50px;
+    font-size: 2rem;
+    /* height: 80px; */
+    box-shadow: 1px 1px 5px black;
+    backdrop-filter: blur(10px);
+}
+.button:active{
+    border: 1px solid red;
+}
+#value_back{
+    grid-column: 5/6;
+    grid-row: 3/5;
+}
+.value_Enter{
+    grid-column: 1/6;
+}
+@media screen and (width <=900px) {
+    body{
+        background: linear-gradient(to right ,#000000c8 ,white,white,white ,#000000c8);
+    }
+    .container{
+      
+    }
+    .button{
+        padding: 10px 30px;
+    }
+}
+@media screen and (width <= 600px) {
+    body{
+        background: none;
+        background-color: #cccc;
+    }
+    .button{
+        padding:5px;
+    }
+}
