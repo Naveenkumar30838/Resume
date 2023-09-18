@@ -223,4 +223,7 @@ li{
     .playlist_box{
         padding: 10px;
     }
+    .music-pl-Anime{
+        opacity:20;
+    }
 }
