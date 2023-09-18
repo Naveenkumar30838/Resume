@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Spotify</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="banner-container">
+        <div class="banner flex">
+            <li><img class="banner_logo" src="Assets/logo.png" alt="Spotify_logo"></li>
+            <li>Home</li>
+            <li>About</li>
+        </div>
+    </div>
+    <!-- Top Navigation Bar Ends Here  -->
+    <div class="container">
+        <div class="content flex">
+
+
+
+        <div class="content_left_image"> 
+        </div>
+
+        <div class="playList_container flex">
+
+            <div class="playlist_box">
+                <h1>My PlayList</h1>
+                <div class="playlist flex">
+
+                    <div class="song_item flex disappear" id="Song_item" id="">
+                        <div class="song_thumbnail"><img src="Assets/song_thumb.jpg" alt=""></div>
+                        <div class="song_name pointer" >My_song</div>
+                        <div class="song_info flex">
+                            <div class="song_duration">5:34</div>
+                            <div class="song_pl_pause"><i class="fa fa-play-circle pl_pauseButton" id="pl_pauseButton"></i></div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <!-- Main Body ends Here -->
+    <div class="bottom-container flex">
+        <div class="music-pl-Anime">
+            <img src="Assets/playMusicgif.gif" alt="">
+        </div>
+        <div class="seek_bar"><input type="range" name="" id="" class="pointer"></div>
+        <div class="seek_bar_icons flex">
+            <i class="fas fa-fast-backward  pointer"></i>
+            <i class="far fa-play-circle  pointer " id="seek_bar_plpause"></i>
+            <i class="fas fa-fast-forward  pointer"></i>
+        </div>
+    </div>
+    <!-- Bottom Section ends Here -->
+    <!-- Here is the style of pluc icons -->
+    <abbr title="Add New Song"> <div class="plus-container">
+        <div class="plus-circle" id="plus_circle">
+            <div class="plus-vertical  plus-line"></div>
+            <div class="plus-horizontal plus-line "></div>
+        </div>
+    </div>
+</abbr>
+
+    <!-- Scripting starts From Here -->
+    <script src="https://kit.fontawesome.com/b842128030.js" crossorigin="anonymous"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

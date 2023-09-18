@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Varela+Round&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --ubuntu:'Ubuntu Condensed', sans-serif;
+    --varela-round:'Varela Round', sans-serif;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+body {
+    background-color: palegoldenrod;
+    font-family: var(--varela-round);
+}
+.flex{
+    display: flex;
+}
+.pointer{
+    cursor: pointer;
+}
+.disappear{
+    display: none;
+}
+li{
+    list-style: none;
+}
+/* Styling starts from Here */
+.banner-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #121212;
+    color: white;
+    padding: 13px 10px;
+}
+.banner{
+    justify-content: flex-start;
+    column-gap: 20px;
+}
+.banner_logo {
+    width: 80px;
+}
+.banner li{
+    cursor: pointer;
+}
+/* Main content Styling  */
+.container{
+    padding: 65px 40px 85px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height:100vh;
+
+}
+
+.content{
+    background-blend-mode:luminosity;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 500px 100%;
+    background:linear-gradient(to bottom ,#ffca00 ,#fec901 ,#fdc300,#d9a200);
+    
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #212121;
+}
+.content_left_image{
+    background: url(Assets/Music_Back.jpg);
+    width: 50%;
+    height: 100%;
+    background-position: right;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    /* border: 2px solid red; */
+}
+.playList_container{
+    /* border: 2px solid red; */
+    padding: 20px;
+    width: 60%;
+    /* box-shadow: 0px 0px 5px black; */
+    justify-content: center;
+}
+.playlist_box{
+    color: white;
+    overflow: auto;
+    box-shadow: 2px solid black;
+    flex-direction: column;
+    width: 90%;
+    border-radius: 10px;
+    padding: 30px 50px;
+    box-shadow: 0px 0px 10px #0000007d;
+    backdrop-filter: blur(10px);
+}
+.playlist_box h1{
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 5px yellow , 0px 0px 10px red;
+}
+.playlist {
+    flex-direction: column;
+    row-gap: 10px;
+}
+.song_item{
+  border-radius: 55px;
+  background-color: #fff;
+  color: black;
+  padding: 5px 15px;
+  overflow: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+.song_thumbnail{
+    max-width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.song_thumbnail img{
+    width: 100%;
+    height: 100%;
+}
+.song_info {
+    column-gap: 5px;
+}
+
+
+/* Bottom Styling */
+.music-pl-Anime{
+  position: absolute;
+  bottom: 0px;
+  left: 100px;
+  opacity: 0;
+  transition: opacity 0.2s ;
+
+}
+.music-pl-Anime img{
+    width: 180px;
+    backdrop-filter: blur(3px);
+    height: 55px;
+}
+.bottom-container{
+    flex-direction: column;
+    row-gap: 5px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    padding:2px 10px 20px;
+    background-color: #212121;
+    color: white;
+    row-gap: 15px;
+}
+.seek_bar{
+    appearance: none;
+    width: 100%;
+}
+.seek_bar input{
+    width: 100%;
+    height: 2px;
+}
+.seek_bar_icons{
+    justify-content: center;
+    font-size: 1.5rem;
+    column-gap: 15px;
+}
+/* Here is the style of making the plus icon on the bottom left  */
+.plus-container{
+    position: absolute;
+    bottom: 90px;
+    right: 10px;
+    /* border: 2px solid green; */
+}
+.plus-circle{
+    background-color: #fff;
+    padding: 20px 10px;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px black;
+    /* border: 2px solid /red; */
+}
+.plus-line{
+    width: 26px;
+    height: 2px;
+    background-color: blue;
+}
+.plus-vertical{
+    transform: rotate(90deg);
+}
+@media screen and (width<=1000px) {
+    .container{
+        padding: 65px 10px 85px;
+    }
+}
+@media screen and (width<=912px) {
+    .content_left_image{
+        width: 100%;
+    }
+    .playList_container{
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        overflow: auto;
+    }
+    .playlist_box{
+        backdrop-filter: blur(1px);
+    }
+   
+}
+@media screen and (width<=600px) {
+    .container{
+        padding: 65px 0px 85px;
+    }
+    .playList_container{
+        padding: 20px 0px;
+    }
+    .content_left_image{
+        background-position:80%;
+    }
+    .playlist_box{
+        padding: 10px;
+    }
+}
