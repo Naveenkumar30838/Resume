@@ -2,7 +2,7 @@ import {orgsongListFun as copiedList } from './ValidForm/vscript.js'
 const  songList=copiedList();
 console.log(songList)
 
-//  ****************Here are some basic Presets Required 😀😀**********************************
+//  ****************Basic Presets and Utility Functions 😀😀**********************************
 let currIndex=0;
 let playingIndex=-1;
 let songPlaying=false;
@@ -11,8 +11,31 @@ let nextSong;
 const MasterPlay=document.getElementById('seek_bar_plpause')
 const MusicAnime=document.getElementsByClassName('music-pl-Anime')[0];
 
-// code  to add song element to the list when window loads
-// Function to create a new song item element
+    // To format second time in minute
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = Math.floor(seconds % 60);
+        return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+      }
+      
+    // finding Duration of any song
+    // function getDuration(idx){
+    //   const x=new Audio(songList[3][1]);
+    //   let duration="";
+    //   x.addEventListener('loadedmetadata' , () =>{
+    //       const dur=x.duration;
+    //       duration +=(String)(formatTime(dur))        
+    //       console.log(duration)
+    //     })
+    //    return duration;
+    // }
+
+    // console.log(getDuration(2))
+
+
+// ***********************Utiltiy Function ends Here *******************************************
+// Adding song element to the list when window loads
+// Creating a new song item element
 function createSongItem(songData) {
     const songItem = document.createElement("div");
     songItem.className = "song_item flex";
@@ -45,7 +68,7 @@ function createSongItem(songData) {
     return songItem;
 }
 
-// Function to add song items to the playlist
+// to add song items to the playlist
 function addSongItemsToPlaylist() {
     const playlist = document.getElementsByClassName("playlist");
     // Loop through the songList and create song items
@@ -57,6 +80,7 @@ function addSongItemsToPlaylist() {
 // Loading Playlist data
 window.addEventListener("load", addSongItemsToPlaylist());
 // *******************************Above was code to load playList when window Load ********************
+// *******************************Handling play pause and other when song play pause ↓↓↓↓↓↓↓↓↓↓↓↓↓↓********************
 function playCurrIndex(currIndex){
     if(songPlaying && currIndex==playingIndex){
         newSong.pause(); 
@@ -69,7 +93,6 @@ function playCurrIndex(currIndex){
     else if(songPlaying){
         ppButtonList[playingIndex -1+2].classList.remove('fa-pause-circle')
         ppButtonList[playingIndex -1+2].classList.add('fa-play-circle')
-        console.log("pause song NO " ,playingIndex);
         nextSong =new Audio(songList[currIndex][1])
         playingIndex=currIndex;
         songPlaying=true;
@@ -94,7 +117,6 @@ function changePpButton(){
     if(songPlaying==true){
         ppButtonList[currIndex-1+2].classList.remove('fa-play-circle')
         ppButtonList[currIndex-1+2].classList.add('fa-pause-circle')
-        console.log("Changed SuccessFully")
     }
     else if (songPlaying==false) {
         ppButtonList[currIndex-1+2].classList.remove('fa-pause-circle')
@@ -120,20 +142,36 @@ function otherChangesOnPlay(){
 }
 //////////////////////////////////////////Handling click on different icons////////////////////////
 // ******************************************Master Play *********************************************
-MasterPlay.addEventListener('click' ,() =>{
-    if(songPlaying){
-        newSong.pause();
-        songPlaying=false;
-        otherChangesOnPlay();
-        changePpButton();
-    }
-    else if(songPlaying==false && playingIndex==-1){
-        playCurrIndex(0);
-    }
-    else{
-        playCurrIndex(currIndex)
-    }
-})
+    MasterPlay.addEventListener('click' ,() =>{
+        if(songPlaying){
+            newSong.pause();
+            songPlaying=false;
+            otherChangesOnPlay();
+            changePpButton();
+        }
+        else if(songPlaying==false && playingIndex==-1){
+            playCurrIndex(0);
+        }
+        else{
+            playCurrIndex(currIndex)
+        }
+    })
+    // Handling click on previous next button
+    const next=document.getElementById('next')
+    const previous=document.getElementById('previous')
+    previous.addEventListener('click',()=>{
+        if( currIndex != 0 && playingIndex!=-1){
+            currIndex -=1;
+            playCurrIndex(currIndex)
+        }
+    })
+    next.addEventListener('click',()=>{
+        const n=songList.length-1;
+        if( currIndex != n && playingIndex!=n){
+            currIndex +=1;
+            playCurrIndex(currIndex)
+        }
+    })
  // playing pausing songs when clicked on pl pause  button 
  ppButtonList.forEach((element ,idx) => {
     element.addEventListener('click', () => {
@@ -161,11 +199,10 @@ MasterPlay.addEventListener('click' ,() =>{
         })
     })
 
-//////////////////////////////////////////JS fOR  Html CSS///////////////////////////
+//////////////////////////////////////////JS fOR  Html CSS or some Utility work function///////////////////////////
 // Opening the new Add song window when click on the plus icon
     const plusIcon=document.getElementById('plus_circle')
     plusIcon.addEventListener('click' ,() =>{
         window.open('ValidForm/index.html')
     })
-
-
+    
