@@ -2,13 +2,14 @@ import {orgsongListFun as copiedList } from './ValidForm/vscript.js'
 const  songList=copiedList();
 console.log(songList)
 
-// Intiliazing the variables
+//  ****************Here are some basic Presets Required 😀😀**********************************
 let currIndex=0;
 let playingIndex=-1;
-let srNo=-1;
 let songPlaying=false;
 let newSong;
 let nextSong;
+const MasterPlay=document.getElementById('seek_bar_plpause')
+const MusicAnime=document.getElementsByClassName('music-pl-Anime')[0];
 
 // code  to add song element to the list when window loads
 // Function to create a new song item element
@@ -22,9 +23,7 @@ function createSongItem(songData) {
     songItem.appendChild(songThumbnail);
 
     const songName = document.createElement("div");
-    srNo+=1;
     songName.className = "song_name pointer";
-    songName.id=srNo;
     songName.textContent = songData[0];
     songItem.appendChild(songName);
 
@@ -49,31 +48,15 @@ function createSongItem(songData) {
 // Function to add song items to the playlist
 function addSongItemsToPlaylist() {
     const playlist = document.getElementsByClassName("playlist");
-    
     // Loop through the songList and create song items
     songList.forEach(songData => {
         const songItem = createSongItem(songData);
         playlist[0].appendChild(songItem);
     });
 }
-// Call the function when the window loads
+// Loading Playlist data
 window.addEventListener("load", addSongItemsToPlaylist());
 // *******************************Above was code to load playList when window Load ********************
-// changing currsong Index when click on any element
-
-const plPauseList=document.querySelectorAll('.song_name')
-    plPauseList.forEach( (element) =>{
-        element.addEventListener('click' ,() =>{
-            const songNo=element.id;
-            currIndex=songNo;
-            // const newSong=new Audio(songList[currIndex][1]);
-            // newSong.play();
-            console.log("clicked Element NO " ,currIndex)
-            playCurrIndex(currIndex);
-        }
-        )
-    }
-    )
 function playCurrIndex(currIndex){
     if(songPlaying && currIndex==playingIndex){
         newSong.pause(); 
@@ -84,21 +67,23 @@ function playCurrIndex(currIndex){
         return; 
     }
     else if(songPlaying){
+        ppButtonList[playingIndex -1+2].classList.remove('fa-pause-circle')
+        ppButtonList[playingIndex -1+2].classList.add('fa-play-circle')
+        console.log("pause song NO " ,playingIndex);
         nextSong =new Audio(songList[currIndex][1])
         playingIndex=currIndex;
         songPlaying=true;
         newSong.pause();
         nextSong.play();
         newSong=nextSong;
-        changePpButton();
     } 
     else {
         newSong =new Audio(songList[currIndex][1])
         playingIndex=currIndex;
         songPlaying=true;
         newSong.play();
-        changePpButton();
     }
+    changePpButton();
     otherChangesOnPlay();
 }
 
@@ -120,46 +105,67 @@ function changePpButton(){
 // Other changes when song is played
 function otherChangesOnPlay(){
     // console.log(ppButtonList)
-    const MasterPlay=document.getElementById('seek_bar_plpause')
-    const MusicAnime=document.getElementsByClassName('music-pl-Anime')[0];
-
+    
     if(songPlaying==true){
         MasterPlay.classList.remove('fa-play-circle')
         MasterPlay.classList.add('fa-pause-circle')
         MusicAnime.style.opacity='100'
 
     }
-    else if (songPlaying==false) {
+    else{
         MasterPlay.classList.remove('fa-pause-circle')
         MasterPlay.classList.add('fa-play-circle')
         MusicAnime.style.opacity='0'
-        console.log("Hello there")
-    }
+    }   
 }
-
-    // playing pausing songs when clicked on pl pause  button 
-    ppButtonList.forEach((element) => {
-        element.addEventListener('click', () => {
-            if(songPlaying==true){
-                newSong.pause(); 
-            }
-            else {
-                newSong.play();
-            }
-            changePpButton();
-            otherChangesOnPlay();
+//////////////////////////////////////////Handling click on different icons////////////////////////
+// ******************************************Master Play *********************************************
+MasterPlay.addEventListener('click' ,() =>{
+    if(songPlaying){
+        newSong.pause();
+        songPlaying=false;
+        otherChangesOnPlay();
+        changePpButton();
+    }
+    else if(songPlaying==false && playingIndex==-1){
+        playCurrIndex(0);
+    }
+    else{
+        playCurrIndex(currIndex)
+    }
+})
+ // playing pausing songs when clicked on pl pause  button 
+ ppButtonList.forEach((element ,idx) => {
+    element.addEventListener('click', () => {
+        if(songPlaying==true){
+            newSong.pause(); 
+            songPlaying=false;
+        }
+        else {
+            currIndex=idx -2 +1;
+            playingIndex=currIndex;
+            playCurrIndex(currIndex);
+            songPlaying=true;
+        }
+        changePpButton();
+        otherChangesOnPlay();
+    })
+})
+// changing currsong Index when click on any element
+ const plPauseList=document.querySelectorAll('.song_name')
+    plPauseList.forEach( (element,idx) =>{
+        element.addEventListener('click' ,() =>{
+            // const songNo=element.id;
+            currIndex=idx -2 +1;
+            playCurrIndex(currIndex);
         })
     })
-      
 
-
-
-
-
+//////////////////////////////////////////JS fOR  Html CSS///////////////////////////
 // Opening the new Add song window when click on the plus icon
-const plusIcon=document.getElementById('plus_circle')
-plusIcon.addEventListener('click' ,() =>{
-    window.open('ValidForm/index.html')
-})
+    const plusIcon=document.getElementById('plus_circle')
+    plusIcon.addEventListener('click' ,() =>{
+        window.open('ValidForm/index.html')
+    })
 
 
