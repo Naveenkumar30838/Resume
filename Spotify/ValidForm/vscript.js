@@ -2,7 +2,7 @@
 const orgsongList =[
     // Song Name Url Duration 
     ["Filhall" , "Assets/Filhall.mp3" ,"00:28"],
-    ["Mein Dil Laya" , "Assets/MeinDilLaya.mp3" ,"02:46"], 
+    ["Mein Dil Laya" , "Assets/MeinDilLaya.mp3" ,"02:463"], 
     ["Brown_munde" , "Assets/Brown_Munde.mp3" ,"04:27"],
     ["Qara" , "Assets/Qara.mp3" ,"00:30"], 
     ["Illegal Weapon" , "Assets/illegalWeapon.mp3" ,"03:08"], 
@@ -12,7 +12,17 @@ const orgsongList =[
     ["Dus Numbari" , "Assets/dus_Numberi.mp3" ,"02:25"], 
     ["Long Drive" , "Assets/Long_drive.mp3" ,"02:30"], 
     ["Lahore" , "Assets/Lahore (1).mp3" ,"03:17"], 
-   
+    ["Tere Naam" , "Assets/terenaam.mp3" ,"06:35"], 
+    ["Birthday" , "Assets/Birthday.mp3" ,"03:58"], 
+    ["Heartless" , "Assets/Heartless.mp3" ,"07:22"], 
+    ["Mere Warga" , "Assets/MereWarga.mp3" ,"04:45"], 
+    ["Parinday" , "Assets/parinday.mp3" ,"04:23"], 
+    ["Ranjha" , "Assets/Ranjha.mp3" ,"03:50"], 
+    ["Raatan Lambiya" , "Assets/Raataan Lambiyan .mp3" ,"03:53"], 
+    ["Yaar Purane" , "Assets/Yaarpuran.mp3" ,"04:52"], 
+    ["Yalgaar" , "Assets/Yalgaar.mp3" ,"03:15"], 
+    ["Tu hai Ki Nahi" , "Assets/Tu_Hai_Ki_Nahi.mp3" ,"05:34"], 
+    
 ]
 export function orgsongListFun() {
  return orgsongList;
