@@ -18,6 +18,13 @@ body {
 .flex{
     display: flex;
 }
+.shadow{
+    animation: borderAnime 2s cubic-bezier(0.25, 0.23, 0.36, 0.33) infinite alternate;
+    transition: border 1s ease-in ;
+    padding: 0px;
+    scale: 1.01;
+    
+}
 a{
     text-decoration: none;
     font-family: var(--varela-round);
@@ -40,17 +47,55 @@ li{
     right: 0;
     background-color: #121212;
     color: white;
-    padding: 13px 10px;
+    padding: 13px 15px;
+    justify-content: space-between;
+    align-items: center;
 }
 .banner{
+    min-width:80%;
     justify-content: flex-start;
     column-gap: 20px;
+    align-items: center;
 }
 .banner_logo {
     width: 80px;
 }
 .banner li{
     cursor: pointer;
+}
+#searchBar{
+    width: 30%;
+    border-radius: 5px;
+    padding: 4px 8px;
+    font-size: 1.1rem;
+    font-weight: 100;
+    font-family: var(--ubuntu);
+}
+.ellipsis{
+   font-size: 1.2rem; 
+   font-weight: 500;
+
+}
+.MoreFeature{
+    flex-direction: vertical;
+    position: absolute;
+    right: 20px;
+    top: 45px;
+    background-color: black;
+    padding: 8px 10px;
+    border-radius: 4px ;
+    box-shadow: 0px 0px 2px white;
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+.MoreFeature li{
+    column-gap: 8px;
+    align-items: center;
+
+}
+.autoplay-icon{
+    font-size: 1.5rem;
+    color: yellow;
 }
 /* Main content Styling  */
 .container{
@@ -74,7 +119,8 @@ li{
     box-shadow: 0px 0px 5px #212121;
 }
 .content_left_image{
-    background: url(Assets/Music_Back.jpg);
+    background-image: url(Assets/Music_Back.jpg) ;
+    background-blend-mode: hard-light;
     width: 50%;
     height: 100%;
     background-position: right;
@@ -82,11 +128,13 @@ li{
     background-repeat: no-repeat;
     /* border: 2px solid red; */
 }
+
 .playList_container{
     /* border: 2px solid red; */
     padding: 20px;
     width: 60%;
     /* box-shadow: 0px 0px 5px black; */
+    
     justify-content: center;
 }
 .playlist_box{
@@ -98,7 +146,7 @@ li{
     border-radius: 10px;
     padding: 30px 50px;
     box-shadow: 0px 0px 10px #0000007d;
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
 }
 .playlist_box h1{
     margin-bottom: 20px;
@@ -258,4 +306,34 @@ li{
         width: 100px;
         height: 40px;
     }
+}
+
+@keyframes borderAnime {
+    0% ,100% {
+        border-top: 5px solid rgb(123, 0, 255);
+        border-left: 5px solid green;
+        border-bottom: 5px solid blue;
+        border-right: 5px solid red;
+    }    
+    
+    25%{
+            border-top: 5.1px solid red;
+         border-bottom: 5.1px solid green;
+          border-right: 5.1px solid blue;
+           border-left: 5.1px solid rgb(123, 0, 255);  
+           box-shadow: 0px 0px 2px white;
+    }    
+    50% {
+        border-top: 5px solid blue;
+        border-left: 5px solid red;
+        border-bottom: 5px solid rgb(123, 0, 255);
+        border-right: 5px solid green;
+    }    
+    75% {
+        border-right: 5px solid rgb(123, 0, 255);
+        border-top: 5px solid green;
+        border-left: 5px solid blue;
+        border-bottom: 5px solid red;
+        box-shadow: 0px 0px 2px black;
+    }     
 }
