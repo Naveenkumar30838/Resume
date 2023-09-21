@@ -4,12 +4,15 @@ console.log(songList)
 
 //  ****************Basic Presets and Utility Functions 😀😀**********************************
 let currIndex=0;
+let prevPlayIndex=-1;
 let playingIndex=-1;
 let songPlaying=false;
+let autoplaying=true;
 let newSong;
 let nextSong;
 const MasterPlay=document.getElementById('seek_bar_plpause')
 const MusicAnime=document.getElementsByClassName('music-pl-Anime')[0];
+const SongItemList=document.getElementsByClassName('song_item');
 
     // To format second time in minute
     function formatTime(seconds) {
@@ -108,6 +111,8 @@ function playCurrIndex(currIndex){
     }
     changePpButton();
     otherChangesOnPlay();
+    if(autoplaying) {autoplay();} 
+    
 }
 
 // Changing play pause button if some song is playing 
@@ -139,6 +144,19 @@ function otherChangesOnPlay(){
         MasterPlay.classList.add('fa-play-circle')
         MusicAnime.style.opacity='0'
     }   
+   
+    // anime around songitem
+    if(songPlaying){
+        SongItemList[playingIndex +1].classList.add('shadow')
+        if(prevPlayIndex !=-1 && prevPlayIndex !=currIndex){
+            SongItemList[prevPlayIndex +1].classList.remove('shadow')
+        }
+        prevPlayIndex =currIndex;
+    }     
+    else{
+        SongItemList[prevPlayIndex +1].classList.remove('shadow')
+    } 
+ 
 }
 //////////////////////////////////////////Handling click on different icons////////////////////////
 // ******************************************Master Play *********************************************
@@ -198,6 +216,41 @@ function otherChangesOnPlay(){
             playCurrIndex(currIndex);
         })
     })
+/////////////////////////////////////////////Other Feature /////////////////////////////////////////////////////////
+                           ////////////////1. Autoplay ////////////////////////////////////////////////
+     function autoplay(){
+        if(songPlaying ){ newSong.addEventListener('ended' ,() =>{
+               if(playingIndex !=songList.length-1){
+                    playCurrIndex(playingIndex + 1);
+                    otherChangesOnPlay();
+                    changePpButton();
+               }
+               if(playingIndex==songList.length -1){
+                playCurrIndex(0);
+                otherChangesOnPlay();
+                changePpButton();
+               }
+           })
+        }
+    }
+/////////////////////////////////////////////For Search Bar///////////////////////////////
+const searchBar=document.getElementById('searchBar');
+searchBar.addEventListener('keyup' ,()=>{
+    let searchInput=searchBar.value;
+    if(linearSearch(searchInput) !=-1){
+        currIndex=linearSearch(searchInput);
+        playCurrIndex(currIndex);
+    }
+})
+function linearSearch(input){
+    for(let i=0;i<songList.length;i++){
+        if(songList[i][0] == input){
+            return i;
+        }
+    }
+    return -1;
+}
+
 
 //////////////////////////////////////////JS fOR  Html CSS or some Utility work function///////////////////////////
 // Opening the new Add song window when click on the plus icon
@@ -206,3 +259,19 @@ function otherChangesOnPlay(){
         window.open('ValidForm/index.html')
     })
     
+    // Showing More feature
+    const ellipsis=document.getElementById('ellipsis')
+    const moreFeature=document.getElementById('MoreFeature')
+    ellipsis.addEventListener('click' , () =>{
+        moreFeature.classList.toggle('disappear')
+    })
+    // auto play icon setting
+    const autoplaytoggle=document.getElementById('autoplay-toggle')
+    autoplaytoggle.addEventListener('click' ,() =>{
+        autoplaytoggle.classList.toggle('fa-toggle-off')
+        autoplaytoggle.classList.toggle('fa-toggle-on')
+        if(autoplaying==true){autoplaying=false;}
+        else{
+            autoplaying=true;
+        }
+    })
