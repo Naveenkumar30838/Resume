@@ -8,15 +8,25 @@
     <link rel="shortcut icon" href="Assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="banner-container">
+    <div class="banner-container flex">
+
         <div class="banner flex">
             <li><img class="banner_logo" src="Assets/logo.png" alt="Spotify_logo"></li>
             <li><a href="#">Home</a></li>
             <li><a href="https://naveenkumar30838.github.io/Resume">About</a></li>
-            
+            <input type="search" id="searchBar" placeholder="Search with Song Name" value="">
         </div>
+
+        <div class="banner-right">
+           <div class="ellipsis pointer" id="ellipsis"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+           <div class="MoreFeature flex disappear" id="MoreFeature">
+            <li class="flex">Autoplay <span class="autoplay-icon"><i class="fa-solid fa-toggle-on pointer" id="autoplay-toggle"></i></span></li>
+           </div>
+        </div>
+        
     </div>
     <!-- Top Navigation Bar Ends Here  -->
+
     <div class="container">
         <div class="content flex">
 
