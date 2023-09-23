@@ -56,9 +56,17 @@ li{
     justify-content: flex-start;
     column-gap: 20px;
     align-items: center;
+    z-index: 1000;
 }
-.banner_logo {
-    width: 80px;
+.banner:nth-child(1) h3{
+    background: linear-gradient(to bottom ,black , #2f2d2d);
+    border-radius: 5px;
+    padding: 0px 2px;
+    color: #3cd33c;
+    /* text-shadow: 0px 0px 1px black; */
+}
+.banner:nth-child(1) h3::first-letter{
+    font-size: 1.6rem;
 }
 .banner li{
     cursor: pointer;
@@ -184,15 +192,16 @@ li{
 .music-pl-Anime{
   position: absolute;
   bottom: 0px;
-  left: 100px;
+  left: 10px;
   opacity: 0;
   transition: opacity 0.2s ;
+  overflow: hidden;
 
 }
 .music-pl-Anime img{
-    width: 180px;
+    width: 280px;
     backdrop-filter: blur(3px);
-    height: 55px;
+    height: 45px;
 }
 .bottom-container{
     flex-direction: column;
@@ -202,7 +211,9 @@ li{
     right: 0px;
     left: 0px;
     padding:2px 10px 20px;
-    background-color: #212121;
+    /* background-color: #212121; */
+    background: linear-gradient(to right , black ,#212121 ,black);
+
     color: white;
     row-gap: 15px;
 }
@@ -217,7 +228,16 @@ li{
 .seek_bar_icons{
     justify-content: center;
     font-size: 1.5rem;
+    align-items: center;
     column-gap: 15px;
+}
+.skipIcon{
+    font-size: 1rem;
+    margin: 3px;
+}
+/* For showing Time elapsed and duration */
+#timepassed , #totaltime{
+    font-size: 0.8rem;
 }
 /* Here is the style of making the plus icon on the bottom left  */
 .plus-container{
@@ -282,9 +302,25 @@ li{
     .playlist_box{
         backdrop-filter: blur(1px);
     }
-   
+    .music-pl-Anime img{
+        opacity: 0.5;
+        width: 220px;
+        height: 40px;
+        
+    }
 }
 @media screen and (width<=600px) {
+    .banner{
+        min-width: 90%;
+        justify-content: space-between;
+        column-gap: 5px;
+        font-size: 0.9rem;
+    }
+    #searchBar{
+        width: 34%;
+        padding: 4px 1px;
+        font-size: 1rem;
+    }
     .container{
         padding: 65px 0px 85px;
     }
@@ -300,11 +336,12 @@ li{
     }
     .music-pl-Anime{
         bottom: 0px;
-        left: 20px; 
+        left: 5px; 
     }
     .music-pl-Anime img{
+        opacity: 0.15;
         width: 100px;
-        height: 40px;
+        height: 60px;
     }
 }
 
