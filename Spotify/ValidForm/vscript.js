@@ -1,32 +1,28 @@
 
-const orgsongList =[
+const playlist =[
     // Song Name Url Duration 
-    ["Filhall" , "Files/Filhall.mp3" ,"00:28"],
-    ["Mein Dil Laya" , "Files/MeinDilLaya.mp3" ,"02:46"], 
-    ["Brown_munde" , "Files/Brown_Munde.mp3" ,"04:27"],
-    ["Qara" , "Files/Qara.mp3" ,"00:30"], 
-    ["Illegal Weapon" , "Files/illegalWeapon.mp3" ,"03:08"], 
-    ["Mehbooba" , "Files/Mehbooba.mp3" ,"03:38"], 
-    ["California" , "Files/california.mp3" ,"02:55"], 
-    ["Mere Raske Qamar" , "Files/Mere Raske Qamar.mp3" ,"03:40"], 
-    ["Dus Numbari" , "Files/dus_Numberi.mp3" ,"02:25"], 
-    ["Long Drive" , "Files/Long_drive.mp3" ,"02:30"], 
-    ["Lahore" , "Files/Lahore (1).mp3" ,"03:17"], 
-    ["Tere Naam" , "Files/terenaam.mp3" ,"06:35"], 
-    ["Birthday" , "Files/Birthday.mp3" ,"03:58"], 
-    ["Heartless" , "Files/Heartless.mp3" ,"07:22"], 
-    ["Mere Warga" , "Files/MereWarga.mp3" ,"04:45"], 
-    ["Parinday" , "Files/parinday.mp3" ,"04:23"], 
-    ["Ranjha" , "Files/Ranjha.mp3" ,"03:50"], 
-    ["Raatan Lambiya" , "Files/Raataan Lambiyan .mp3" ,"03:53"], 
-    ["Yaar Purane" , "Files/Yaarpuran.mp3" ,"04:52"], 
-    ["Yalgaar" , "Files/Yalgaar.mp3" ,"03:15"], 
-    ["Tu hai Ki Nahi" , "Files/Tu_Hai_Ki_Nahi.mp3" ,"05:34"], 
-    
+    {name: "Challeya" ,src:"Files/Chaleya.mp3" , duration: "03:20" , singer: ""},  
+    {name: "California" , src: "Files/california.mp3" ,duration: "02:55" , singer: ""}, 
+    {name: "Mere Raske Qamar" , src: "Files/Mere Raske Qamar.mp3" ,duration:"03:40" , singer: ""}, 
+    {name: "Dus Numbari" , src: "Files/dus_Numberi.mp3" ,duration:"02:25" , singer: ""}, 
+    {name: "Long Drive" , src: "Files/Long_drive.mp3" ,duration: "02:30" , singer: ""}, 
+    {name: "Lahore" , src: "Files/Lahore (1).mp3" ,duration: "03:17",singer:""}, 
+    {name: "Tere Naam" , src: "Files/terenaam.mp3" ,duration:"06:35",singer:""}, 
+    {name: "Birthday" , src: "Files/Birthday.mp3" ,duration: "03:58",singer:""}, 
+    {name: "Heartless" , src: "Files/Heartless.mp3" ,duration: "07:22" , singer:"Badshah"}, 
+    {name: "Mere Warga" , src: "Files/MereWarga.mp3" ,duration: "04:45" ,singer:""}, 
+    {name: "Yaar Purane" , src: "Files/Yaarpuran.mp3" ,duration: "04:52" ,singer:""}, 
+    {name: "Tu hai Ki Nahi" , src: "Files/Tu_Hai_Ki_Nahi.mp3" ,duration: "05:34" ,singer:""},
+    {name: "Yalgaar" , src: "Files/Yalgaar.mp3" ,duration: "03:15" ,singer:""}, 
+    {name: "Shaam-Lofi" , src: "Files/shaam.mp3" ,duration: "06:08" ,singer:""}, 
+    {name: "ChildHood" , src: "Files/Childhood.mp3" ,duration: "02:04" ,singer:""}, 
+    {name: "Chan Vekhya" , src: "Files/chanVekhya.mp3" ,duration: "03:30" ,singer:"Harnoor"}, 
+    {name: "Parshawan" , src: "Files/Parshawan.mp3" ,duration: "02:55" ,singer:"Harnoor"}, 
 ]
 export function orgsongListFun() {
- return orgsongList;
+ return playlist;
 }
+
 function isValid(songName, songLocation,songduration){
     const nameLen=songName.length;
    if( nameLen>10 || nameLen==0 ) {return "Enter Name in proper format"}
