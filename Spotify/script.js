@@ -10,6 +10,7 @@ const MasterPlay=document.getElementById('seek_bar_plpause')
 const MusicAnime=document.getElementsByClassName('music-pl-Anime')[0];
 const SongItemList=document.getElementsByClassName('song_item');
 const seekbar=document.getElementById('seekbarInput');
+const currsongname=document.getElementById('currsongname')
 let currIndex=0;
 let prevPlayIndex=-1;
 let playingIndex=-1;
@@ -34,7 +35,7 @@ function createSongItem(songData) {
 
     const songName = document.createElement("div");
     songName.className = "song_name pointer";
-    songName.textContent = songData[0];
+    songName.textContent = songData.name;
     songItem.appendChild(songName);
 
     const songInfo = document.createElement("div");
@@ -42,7 +43,7 @@ function createSongItem(songData) {
 
     const songDuration = document.createElement("div");
     songDuration.className = "song_duration";
-    songDuration.textContent = songData[2];
+    songDuration.textContent = songData.duration;
     songInfo.appendChild(songDuration);
 
     const songPlayPause = document.createElement("div");
@@ -56,16 +57,17 @@ function createSongItem(songData) {
 }
 
 // to add song items to the playlist
-function addSongItemsToPlaylist() {
+function addSongItemsToPlaylist(list) {
     const playlist = document.getElementsByClassName("playlist");
+    playlist.innerHTML=null;
     // Loop through the songList and create song items
-    songList.forEach(songData => {
+    list.forEach(songData => {
         const songItem = createSongItem(songData);
         playlist[0].appendChild(songItem);
     });
 }
 // Loading Playlist data
-window.addEventListener("load", addSongItemsToPlaylist());
+window.addEventListener("load", addSongItemsToPlaylist(songList));
 // *******************************Above was code to load playList when window Load ********************
 // *******************************Handling play pause and other when song play pause ↓↓↓↓↓↓↓↓↓↓↓↓↓↓********************
 function playCurrIndex(currIndex){
@@ -82,20 +84,22 @@ function playCurrIndex(currIndex){
         // currTime=0;
         ppButtonList[playingIndex -1+2].classList.remove('fa-pause-circle')
         ppButtonList[playingIndex -1+2].classList.add('fa-play-circle')
-        nextSong =new Audio(songList[currIndex][1])
+        nextSong =new Audio(songList[currIndex].src)
         playingIndex=currIndex;
         songPlaying=true;
         newSong.pause();
         nextSong.play();
         nextSong.currTime=currTime;
         newSong=nextSong;
+        currsongname.innerHTML=`<p>${songList[currIndex].name}</p>`;
     } 
     else {
-        newSong =new Audio(songList[currIndex][1])
+        newSong =new Audio(songList[currIndex].src)
         newSong.currentTime=currTime;
         playingIndex=currIndex;
         songPlaying=true;
         newSong.play();
+        currsongname.innerHTML=`<p>${songList[currIndex].name}</p>`;
         
     }
     changePpButton();
@@ -146,6 +150,7 @@ function otherChangesOnPlay(){
         SongItemList[prevPlayIndex +1].classList.remove('shadow')
     } 
     bindSeekBar(newSong);
+    playSongNameAnime();
 }
 //////////////////////////////////////////Handling click on different icons////////////////////////
 // ******************************************Master Play *********************************************
@@ -278,26 +283,67 @@ function otherChangesOnPlay(){
         newSong.currentTime=newTime;
         console.log(seekbar.value)
     })
+    // adding animation on song Name when song Load
+    function playSongNameAnime(){
+        const currsongnameP=currsongname.querySelector('p');
+        if(songPlaying==true){
+            currsongnameP.style.animation=' songnameAnime 3s cubic-bezier(0.63, 0.63, 0.41, 1.35)'
+            console.log("added")
+        }
+    }
 
 /////////////////////////////////////////////For Search Bar///////////////////////////////
     const searchBar=document.getElementById('searchBar');
-    searchBar.addEventListener('keyup' ,()=>{
-        let searchInput=searchBar.value;
-        if(linearSearch(searchInput) !=-1){
-            currIndex=linearSearch(searchInput);
-            playCurrIndex(currIndex);
-        }
-    })
+    // searchBar.addEventListener('keyup' ,()=>{
+    //     let searchInput=searchBar.value;
+    //     if(linearSearch(searchInput) !=-1){
+    //         currIndex=linearSearch(searchInput);
+    //         playCurrIndex(currIndex);
+    //     }
+    // })
+    // function linearSearch(input){
+    //     for(let i=0;i<songList.length;i++){
+    //         if(songList[i][0] == input){
+    //             return i;
+    //         }
+    //     }
+    //     return -1;
+    // }
+    // New code for Search bar
     function linearSearch(input){
-        for(let i=0;i<songList.length;i++){
-            if(songList[i][0] == input){
-                return i;
+        for(let i=0;i<songBase.length;i++){
+            if(songBase[i][0].toLowerCase() == input.toLowerCase()){
+                return [songBase[i][0],  songBase[i][1], songBase[i][2]]
             }
         }
         return -1;
-    }
-    // creating a new Element if Search occured SuccessFully
-
+    } 
+    // function isSongPresent(songList , input){
+    //     for(let i=0;i<songList.length;i++){
+    //         if(songList[i].name.toLowerCase() == input.toLowerCase()){
+    //             console.log('song is present ')  
+    //             console.log(songList[i][0])
+    //             return true;  
+    //         }
+    //     }
+    //     return false;
+    // }
+    searchBar.addEventListener('keyup' ,()=>{
+        let searchInput=searchBar.value;
+        const searchedSongData=linearSearch(searchInput);
+        if( searchedSongData!=-1){
+        //    createSongItem(searchedSongData);
+        //    if(!isSongPresent(songList,searchedSongData[0]))
+        //    {
+        //        console.log("Song was Not present in the list so it was added to List")   
+            //    songList.push(searchedSongData);
+        //        addSongItemsToPlaylist();
+        //     }
+        //    console.log("Created song item")
+           currIndex=songList.length-1;
+            playCurrIndex(currIndex);
+        }
+    })
 
 //////////////////////////////////////////JS fOR  Html CSS or some Utility work function///////////////////////////
 // Opening the new Add song window when click on the plus icon
@@ -322,3 +368,59 @@ function otherChangesOnPlay(){
             autoplaying=true;
         }
     })
+
+    // const filterButton=document.getElementsByClassName("filterButton")[0];
+    // filterButton.addEventListener('click' ,() =>{
+        //  filterButton.style.backgroundColor ="red"
+        //  const newSongList=songList.filter((currvalue)=>{
+        //     if(currvalue.singer =='Badshah') {return true;}
+        //  })
+        //  console.log( newSongList) 
+        //      addSongItemsToPlaylist(newSongList);
+        
+        // })   // updating Soon
+/// Basic functionality for home screen
+// window.addEventListener('keypress')
+window.addEventListener('keydown' ,(e) =>{
+    console.log(e)
+    if(e.key == 'k' || e.key==' ' ){
+        if(songPlaying){
+            newSong.pause();
+            songPlaying=false;
+            otherChangesOnPlay();
+            changePpButton();
+        }
+        else if(songPlaying==false && playingIndex==-1){
+            playCurrIndex(0);
+        }
+        else{
+            playCurrIndex(currIndex)
+        }
+    }
+    if(e.key == 'l'){
+            const n=songList.length-1;
+            if( currIndex != n && playingIndex!=n){
+                currIndex +=1;
+                playCurrIndex(currIndex)
+            }
+    }
+    if(e.key == 'j'){
+            if( currIndex != 0 && playingIndex!=-1){
+                currIndex -=1;
+                playCurrIndex(currIndex)
+            }
+    }
+    if(e.key == 'ArrowRight' && songPlaying){
+            const newTime=newSong.currentTime + 10;
+            newSong.currentTime=newTime;
+    }
+    if(e.key == 'ArrowLeft' && songPlaying){
+            const newTime=newSong.currentTime - 10;
+            newSong.currentTime=newTime;   
+    }
+
+
+
+
+
+})
