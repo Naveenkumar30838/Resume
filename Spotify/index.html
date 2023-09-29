@@ -39,6 +39,7 @@
         <div class="playList_container flex">
 
             <div class="playlist_box">
+                <!-- <div class="filterButton pointer"><h4>Badshah</h4></div> -->
                 <h1>My PlayList</h1>
                 <div class="playlist flex">
 
@@ -68,12 +69,14 @@
     </div>
     <!-- Main Body ends Here -->
     <div class="bottom-container flex">
-
+        <div class="seek_bar"><input type="range" name="" id="seekbarInput" class="pointer"></div>
+        
+        <div class="player-container flex">
+            <!-- Part 1 -->
         <div class="music-pl-Anime">
             <img src="Assets/playMusicgif.gif" alt="">
         </div>
-
-        <div class="seek_bar"><input type="range" name="" id="seekbarInput" class="pointer"></div>
+            <!-- Part 2 -->
         <div class="seek_bar_icons flex">
             <abbr title="10 sec Back"><i class="fa-solid fa-backward  pointer skipIcon" id="skipBack"></i></abbr>
             <i class="fa-solid fa-backward-step pointer" id="previous"></i>
@@ -81,10 +84,14 @@
             <i class="fa-solid fa-forward-step pointer " id="next"></i>
             <abbr title="10 sec Forward"><i class="fa-solid fa-forward  pointer skipIcon" id="skipFor"></i></abbr>
             <div class="flex">
-            <p id="timepassed">00:00</p>
-            <span style="font-size: 0.8rem;">/</span>
-            <p id="totaltime">00:00</p>
+                <p id="timepassed">00:00</p>
+                <span style="font-size: 0.8rem;">/</span>
+                <p id="totaltime">00:00</p>
             </div>
+        </div>
+            <!-- part3  -->
+        <div class="currsongname" id="currsongname">
+           <p>play Some Song</p>
         </div>
     </div>
     <!-- Bottom Section ends Here -->
