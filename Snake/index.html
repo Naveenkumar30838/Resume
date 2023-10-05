@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b842128030.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="board" id="board"></div>
+    </div>
+    <div class="settings" id="settings"><i class="fa-solid fa-gear"></i></div>
+    <!-- showing a score box -->
+
+    <div class="scorebox" id="scorebox" > 
+         <div class="alongLine">
+             <p >Level : </p>
+             <div class="level" id="level">1</div>
+         </div>
+         <div class="alongLine">
+             <p >Score : </p>
+             <div class="score" id="score">0</div>
+         </div>
+         <div class="alongLine">
+             <p >Max Score : </p>
+             <div class="maxScore" id="maxScore">0</div>
+         </div>
+   </div>
+   <div class="buttons-container">
+       <div id="top" class="top"><i class="fa-solid fa-angle-up"></i></div>
+       <div id="left" class="left"><i class="fa-solid fa-angle-left"></i></div>
+       <div id="right" class="right"><i class="fa-solid fa-angle-right"></i></div>
+       <div id="bottom" class="bottom"><i class="fa-solid fa-angle-down"></i></div>
+    
+   </div>
+   
+    <script src="script.js"></script>
+</body>
+</html>

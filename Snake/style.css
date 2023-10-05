@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(./snake.jpg);
+    background-size: 100vw 100vh;
+    background-blend-mode: overlay;
+    background-color: green;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+.disappear{
+    display: none!important;;
+    border: 2px solid black;
+    
+}
+.container{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    
+} 
+.board{
+    width: 50%;
+    height:90%;
+    align-self: center;
+    background-color: #0077ffba;
+    display: grid;
+    grid-template-columns: repeat(18  , 1fr);
+    grid-template-rows: repeat(18 , 1fr);
+    /* border: 1px solid rgba(0, 0, 0, 0.283); */
+    box-shadow: 0px 0px 3px black;
+    backdrop-filter: blur(3px);
+}
+.food{
+    background:radial-gradient(#ffd000 , red , #ffd000);
+    box-shadow: 0px 0px 1px black;
+    border-radius: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.head{
+    background-color: red;
+    backdrop-filter: blur(10px);
+    padding: 4px;
+}
+.body{
+    backdrop-filter: blur(10px);
+    background-color: pink;
+    }
+.alongLine{
+    display: flex;
+
+}
+.scorebox{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    max-height: 100px;
+    max-width: 30%;
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1px;
+}
+.scorebox div{
+    background-color: #c6dcfd;
+    margin: 2px;
+    padding: 0px 4px;
+}
+.settings{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+/* buttons for mobile display */
+.buttons-container{
+    position: absolute;
+    width: 67px;
+    --height:65px;
+    height: var(--height);
+    bottom: 10px;
+    left: 40%;
+    display: none;
+}
+.buttons-container div{
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0000007b;
+    cursor: pointer;
+    position: absolute;
+}
+.buttons-container div:active{
+    color: black;
+}
+#top{
+   top: 0px;
+   left:calc((var(--height)) / 2.7);
+}
+#left{
+    left: 0px;
+     top: calc((var(--height)) / 2.7);
+}
+#right{
+    right: 0;
+    top:calc((var(--height)) / 2.7);
+}
+#bottom{
+    left: calc((var(--height)) / 2.7);
+    bottom: 0px;
+}
+@media screen and (width<=830px) {
+    .board{
+        width: 80%;
+        height: 70%;
+    }
+    .settings{
+        display: block;
+    }
+    .scorebox{
+         right: none;
+         bottom: -200px;
+    }
+
+}
+@media screen and (width<750px) {
+    .buttons-container{
+        display: block;
+    }
+    
+}
+
+@media screen and (width<=500px) {
+    .board{
+        margin-top: 20px;
+        width: 90%;
+        height: 50%;
+    }
+    .container{
+        
+        align-items: flex-end;
+    }
+    .scorebox{
+        padding: 4px;
+        max-width: 50%;
+    }
+}
