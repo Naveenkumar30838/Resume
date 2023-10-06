@@ -11,8 +11,8 @@
     <link rel="shortcut icon" href="favicon.ico">
 </head>
 
-<body id="body"  oncontextmenu="return false;" >
-   
+<body id="body"  >
+    <!-- oncontextmenu="retu rn false;"  -->
     <div class="top-container">
     <div class="banner">
         <p> <a href="https://www.linkedin.com/in/naveen-kumar-7a4566223/">Don't forget to connect with me on linked in</a>  🎉</p>
@@ -23,9 +23,9 @@
              <div class="topnav_content flex" id="topnav_content">
                 <div class="topnav_div" ><a class="topnav_div_a" href="#">Home</a> </div>
              <div class="topnav_div" ><a class="topnav_div_a" href="#projects">Project</a></div>
+             <div class="topnav_div" ><a class="topnav_div_a" href="Spotify/index.html">Music Player</a></div>
              <div class="topnav_div" ><a class="topnav_div_a" href="#footer">connect</a></div>
-             <div class="topnav_div " ><a class="topnav_div_a" href="Spotify/index.html">Music Player</a></div>
-             <div class="topnav_div " ><a class="topnav_div_a" href="Snake/index.html">Latest Project</a></div>
+             <div class="topnav_div " ><a class="topnav_div_a" href="/Snake/index.html">Latest Project</a></div>
              <div class="topnav_div pointer" id="yellow_mode_button"><a class="topnav_div_a" > <abbr title="High contrast / yellow "><i class="fa-regular fa-eye"></i></abbr></a></div>
              <div class="topnav_div pointer" id="dark_mode_button"><a class="topnav_div_a" > <abbr title="Dark/light"><i class="fa-solid fa-circle-half-stroke"></i></abbr></a></div>
 
@@ -38,14 +38,15 @@
     </div>
     </nav>
     </div>
+
     <!-- header starts -->
     <header class="header container flex">
         <div class="header-content">
         <h1 >Hi , There I'm NAVEEN <span>KUMAR </span></h1>
-         <h2>Front End Developer</h2>
+         <h2>Software Developer</h2>
     </div>
-    <div class="header-image">
-            <img src="images/photo_2023-07-28_00-47-09.jpg" alt="">
+    <div class="header-image pointer">
+            <img id="header_image_img" src="images/Naveen_1.jpg" alt="">
         </div>
        </header>
 
@@ -57,29 +58,33 @@
             <div class="about backgound-design container" id="#About">
                 <h2> <i class="fa-solid fa-user"></i> About <span>Me</span></h2>
                 <div class="about-container flex">
-                    <div class="about-image header-image"><img src="images/profile-pic (2).png" alt=""></div>
+                    <div class="about-image header-image">
+                        <img src="images/profile-pic (2).png" alt="">
+                    </div>
                 
                 <div class="about-content">
-                    <h3 >Hi , I'm Naveen Kumar</h3>
-                    <p>
-                    I am fronted web developer and a determined tech enthusiast . Currently I am Learning  Data Structure and Algorithms in java and Web Development skills 
-                    <br> 
-                    Currently i am in my graduation final year .I passed my 10 <sup>th</sup> and 12 <sup>th </sup> with 92% grades 
+                    <p> <h3>Hi! 👋 </h3>
+                    My Name is Naveen Kumar, and I am a Student of Indira Gandhi University in Rewari, Haryana, India. I'm currently in my final year of a three-year bachelor's degree program.</p>
                     <br>
-                    With  multitude of projects spanning various domains , I consistently pushes myself to do something new everyday and learn something new everyday
-                    </p>
+                    <br>
+                    <p> 
+                        Over the past year, I've been exploring various <a href="#skills">technologies </a></a>, including frontend development with HTML, CSS, JavaScript, and React. I've even had the opportunity to work on some exciting <a href="#projects">projects</a>. Presently, I'm sharpening my skills in Data Structures and Algorithms (DSA) using Java.
+                     </p>   
+                    <p><h3></h3> Looking ahead, my goal for next year is to enroll in an MCA (Master of Computer Applications) course, and I'm actively preparing for it. 📚💻"</p>
                     </div>
+                  
+
                 </div>
             </div>
           <section >
-          <div class="skills container">
+          <div class="skills container" id="skills">
                <h2> <i class="fa-solid fa-laptop-code"></i> Skills & Abilities </h2>
                <div class="flex">
                    <div>Java </div>
                    <div>DSA </div>
                    <div>Html</div>
                    <div>Css</div>
-                   <div>Python</div>
+                   <div>React</div>
                    <div>JavaScript</div>
                    <div>Git and Github</div>
                    <div>Video editing</div>
@@ -91,13 +96,11 @@
             <div><h2>Projects</h2></div>
             <div class="projects_outrdiv flex">
                 <div class="project_innerdiv" id="project_innerdiv" >
-                    <!-- <img src="images/usability_hub_clone.png" alt="usability_hub_images"> -->
                     <div class="project_innerdiv_content" id="project_innerdiv_content">
                         <h4>Usability Hub Clone</h4>
                        <div class="project_innerdiv_content_para_button flex"> <p>Here is a clone of usability hub named website.It designed when i was learning about media queries</p>
                        <button> <a class="projects_link" href="https://naveenkumar30838.github.io/Resume/11.full_website/index.html"><p>Visit Site</p></a></button>
                        <button> <a class="projects_link" href="https://github.com/Naveenkumar30838/Resume/blob/6c584f932c363e5bb168ccda6d17f0b3602b8c8d/11.full_website/index.html"><p>View Code</p></a></button>
-                  
                        </div>
                     </div>
                 </div>
@@ -108,7 +111,6 @@
                        <div class="project_innerdiv_content_para_button flex"> <p>Here is clone of Amazon.com Designed by me for learning purpose </p>
                        <button> <a class="projects_link" href="https://naveenkumar30838.github.io/Resume/Amazon.co/index.html"><p>Visit Site</p></a></button>
                        <button> <a class="projects_link" href="https://github.com/Naveenkumar30838/Resume/tree/6c584f932c363e5bb168ccda6d17f0b3602b8c8d/Amazon.co"><p>View Code</p></a></button>
-                  
                        </div>
                     </div>
                 </div>
@@ -118,7 +120,6 @@
                        <div class="project_innerdiv_content_para_button flex"> <p>This is the project which you  are watching  live i.e My resume project  , I created it Just for You  </p>
                        <button> <a class="projects_link" href="#"><p>Visit Site</p></a></button>
                        <button> <a class="projects_link" href="https://github.com/Naveenkumar30838/Resume/blob/6c584f932c363e5bb168ccda6d17f0b3602b8c8d/index.html"><p>View Code</p></a></button>
-                  
                        </div>
                     </div>
                 </div>
@@ -170,7 +171,21 @@
             </a>
         </aside>
     </aside>
-   
+     <!-- Prefooter Section ( css at 596)  -->
+    <div class="pre-footer" id="prefooter">
+        <div class="pre-footer-in flex">
+            <div class="prefooter-content flex">
+                <div class="pre-ftr-box pointer flex">Manjeera</div>
+                <div class="pre-ftr-box pointer flex">Calculator</div>
+                <div class="pre-ftr-box pointer flex">Snake</div>
+            </div>
+            <div class="prefooter-content2 flex">
+                <li><a href="https://www.hackerrank.com/naveenkumar30838?hr_r=1">My HackerRank</a></li>
+                <li><a href="https://leetcode.com/naveenkumar30838/">My Leetcode</a></li>
+                <li><a href="https://auth.geeksforgeeks.org/user/naveenkumar30838">My GFG</a></li>
+            </div>
+        </div>
+    </div>
      <!-- here is a main footer -->
      <footer class="footer" id="footer">
         <!-- main outer div -->
@@ -194,14 +209,15 @@
                                  <ul>
                                    <li><a target="_blank" href="https://github.com/Naveenkumar30838" class="footer_links"> <i class="fa-brands fa-github"></i> My Github</a></li>
                                    <li><a target="_blank" href="https://www.linkedin.com/in/naveen-kumar-7a4566223/" class="footer_links"> <i class="fa-brands fa-linkedin"></i> My LinkedIn</a></li>
+                                   <li><a target="_blank" href="https://clubs.internshala.com/member/naveenkumar94/?source=header_desktop" class="footer_links"> <i class="fa-brands fa-telegram"></i> On InternShala</a></li>
                                    <li><a href="mailto:naveenkumar30838a2gmail.com" class="footer_links"><i  class="fa-solid fa-envelope"></i> Mail</a></li>
                                  </ul>
                             </div>
                             <div class="ftd_innerdiv">
                                 <h4><span class="footer_headings" id="#connect">Quick links </span> </h4>
                                  <ul>
-                                   <li><a  href="https://github.com/Naveenkumar30838" class="footer_links"><i class="fa-solid fa-circle-chevron-right"></i> Home</a></li>
-                                   <li><a  href="#project" class="footer_links"> <i class="fa-solid fa-circle-chevron-right"></i> projects</a></li>
+                                   <li><a  href="#" class="footer_links"><i class="fa-solid fa-circle-chevron-right"></i> Home</a></li>
+                                   <li><a  href="#prefooter" class="footer_links"> <i class="fa-solid fa-circle-chevron-right"></i> projects</a></li>
                                    <li><a  href="#" class="footer_links"> <i class="fa-solid fa-circle-chevron-right"></i> To Top</a></li>
                                  </ul>
                             </div>
@@ -234,9 +250,16 @@
 
 
 
-
-                   <script src="script.js"></script>
-                    <script src="https://kit.fontawesome.com/b842128030.js" crossorigin="anonymous"></script>
+                <!-- Footer has ended Here -->
+                <script src="script.js"></script>
+                <script src="https://kit.fontawesome.com/b842128030.js" crossorigin="anonymous"></script>
                     
+                <!-- Here is the code for the pop up screen -->\
+                <!-- <div style="display: none;" class="lpc_final"></div>
+                <div class="late-project-container flex" id="lpc">
+                    <div class="late-project-content" id="lpcc">
+                        <a href="" ><button id="lpc-button">Click me >> </button></a>
+                    </div>
+                </div> -->
 </body>
 </html>
