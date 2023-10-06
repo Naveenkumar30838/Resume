@@ -150,21 +150,19 @@
 
 .topnavouterdiv{
     background: linear-gradient(to bottom ,var(--light-background), var(--light-background)) ;
-      border-radius:0px 0px 3px 3px;
+    border-radius:0px 0px 3px 3px;
     animation: nav-anime 0.8s;
-    padding: 5px;
+    padding: 2px 5px;
     border-top: 0.002rem solid var(--white-text);
     gap: var(--default-padding);
     width: 100%;
     align-items: center;
     backdrop-filter: blur(5px);
     box-shadow: 0px 1px 5px var(--text-black);
-    /* transition:all 1s ease-in-out; */
 }
 .topnav_content{
     column-gap: 40px;
 }
-
 .topnav_div_img img{
     border-radius: 70px;
     width: 40px;
@@ -179,10 +177,8 @@
     font-family: 'Roboto', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: var(--text-black);
     box-shadow: 1px 1px 3px #2525b981;
-    padding: 7px;
-    /* backdrop-filter: blur(5px); */
-    transition: 2s ease-in all;
-    
+    padding: 4px 6px;
+    transition: 1s ease-in all;
 }
 .topnav_div_a:hover{
     padding: 5.9px;
@@ -231,7 +227,8 @@
     
 }
 .header-image img{
-    width: 60%;
+    max-width: 60%;
+    max-height: 800px;
     border-radius: 200%;
     object-fit: 100px 100px;
 }
@@ -261,22 +258,19 @@ p {
     font-weight: bold;
     color: var(--text-black);
     font-family: var(--primary-font);
-    background:linear-gradient(to top ,#ff0000 ,#ff00003a);
+    background:linear-gradient(to top ,red, yellow , white);
     transition: 1s cubic-bezier(1, 5 ,1 ,5) all; 
 }
 .skills div  div:hover{
     transform: translateY(-2px);
-    box-shadow: 0px 1px 5px var(--default-shadow-color);
+    box-shadow: 2px 2px 3px var(--default-shadow-color);
 }
 
 /* containers styling starts from here */
 
 
 .about{ 
-       padding: 40px;
-        }
-.about-container{
-    padding-block: var(--default-padding);
+       padding:20px 40px;
 }
 .about h2{
     text-align: center;
@@ -293,9 +287,12 @@ p {
     width: 50%;
     text-align: start;
     font-size: 1.13rem;
-    /* border: 2px solid red; */
     padding: var(--default-padding);
-
+    font-family: var(--secondary-font);
+}
+.about-content p{
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 /* here is the projects section style  */
 .projects{
@@ -321,11 +318,11 @@ p {
 }
 .project_innerdiv{
     box-shadow: 0px 0px 4px var(--white-text);
+    transform: translateY(20px); 
+    transition: opacity 1s , transform 0.7s;
     overflow: hidden;
     width:100% ;
     height: 250px;
-    /* overflow: hidden; */
-    position: relative;
     z-index: 4;
     border-radius: 4px;
     position: relative;
@@ -402,7 +399,7 @@ p {
     animation: popup 1s both;
     animation-delay: 1s;
     position: fixed;
-    z-index: 119;
+    z-index: 29;
     bottom: 20px;
     left:20px;
     border-radius: 5px;
@@ -581,8 +578,77 @@ p {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
 }
+/* Prefooter Styling start Here  */
+.pre-footer{
+    overflow: hidden;
+    max-width: 100vw;
+    height: 90vh;
+    transition: 1s background-blend-mode ;
+    background-image: url(images/bulb.jpg);
+    background-size: cover;
+    background-position:center;
+    background-color: black;
+    animation: prefooter-anime 8s infinite;
+}   
+.pre-footer-in{
+    justify-content: space-between;
+    padding-inline: 30px;
+    height: 80vh;
+    align-items: center;
+}
+.prefooter-content{
+    flex-direction: column;
+    row-gap: 30px;
+}
+.pre-ftr-box{
+    justify-content: center;
+    align-items: flex-end;
+    color: var(--yellow-color);
+    text-shadow: 0px 0px 5px black;
+    font-size: 1.3rem;
+    width: 150px;
+    height: 100px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px white;
+    background-size: cover;
+    background-position: center;
+    transition: scale 0.2s;
+}
+.pre-ftr-box:hover{
+    scale: 1.05;
+    box-shadow: 0px 0px 10px white;
+}
+.pre-ftr-box:nth-child(1){
+    background-image: url(images/manjeera_snip.jpg);
+}
+.pre-ftr-box:nth-child(2){
+    background-image: url(images/calculator_image.jpg);
+}
+.pre-ftr-box:nth-child(3){
+    background-image: url(images/snake_game_snipe.jpg);
+}
+ /* prefooter content 2 */
+.prefooter-content2{
+    flex-direction: column;
+    row-gap: 10px;
+}
+.prefooter-content2 li{
+    border-top: 2px solid white;
+    justify-self: center;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: rgb(97, 97, 240);
+    transition: transform 0.4s;
+ }
+ .prefooter-content2 li:hover{
+    transform: rotateX(20deg) rotateY(20deg)  ;
+    perspective: 400px;
+    transform-style: preserve-3d;
+ }
+ .prefooter-content2 li a{
+    color: var(--yellow-color);
+ }
 /* footer styling starts here *//*/////////////////////////////////////////////////////////*/
 .footer{
     background-color: var(--footer-background-color);
@@ -590,12 +656,10 @@ p {
     overflow: hidden;
     padding-bottom: 10px;
 }
-
 .ftrmaindiv{
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    
+    gap: 30px;  
 }
 .ftrtopdiv{
    display: flex;
@@ -696,4 +760,33 @@ font-size: 1.055em;
 }
 .footer a:hover{
     color: var(--yellow-color);
+}
+/* code for the latest project file */
+.late-project-container{
+    position: fixed;
+    /* display: none; */
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 255, 0.516);
+    backdrop-filter: blur(4px);
+    top: 0;
+    bottom: 0;
+    z-index: 1001;
+}
+.lpc_final{
+    position: fixed;
+    display: none;
+} 
+.late-project-content{
+    background-color: rgba(0, 0, 255, 0.607);
+   padding: 150px;
+   border: 2px;
+   backdrop-filter: blur(3px);
+    
+}
+.late-project-content button{
+    font-size: 1.3rem;
+    padding: 10px;
+    border-radius: 2px;
+    border: none;
 }
