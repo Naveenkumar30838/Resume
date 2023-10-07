@@ -9,9 +9,10 @@ function isValid(songName, songLocation,songduration){
    return true;
 }
 
-// const myForm=document.getElementById('myForm');
+const myForm=document.getElementById('myForm');
 // console.log(myForm)
-// myForm.addEventListener('submit' ,(event) => {
+myForm.addEventListener('submit' ,(event) => {
+    window.aler("it will be updated Soon");
 //     event.preventDefault();
 //     const songName=document.getElementById("Name").value;
 //     const songLocation=document.getElementById("location").value;
@@ -26,7 +27,7 @@ function isValid(songName, songLocation,songduration){
 //         addSongToPlayList(songName,songLocation,songlength);
 //     }
 
-//    }
+   }
 // )
 // function to add song to the playlist
 // function addSongToPlayList(songName,songLocation,songlength){
