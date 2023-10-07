@@ -1,9 +1,8 @@
-import {orgsongListFun as copiedList } from './ValidForm/vscript.js'
+
 import {allSongs as allSongsList } from './playbase.js';
 const songBase=allSongsList();
 
-const  songList=copiedList();
-// console.log(songList)
+// console.log(songBase)
 
 //  ****************Basic Presets and Utility Functions 😀😀**********************************
 const MasterPlay=document.getElementById('seek_bar_plpause')
@@ -11,6 +10,7 @@ const MusicAnime=document.getElementsByClassName('music-pl-Anime')[0];
 const SongItemList=document.getElementsByClassName('song_item');
 const seekbar=document.getElementById('seekbarInput');
 const currsongname=document.getElementById('currsongname')
+const thumb=document.getElementsByClassName('song_thumbnail');
 let currIndex=0;
 let prevPlayIndex=-1;
 let playingIndex=-1;
@@ -34,6 +34,7 @@ function createSongItem(songData) {
     songItem.appendChild(songThumbnail);
 
     const songName = document.createElement("div");
+
     songName.className = "song_name pointer";
     songName.textContent = songData.name;
     songItem.appendChild(songName);
@@ -60,19 +61,18 @@ function createSongItem(songData) {
 function addSongItemsToPlaylist(list) {
     const playlist = document.getElementsByClassName("playlist");
     playlist.innerHTML=null;
-    // Loop through the songList and create song items
+    // Loop through the songBase and create song items
     list.forEach(songData => {
         const songItem = createSongItem(songData);
         playlist[0].appendChild(songItem);
     });
 }
 // Loading Playlist data
-window.addEventListener("load", addSongItemsToPlaylist(songList));
+window.addEventListener("load", addSongItemsToPlaylist(songBase));
 // *******************************Above was code to load playList when window Load ********************
 // *******************************Handling play pause and other when song play pause ↓↓↓↓↓↓↓↓↓↓↓↓↓↓********************
 function playCurrIndex(currIndex){
     if(songPlaying && currIndex==playingIndex){// clicked on same song
-        // currTime=newSong.currTime;
         newSong.pause(); 
         songPlaying=false; 
         playingIndex=currIndex;
@@ -84,22 +84,22 @@ function playCurrIndex(currIndex){
         // currTime=0;
         ppButtonList[playingIndex -1+2].classList.remove('fa-pause-circle')
         ppButtonList[playingIndex -1+2].classList.add('fa-play-circle')
-        nextSong =new Audio(songList[currIndex].src)
+        nextSong =new Audio(songBase[currIndex].src)
         playingIndex=currIndex;
         songPlaying=true;
         newSong.pause();
         nextSong.play();
         nextSong.currTime=currTime;
         newSong=nextSong;
-        currsongname.innerHTML=`<p>${songList[currIndex].name}</p>`;
+        currsongname.innerHTML=`<p>${songBase[currIndex].name}</p>`;
     } 
     else {
-        newSong =new Audio(songList[currIndex].src)
+        newSong =new Audio(songBase[currIndex].src)
         newSong.currentTime=currTime;
         playingIndex=currIndex;
         songPlaying=true;
         newSong.play();
-        currsongname.innerHTML=`<p>${songList[currIndex].name}</p>`;
+        currsongname.innerHTML=`<p>${songBase[currIndex].name}</p>`;
         
     }
     changePpButton();
@@ -181,7 +181,7 @@ function otherChangesOnPlay(){
         }
     })
     next.addEventListener('click',()=>{ // go to next
-        const n=songList.length-1;
+        const n=songBase.length-1;
         if( currIndex != n && playingIndex!=n){
             currIndex +=1;
             playCurrIndex(currIndex)
@@ -234,13 +234,13 @@ function otherChangesOnPlay(){
                            ////////////////1. Autoplay ////////////////////////////////////////////////
      function autoplay(){
         if(songPlaying ){ newSong.addEventListener('ended' ,() =>{
-               if(playingIndex !=songList.length-1){
+               if(playingIndex !=songBase.length-1){
                     currIndex +=1;
                     playCurrIndex(currIndex);
                     otherChangesOnPlay();
                     changePpButton();
                }
-               if(playingIndex==songList.length -1){
+               if(playingIndex==songBase.length -1){
                 currIndex=0;
                 playCurrIndex(currIndex);
                 otherChangesOnPlay();
@@ -288,61 +288,30 @@ function otherChangesOnPlay(){
         const currsongnameP=currsongname.querySelector('p');
         if(songPlaying==true){
             currsongnameP.style.animation=' songnameAnime 3s cubic-bezier(0.63, 0.63, 0.41, 1.35)'
-            console.log("added")
         }
     }
 
 /////////////////////////////////////////////For Search Bar///////////////////////////////
     const searchBar=document.getElementById('searchBar');
-    // searchBar.addEventListener('keyup' ,()=>{
-    //     let searchInput=searchBar.value;
-    //     if(linearSearch(searchInput) !=-1){
-    //         currIndex=linearSearch(searchInput);
-    //         playCurrIndex(currIndex);
-    //     }
-    // })
-    // function linearSearch(input){
-    //     for(let i=0;i<songList.length;i++){
-    //         if(songList[i][0] == input){
-    //             return i;
-    //         }
-    //     }
-    //     return -1;
-    // }
-    // New code for Search bar
     function linearSearch(input){
         for(let i=0;i<songBase.length;i++){
-            if(songBase[i][0].toLowerCase() == input.toLowerCase()){
-                return [songBase[i][0],  songBase[i][1], songBase[i][2]]
+            if(songBase[i].name.toLowerCase() == input.toLowerCase()){
+                return i;
             }
         }
         return -1;
-    } 
-    // function isSongPresent(songList , input){
-    //     for(let i=0;i<songList.length;i++){
-    //         if(songList[i].name.toLowerCase() == input.toLowerCase()){
-    //             console.log('song is present ')  
-    //             console.log(songList[i][0])
-    //             return true;  
-    //         }
-    //     }
-    //     return false;
-    // }
-    searchBar.addEventListener('keyup' ,()=>{
+    }
+    searchBar.addEventListener('keyup' ,(e)=>{
         let searchInput=searchBar.value;
+       
         const searchedSongData=linearSearch(searchInput);
-        if( searchedSongData!=-1){
-        //    createSongItem(searchedSongData);
-        //    if(!isSongPresent(songList,searchedSongData[0]))
-        //    {
-        //        console.log("Song was Not present in the list so it was added to List")   
-            //    songList.push(searchedSongData);
-        //        addSongItemsToPlaylist();
-        //     }
-        //    console.log("Created song item")
-           currIndex=songList.length-1;
+        if( searchedSongData!=-1 ){
+            currIndex=searchedSongData;
+            playingIndex=searchedSongData;
+            currTime=0;
             playCurrIndex(currIndex);
         }
+        
     })
 
 //////////////////////////////////////////JS fOR  Html CSS or some Utility work function///////////////////////////
@@ -372,17 +341,18 @@ function otherChangesOnPlay(){
     // const filterButton=document.getElementsByClassName("filterButton")[0];
     // filterButton.addEventListener('click' ,() =>{
         //  filterButton.style.backgroundColor ="red"
-        //  const newSongList=songList.filter((currvalue)=>{
+        //  const newsongBase=songBase.filter((currvalue)=>{
         //     if(currvalue.singer =='Badshah') {return true;}
         //  })
-        //  console.log( newSongList) 
-        //      addSongItemsToPlaylist(newSongList);
+        //  console.log( newsongBase) 
+        //      addSongItemsToPlaylist(newsongBase);
         
         // })   // updating Soon
 /// Basic functionality for home screen
 // window.addEventListener('keypress')
 window.addEventListener('keydown' ,(e) =>{
-    console.log(e)
+    const activeElement =document.activeElement;
+    if(activeElement.tagName=='INPUT' ){return;}
     if(e.key == 'k' || e.key==' ' ){
         if(songPlaying){
             newSong.pause();
@@ -398,7 +368,7 @@ window.addEventListener('keydown' ,(e) =>{
         }
     }
     if(e.key == 'l'){
-            const n=songList.length-1;
+            const n=songBase.length-1;
             if( currIndex != n && playingIndex!=n){
                 currIndex +=1;
                 playCurrIndex(currIndex)
