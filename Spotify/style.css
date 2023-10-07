@@ -50,9 +50,11 @@ li{
     padding: 13px 15px;
     justify-content: space-between;
     align-items: center;
+
 }
 .banner{
-    min-width:80%;
+    max-width:80%;
+    min-width: 50%;
     justify-content: flex-start;
     column-gap: 20px;
     align-items: center;
@@ -72,13 +74,14 @@ li{
     cursor: pointer;
 }
 #searchBar{
-    width: 30%;
+    width: 40%;
     border-radius: 5px;
     padding: 4px 8px;
     font-size: 1.1rem;
     font-weight: 100;
     font-family: var(--ubuntu);
 }
+
 .ellipsis{
    font-size: 1.2rem; 
    font-weight: 500;
@@ -335,14 +338,20 @@ li{
     }
 }
 @media screen and (width<=600px) {
-    .banner{
-        min-width: 90%;
+    .banner-container{
         justify-content: space-between;
+        padding: 5px 7px 4px 1px;
+        z-index: 1000;
+    }
+    .banner{
+        max-width: 90%;
+        justify-content: space-between;
+        align-items: baseline;
         column-gap: 5px;
         font-size: 0.9rem;
     }
     #searchBar{
-        width: 34%;
+        width: 54%;
         padding: 4px 1px;
         font-size: 1rem;
         
