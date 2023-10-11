@@ -11,6 +11,9 @@
 ::-webkit-scrollbar{
     display: none;
 }
+::selection {
+    background-color: transparent; /* Change the background color */
+  }
 body {
     background-color: palegoldenrod;
     font-family: var(--varela-round);
@@ -88,23 +91,26 @@ li{
 
 }
 .MoreFeature{
-    flex-direction: vertical;
+    flex-direction: column;
     position: absolute;
     right: 20px;
     top: 45px;
+    row-gap: 5px;
     background-color: black;
     padding: 8px 10px;
     border-radius: 4px ;
     box-shadow: 0px 0px 2px white;
     font-family: sans-serif;
     font-size: 1rem;
+    z-index: 10002;
 }
 .MoreFeature li{
+    font-size: 1.1rem;
     column-gap: 8px;
     align-items: center;
-
+    justify-content: space-between;
 }
-.autoplay-icon{
+.autoplay-icon ,.loop-icon{
     font-size: 1.5rem;
     color: yellow;
 }
@@ -114,18 +120,15 @@ li{
     left: 0;
     right: 0;
     width: 100vw;
-    height:100vh;
-
+  height:100vh;
 }
-
 .content{
     background-blend-mode:luminosity;
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-size: 500px 100%;
-    background:linear-gradient(to bottom ,#ffca00 ,#fec901 ,#fdc300,#d9a200);
-    
+    background:linear-gradient(to bottom ,#ffca00 ,#fec901 ,#fdc300,#d9a200);  
     border-radius: 5px;
     box-shadow: 0px 0px 5px #212121;
 }
@@ -137,23 +140,14 @@ li{
     background-position: right;
     background-size: auto 100%;
     background-repeat: no-repeat;
-    /* border: 2px solid red; */
 }
 
 .playList_container{
-    /* border: 2px solid red; */
     padding: 20px;
     width: 60%;
-    /* box-shadow: 0px 0px 5px black; */
-    
     justify-content: center;
 }
-.filterButton{
-    background-color: black;
-    width: fit-content;
-    padding: 5px;
-    border-radius: 20px;
-}
+
 .playlist_box{
     color: white;
     overflow: auto;
@@ -163,13 +157,33 @@ li{
     border-radius: 10px;
     padding: 30px 50px;
     box-shadow: 0px 0px 10px #0000007d;
-    /* backdrop-filter: blur(10px); */
 }
 .playlist_box h1{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-shadow: 0px 0px 5px yellow , 0px 0px 10px red;
 }
+.sortList{
+    justify-content: space-around;
+    position: sticky;
+    top: -30px;
+    backdrop-filter: blur(9px);
+    padding-block: 4px;
+    border-radius: 3px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius:20px;
+    overflow: auto;
+}
+.whiteback{
+    background-color: #fff;
+}
+.sortList div{
+    border: 1px solid rgb(203, 146, 0);
+    border-radius: 4px;
+    padding: 5px 7px;
+    color: #212121;
+}
 .playlist {
+    margin-top: 10px;
     flex-direction: column;
     row-gap: 10px;
 }
@@ -399,6 +413,13 @@ li{
         flex-wrap: wrap-reverse;
         row-gap: 2px;
         justify-content: center;
+    }
+    .sortList{
+        column-gap: 6px;
+        border-radius: 2px;
+    }
+    .sortList div{
+        padding: 3px 5px;
     }
 }
 @keyframes borderAnime {
