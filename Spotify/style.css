@@ -401,6 +401,9 @@ li{
     .music-pl-Anime img{
         display: none;
     }
+     .sortList{
+        top: -10px;
+    }
 }
 @media screen and (width<=420px) {
     .bottom-container{
