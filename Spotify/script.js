@@ -1,25 +1,33 @@
-
 import {allSongs as allSongsList } from './playbase.js';
-const songBase=allSongsList();
-
-// console.log(songBase)
-
+let songBase=allSongsList();
 //  ****************Basic Presets and Utility Functions 😀😀**********************************
 const MasterPlay=document.getElementById('seek_bar_plpause')
 const MusicAnime=document.getElementsByClassName('music-pl-Anime')[0];
 const SongItemList=document.getElementsByClassName('song_item');
 const seekbar=document.getElementById('seekbarInput');
 const currsongname=document.getElementById('currsongname')
-const thumb=document.getElementsByClassName('song_thumbnail');
+const plusIcon=document.getElementById('plus_circle')
+const autoplaytoggle=document.getElementById('autoplay-toggle')
+const looptoggle=document.getElementById('loop-toggle')
+const ellipsis=document.getElementById('ellipsis')
+const moreFeature=document.getElementById('MoreFeature')
+const punjabi= document.getElementById('punjabi')
+const all= document.getElementById('all')
+const Bollywood= document.getElementById('Bollywood')
+const jubin= document.getElementById('jubin')
+const lofi= document.getElementById('lofi')
+
 let currIndex=0;
 let prevPlayIndex=-1;
 let playingIndex=-1;
 let songPlaying=false;
 let autoplaying=true;
+let looping=true;
 let newSong;
 let nextSong;
 let currTime=0;
 seekbar.value='0';
+let currlist=songBase;
 
 // ***********************Utiltiy Function ends Here *******************************************
 // Adding song element to the list when window loads
@@ -59,19 +67,28 @@ function createSongItem(songData) {
 
 // to add song items to the playlist
 function addSongItemsToPlaylist(list) {
-    const playlist = document.getElementsByClassName("playlist");
-    playlist.innerHTML=null;
+    const playlist = document.getElementsByClassName("playlist")[0];
+    playlist.innerHTML="";
     // Loop through the songBase and create song items
     list.forEach(songData => {
         const songItem = createSongItem(songData);
-        playlist[0].appendChild(songItem);
+        playlist.appendChild(songItem);
     });
 }
 // Loading Playlist data
-window.addEventListener("load", addSongItemsToPlaylist(songBase));
+window.addEventListener("load", () =>{
+    setTimeout(() => {
+        addSongItemsToPlaylist(songBase)
+    }, 1000);
+    setTimeout(() => {
+        activateNameClick();
+        changePpButton();
+        activatePPButtonList();
+    }, 2000);
+})
 // *******************************Above was code to load playList when window Load ********************
 // *******************************Handling play pause and other when song play pause ↓↓↓↓↓↓↓↓↓↓↓↓↓↓********************
-function playCurrIndex(currIndex){
+function playCurrIndex(currIndex , currlist){
     if(songPlaying && currIndex==playingIndex){// clicked on same song
         newSong.pause(); 
         songPlaying=false; 
@@ -79,76 +96,90 @@ function playCurrIndex(currIndex){
         changePpButton();
         otherChangesOnPlay();
         return; 
-    }
-    else if(songPlaying){// song playing and clicked on new Song
-        // currTime=0;
-        ppButtonList[playingIndex -1+2].classList.remove('fa-pause-circle')
-        ppButtonList[playingIndex -1+2].classList.add('fa-play-circle')
-        nextSong =new Audio(songBase[currIndex].src)
+    }else if(songPlaying){// song playing and clicked on new Song
+        const ppButtonList=makePPButtonList();
+        nextSong =new Audio(currlist[currIndex].src)
+        ppButtonList[playingIndex].classList.remove('fa-pause-circle')
+        ppButtonList[playingIndex].classList.add('fa-play-circle')
         playingIndex=currIndex;
         songPlaying=true;
         newSong.pause();
         nextSong.play();
         nextSong.currTime=currTime;
         newSong=nextSong;
-        currsongname.innerHTML=`<p>${songBase[currIndex].name}</p>`;
+        currsongname.innerHTML=`<p>${currlist[currIndex].name}</p>`;
     } 
     else {
-        newSong =new Audio(songBase[currIndex].src)
+        if(currIndex!=playingIndex){
+            currTime=0;
+        }
+        newSong =new Audio(currlist[currIndex].src)
         newSong.currentTime=currTime;
         playingIndex=currIndex;
         songPlaying=true;
         newSong.play();
-        currsongname.innerHTML=`<p>${songBase[currIndex].name}</p>`;
-        
+        currsongname.innerHTML=`<p>${currlist[currIndex].name}</p>`;  
     }
     changePpButton();
     otherChangesOnPlay();
-    if(autoplaying) {autoplay();} 
-    
+    if(autoplaying){
+        autoplay(currlist);
+    }
 }
-
 // Changing play pause button if some song is playing 
-const ppButtonList=Array.from(document.getElementsByClassName('pl_pauseButton'));
+function makePPButtonList(){
+    return Array.from(document.getElementsByClassName('pl_pauseButton'));
+}
 function changePpButton(){
-    // console.log(ppButtonList)
+    const ppButtonList=makePPButtonList();
     if(songPlaying==true){
-        ppButtonList[currIndex-1+2].classList.remove('fa-play-circle')
-        ppButtonList[currIndex-1+2].classList.add('fa-pause-circle')
+        ppButtonList[currIndex].classList.remove('fa-play-circle')
+        ppButtonList[currIndex].classList.add('fa-pause-circle')
     }
     else if (songPlaying==false) {
-        ppButtonList[currIndex-1+2].classList.remove('fa-pause-circle')
-        ppButtonList[currIndex-1+2].classList.add('fa-play-circle')
+        ppButtonList[currIndex].classList.remove('fa-pause-circle')
+        ppButtonList[currIndex].classList.add('fa-play-circle')
     }
 }
-
+   
+//  playing pausing songs when clicked on pl pause  button 
+function activatePPButtonList() {
+const ppButtonList=makePPButtonList();
+    ppButtonList.forEach((element ,idx) => {
+        element.addEventListener('click', () => {
+            if(songPlaying==true && idx==playingIndex){
+                newSong.pause(); 
+                songPlaying=false;
+            }
+            else {
+            currIndex=idx;
+            playCurrIndex(currIndex, currlist)
+            songPlaying=true;
+        }
+        changePpButton();
+        otherChangesOnPlay();
+    })
+})
+}
 // Other changes when song is played
 function otherChangesOnPlay(){
-    // console.log(ppButtonList)
-    
     if(songPlaying==true){
         MasterPlay.classList.remove('fa-play-circle')
         MasterPlay.classList.add('fa-pause-circle')
         MusicAnime.style.opacity='100'
-
+        // anime around songItem
+        SongItemList[playingIndex].classList.add('shadow')
+        if(prevPlayIndex !=-1 && prevPlayIndex !=currIndex){
+            SongItemList[prevPlayIndex].classList.remove('shadow')
+        }
+        prevPlayIndex =currIndex;
     }
     else{
         MasterPlay.classList.remove('fa-pause-circle')
         MasterPlay.classList.add('fa-play-circle')
         MusicAnime.style.opacity='0'
+        SongItemList[prevPlayIndex].classList.remove('shadow')
     }   
-   
-    // anime around songitem
-    if(songPlaying){
-        SongItemList[playingIndex +1].classList.add('shadow')
-        if(prevPlayIndex !=-1 && prevPlayIndex !=currIndex){
-            SongItemList[prevPlayIndex +1].classList.remove('shadow')
-        }
-        prevPlayIndex =currIndex;
-    }     
-    else{
-        SongItemList[prevPlayIndex +1].classList.remove('shadow')
-    } 
     bindSeekBar(newSong);
     playSongNameAnime();
 }
@@ -156,16 +187,17 @@ function otherChangesOnPlay(){
 // ******************************************Master Play *********************************************
     MasterPlay.addEventListener('click' ,() =>{
         if(songPlaying){
+        playingIndex=-1;
             newSong.pause();
             songPlaying=false;
             otherChangesOnPlay();
             changePpButton();
         }
         else if(songPlaying==false && playingIndex==-1){
-            playCurrIndex(0);
+            playCurrIndex(0 , currlist);
         }
         else{
-            playCurrIndex(currIndex)
+            playCurrIndex(currIndex, currlist)
         }
     })
     // Handling click on previous next and skip Buttons ,-  -> && << >>
@@ -177,14 +209,14 @@ function otherChangesOnPlay(){
     previous.addEventListener('click',()=>{ // go to previous
         if( currIndex != 0 && playingIndex!=-1){
             currIndex -=1;
-            playCurrIndex(currIndex)
+            playCurrIndex(currIndex, currlist)
         }
     })
     next.addEventListener('click',()=>{ // go to next
         const n=songBase.length-1;
         if( currIndex != n && playingIndex!=n){
             currIndex +=1;
-            playCurrIndex(currIndex)
+            playCurrIndex(currIndex,currlist)
         }
     })
     skipback.addEventListener('click',() =>{  // go back by 10 sec
@@ -196,55 +228,41 @@ function otherChangesOnPlay(){
         newSong.currentTime=newTime;
     })
     
-   
-//  playing pausing songs when clicked on pl pause  button 
-
-
-
-
-
-
-
- ppButtonList.forEach((element ,idx) => {
-    element.addEventListener('click', () => {
-        if(songPlaying==true){
-            newSong.pause(); 
-            songPlaying=false;
-        }
-        else {
-            currIndex=idx -2 +1;
-            playingIndex=currIndex;
-            playCurrIndex(currIndex);
-            songPlaying=true;
-        }
-        changePpButton();
-        otherChangesOnPlay();
-    })
-})
 // changing currsong Index when click on any element
- const plPauseList=document.querySelectorAll('.song_name')
-    plPauseList.forEach( (element,idx) =>{
-        element.addEventListener('click' ,() =>{
-            // const songNo=element.id;
-            currIndex=idx -2 +1;
-            playCurrIndex(currIndex);
-        })
-    })
+function activateNameClick(){ ///Here creating func. so that when playlist is changed we can recall this function to refresh
+    const plPauseList=document.querySelectorAll('.song_name')
+       plPauseList.forEach( (element,idx) =>{
+           element.addEventListener('click' ,() =>{
+               currIndex=idx;
+               playCurrIndex(currIndex,currlist);
+           })
+       })
+}
+
 /////////////////////////////////////////////Other Feature /////////////////////////////////////////////////////////
                            ////////////////1. Autoplay ////////////////////////////////////////////////
-     function autoplay(){
-        if(songPlaying ){ newSong.addEventListener('ended' ,() =>{
-               if(playingIndex !=songBase.length-1){
-                    currIndex +=1;
-                    playCurrIndex(currIndex);
+     function autoplay(currlist){
+        if(songPlaying ){
+            newSong.addEventListener('ended' ,() =>{
+               if(playingIndex !=currlist.length-1){
+                    currIndex=currIndex+1;
+                    currTime=0;
+                    playCurrIndex(currIndex,currlist);
+                    playingIndex=currIndex;
                     otherChangesOnPlay();
                     changePpButton();
                }
-               if(playingIndex==songBase.length -1){
-                currIndex=0;
-                playCurrIndex(currIndex);
-                otherChangesOnPlay();
-                changePpButton();
+               else if (looping){
+                   currIndex = 0;
+                   currTime=0;
+                   playCurrIndex(currIndex,currlist);
+                   playingIndex=0;
+                    otherChangesOnPlay();
+                    changePpButton();
+               }
+               else{
+                currTime=0;
+                newSong.pause();
                }
            })
         }
@@ -255,9 +273,7 @@ function otherChangesOnPlay(){
         const minutes = Math.floor(seconds / 60);
         const remainingSeconds = Math.floor(seconds % 60);
         return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
-      }
-
-      
+      }  
     // finding Duration of any song  && Time Stamps
     function bindSeekBar(newSong){
         let duration="";
@@ -279,9 +295,11 @@ function otherChangesOnPlay(){
     }
     // handling click on seekBar
     seekbar.addEventListener('input' ,() =>{
-        const newTime = newSong.duration * (seekbar.value / 100);
-        newSong.currentTime=newTime;
-        console.log(seekbar.value)
+        if(songPlaying){
+        playingIndex=-1;
+            const newTime = newSong.duration * (seekbar.value / 100);
+            newSong.currentTime=newTime;
+        }
     })
     // adding animation on song Name when song Load
     function playSongNameAnime(){
@@ -290,7 +308,6 @@ function otherChangesOnPlay(){
             currsongnameP.style.animation=' songnameAnime 3s cubic-bezier(0.63, 0.63, 0.41, 1.35)'
         }
     }
-
 /////////////////////////////////////////////For Search Bar///////////////////////////////
     const searchBar=document.getElementById('searchBar');
     function linearSearch(input){
@@ -303,32 +320,26 @@ function otherChangesOnPlay(){
     }
     searchBar.addEventListener('keyup' ,(e)=>{
         let searchInput=searchBar.value;
-       
         const searchedSongData=linearSearch(searchInput);
         if( searchedSongData!=-1 ){
             currIndex=searchedSongData;
             playingIndex=searchedSongData;
             currTime=0;
-            playCurrIndex(currIndex);
+            playCurrIndex(currIndex,currlist);
         }
         
     })
-
 //////////////////////////////////////////JS fOR  Html CSS or some Utility work function///////////////////////////
 // Opening the new Add song window when click on the plus icon
-    const plusIcon=document.getElementById('plus_circle')
     plusIcon.addEventListener('click' ,() =>{
-        window.open('ValidForm/index.html')
-    })
-    
+     //    window.open('ValidForm/index.html')
+     window.alert("Coming Soon ......")
+    })  
     // Showing More feature
-    const ellipsis=document.getElementById('ellipsis')
-    const moreFeature=document.getElementById('MoreFeature')
     ellipsis.addEventListener('click' , () =>{
         moreFeature.classList.toggle('disappear')
     })
     // auto play icon setting
-    const autoplaytoggle=document.getElementById('autoplay-toggle')
     autoplaytoggle.addEventListener('click' ,() =>{
         autoplaytoggle.classList.toggle('fa-toggle-off')
         autoplaytoggle.classList.toggle('fa-toggle-on')
@@ -337,47 +348,46 @@ function otherChangesOnPlay(){
             autoplaying=true;
         }
     })
-
-    // const filterButton=document.getElementsByClassName("filterButton")[0];
-    // filterButton.addEventListener('click' ,() =>{
-        //  filterButton.style.backgroundColor ="red"
-        //  const newsongBase=songBase.filter((currvalue)=>{
-        //     if(currvalue.singer =='Badshah') {return true;}
-        //  })
-        //  console.log( newsongBase) 
-        //      addSongItemsToPlaylist(newsongBase);
-        
-        // })   // updating Soon
-/// Basic functionality for home screen
-// window.addEventListener('keypress')
+    // loop icon settings
+    looptoggle.addEventListener('click' ,() =>{
+        looptoggle.classList.toggle('fa-toggle-on')
+        looptoggle.classList.toggle('fa-toggle-off')
+        if(looping==true){looping=false;}
+        else{
+            looping=true;
+        }
+    })
+    // Making all playlist to be primary
+    all.classList.add('whiteback')
 window.addEventListener('keydown' ,(e) =>{
     const activeElement =document.activeElement;
     if(activeElement.tagName=='INPUT' ){return;}
     if(e.key == 'k' || e.key==' ' ){
         if(songPlaying){
+        playingIndex=-1;
             newSong.pause();
             songPlaying=false;
             otherChangesOnPlay();
             changePpButton();
         }
         else if(songPlaying==false && playingIndex==-1){
-            playCurrIndex(0);
+            playCurrIndex(0,currlist);
         }
         else{
-            playCurrIndex(currIndex)
+            playCurrIndex(currIndex,currlist)
         }
     }
     if(e.key == 'l'){
             const n=songBase.length-1;
             if( currIndex != n && playingIndex!=n){
                 currIndex +=1;
-                playCurrIndex(currIndex)
+                playCurrIndex(currIndex,currlist)
             }
     }
     if(e.key == 'j'){
             if( currIndex != 0 && playingIndex!=-1){
                 currIndex -=1;
-                playCurrIndex(currIndex)
+                playCurrIndex(currIndex,currlist)
             }
     }
     if(e.key == 'ArrowRight' && songPlaying){
@@ -388,9 +398,129 @@ window.addEventListener('keydown' ,(e) =>{
             const newTime=newSong.currentTime - 10;
             newSong.currentTime=newTime;   
     }
+})
+  // changing the background color when clicked on any of item on sorting List
+const sortListElement =document.querySelectorAll(".sortList div")
+    sortListElement.forEach((e) =>{
+        e.addEventListener('click',()=>{
+            sortListElement.forEach((e) =>{
+                if(e.classList.contains('whiteback')){e.classList.remove('whiteback')}
+            })
+            e.classList.add('whiteback')
+        })
+    })
+function bringChanges(){
+    
+    activateNameClick();
+    changePpButton();
+    activatePPButtonList();
+}
+all.addEventListener('click',() =>{
+    songBase=allSongsList();
+    currlist=songBase;
+    addSongItemsToPlaylist(currlist);
+    bringChanges();
+    if(songPlaying){
+        playingIndex=-1;
+        currTime=0;
+        songPlaying=false;
+        newSong.pause();
+        otherChangesOnPlay();
+        changePpButton();
+    }
+})
+punjabi.addEventListener('click' ,() =>{
+    songBase=allSongsList();
+    const punjabiSongList=songBase.filter((element) =>{
+        if(element.category=="Punjabi"){return true;}
+        else {
+            return false;
+        }
+    })
+    if(songPlaying){
+        playingIndex=-1;
+        currTime=0;
+        songPlaying=false;
+        newSong.pause();
+        otherChangesOnPlay();
+        changePpButton();
+    }
+    currlist=punjabiSongList;
+    songBase=currlist;
+    addSongItemsToPlaylist(currlist);
+    setTimeout(() => {
+        bringChanges()
+    }, 500);
+})
+jubin.addEventListener('click' ,() =>{
+    songBase=allSongsList();
+    const jubinSongList=songBase.filter((element) =>{
+        if(element.singer=="jubin Nautiyal"){return true;}
+        else {
+            return false;
+        }
+    })
+    if(songPlaying){
+        playingIndex=-1;
+        currTime=0;
+        songPlaying=false;
+        newSong.pause();
+        otherChangesOnPlay();
+        changePpButton();
+    }
+    currlist=jubinSongList;
+    songBase=currlist;
+    addSongItemsToPlaylist(currlist);
+    setTimeout(() => {
+        bringChanges()
+    }, 500);
+})
+Bollywood.addEventListener('click' ,() =>{
+    songBase=allSongsList();
+    const bollySongList=songBase.filter((element) =>{
+        if(element.category=="bollywood"){return true;}
+        else {
+            return false;
+        }
+    })
+    if(songPlaying){
+        playingIndex=-1;
+        currTime=0;
+        songPlaying=false;
+        newSong.pause();
+        otherChangesOnPlay();
+        changePpButton();
+    }
+    currlist=bollySongList;
+    songBase=currlist;
 
+    addSongItemsToPlaylist(currlist)
+    setTimeout(() => {
+        bringChanges()
+    }, 500);
 
+})
+lofi.addEventListener('click' ,() =>{
+    songBase=allSongsList();
+    const lofiSongList=songBase.filter((element) =>{
+        if(element.category=="lofi"){return true;}
+        else {
+            return false;
+        }
+    })
+    if(songPlaying){
+        playingIndex=-1;
+        currTime=0;
+        songPlaying=false;
+        newSong.pause();
+        otherChangesOnPlay();
+        changePpButton();
+    }
+    currlist=lofiSongList;
+    songBase=currlist;
 
-
-
+    addSongItemsToPlaylist(currlist)
+    setTimeout(() => {
+        bringChanges()
+    }, 500);
 })
