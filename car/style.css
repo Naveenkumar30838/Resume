@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+::selection{
+    background-color: transparent;
+}
+:root{
+    --totalRow:15;
+    --rowPlusOne:16;
+    --row:calc(100vh/40);
+}
+body{
+    background-color: green;
+}
+
+.flex{
+    display: flex;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: green;
+    overflow: auto;
+}
+.grid-road{
+    width: 200px;
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns:  1fr 6fr 0.2fr 6fr 1fr;
+    --num:calc(100vh/40px);
+    grid-template-rows:repeat(15 , 40.7px) ;
+    position: absolute;
+    background-color: black;
+    z-index: 10px;
+}
+.roadleft {
+    max-height: 100vh;
+    grid-row-start:1;
+    grid-row-end:16;
+    grid-column: 1/2;
+    background-color: white;
+}
+.roadright {
+     max-height: 100vh;
+    grid-row-start:  1;
+    grid-row-end: 16;
+    grid-column: 5/6;
+    background-color: white;
+}
+.roadmid{
+     max-height: 100vh;
+    grid-row-start: 1;
+    grid-row-end: 16;
+   grid-column: 3/4;
+   background: linear-gradient(to bottom , black , white);
+   transition: all 1s;
+}
+.roadline{
+    max-height: 100vh;
+    width: 7px;
+    height: 8%;
+    background-color: white;
+}
+.car{
+    align-self: center;
+    justify-self: center;
+    grid-row: 3/4;
+    grid-column: 3/2;
+    transition: all 1s;
+}
+.car img , .obstacle img{
+    width: 25px;
+    height: 40.7px;
+}
+.obstacle{
+    justify-self: center;
+    align-self: center;
+}
+.tree{
+    scale: 5;
+    position: absolute;
+}
+.tree1{
+    bottom: 70px;
+    left: 70px;
+}
+.tree2{
+    right: 84px;
+}
+.tree3{
+    bottom: 180px;
+    right: 80px;
+}
+.board{
+    flex-direction: column;
+    position: absolute;
+    top: 80px;    
+    left: 25px;
+    row-gap: 8px;
+}
+.board div{
+    font-family: 'Pixelify Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    background-color: white;
+    border-radius: 8px;
+    padding: 6px 8px;
+    transition: transform 0.2s;
+}
+.board div:hover{
+    cursor:crosshair;
+    transform: rotateX(20deg) rotateY(10deg);
+}
+.arrowLeft {
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    left: 8px;
+    width: fit-content;
+    font-size: 3rem;
+    display: none;
+}
+.arrowRight{
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    right: 8px!important;
+    width: fit-content;
+    font-size: 3rem;
+}
+@media screen and (width<=767px) {
+    .arrowLeft ,.arrowRight{
+        display: block;
+        bottom: 200px;
+    }
+    .tree{
+        bottom: 50px;
+    }
+    .tree3{
+        bottom: 400px;
+    }
+    .board div{
+        font-size: 1.1rem;
+        padding: 4px;
+        
+    }
+    .board{
+        left: 6px;
+    }
+}
+@media screen and (width<=470px) {
+   
+    .tree{
+        bottom: 50px;
+        scale: 3;
+    }
+    .tree1{
+        left:20px;
+    }
+    .tree2{
+        right: 20px;
+    }
+    .tree3{
+        bottom: 330px;
+        right: 18px;
+    }
+    .arrowLeft , .arrowRight{
+        font-size: 2rem;
+    }
+    .level label ,.score label , .maxScore label
+    {
+        display: none;
+    }
+}
