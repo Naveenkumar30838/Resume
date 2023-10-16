@@ -14,6 +14,9 @@ const scoreBox=document.getElementById('score');
 const maxScoreBox=document.getElementById('maxScore');
 const leftButton=document.getElementsByClassName('arrowLeft')[0];
 const rightButton=document.getElementsByClassName('arrowRight')[0];
+const gridRoad=document.getElementsByClassName('grid-road')[0];
+const roadleft=document.getElementsByClassName('roadleft')[0];
+
 
 // Intializing variable
 let score=0;
@@ -22,12 +25,22 @@ let x=10;
 let lastTime=0;
 let speed=8;
 let inputDir = { x: 0, y: 1 }
-const carPos={x:2 , y:11};
+const rowHeight=40;
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+const NoOfRows=Math.round(vh/rowHeight);
 
+const carPos={x:2 , y:NoOfRows-4};
 const ob1Pos={x:2 , y:4};
 const ob2Pos={x:4 , y:2};
 const ob3Pos={x:4 , y:8};
 
+// Code for Stylesheet 
+// changing some stylsheet using js
+ gridRoad.style.gridTemplateRows=`repeat(${NoOfRows} ,40px)`
+ roadleft.style.gridRowEnd=NoOfRows + 2;
+ roadRight.style.gridRowEnd=NoOfRows + 2;
+ roadMid.style.gridRowEnd=NoOfRows + 2;
+//  Main function to get Fps
 function main ( currtime){
     window.requestAnimationFrame(main);
     if((currtime -lastTime) /3000 < 1/speed){
@@ -59,7 +72,7 @@ function gameEngine() {
         // if you collided
         if((carPos.x ==ob1Pos.x && carPos.y ==ob1Pos.y) || (carPos.x ==ob2Pos.x && carPos.y ==ob2Pos.y) || (carPos.x ==ob3Pos.x && carPos.y ==ob3Pos.y)){
             carPos.x=2;
-            carPos.y=14;
+            carPos.y=NoOfRows-2;
             ob1Pos.y=1;
             ob2Pos.y=4;
             ob3Pos.y=8;
@@ -77,19 +90,19 @@ function gameEngine() {
         }
         if(carPos.y == 1){
             const a=2;
-            const b=11;
+            const b=NoOfRows-4;
             ob1Pos.x=2;
             ob1Pos.y=Math.round(a + (b - a) * Math.random());
         }
         if(carPos.y == 1){
             const a=1;
-            const b=11;
+            const b=NoOfRows-4;
             ob2Pos.x=4;
             ob2Pos.y=Math.round(a + (b - a) * Math.random());
         }
         if(carPos.y == 1){
             const a=2;
-            const b=13;
+            const b=NoOfRows-2;
             const  newx=Math.random() <0.5?2:4;
             ob3Pos.x=newx;
             ob3Pos.y=Math.round(a + (b - a) * Math.random());
@@ -101,7 +114,7 @@ function gameEngine() {
         }
         // moving the car
         if(carPos.y <=1){
-           carPos.y = 16;
+           carPos.y = NoOfRows;
            otherChanges();
            score ++;
            scoreBox.innerHTML=score;
