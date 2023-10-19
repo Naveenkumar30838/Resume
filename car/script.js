@@ -72,7 +72,7 @@ function gameEngine() {
         // if you collided
         if((carPos.x ==ob1Pos.x && carPos.y ==ob1Pos.y) || (carPos.x ==ob2Pos.x && carPos.y ==ob2Pos.y) || (carPos.x ==ob3Pos.x && carPos.y ==ob3Pos.y)){
             carPos.x=2;
-            carPos.y=NoOfRows-2;
+            carPos.y=NoOfRows;
             ob1Pos.y=1;
             ob2Pos.y=4;
             ob3Pos.y=8;
