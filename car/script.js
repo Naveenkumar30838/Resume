@@ -23,13 +23,13 @@ let score=0;
 let maxScore =0;
 let x=10;
 let lastTime=0;
-let speed=8;
+let speed=3;
 let inputDir = { x: 0, y: 1 }
 const rowHeight=40;
 const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 const NoOfRows=Math.round(vh/rowHeight);
 
-const carPos={x:2 , y:NoOfRows-4};
+const carPos={x:2 , y:NoOfRows-2};
 const ob1Pos={x:2 , y:4};
 const ob2Pos={x:4 , y:2};
 const ob3Pos={x:4 , y:8};
@@ -43,7 +43,7 @@ const ob3Pos={x:4 , y:8};
 //  Main function to get Fps
 function main ( currtime){
     window.requestAnimationFrame(main);
-    if((currtime -lastTime) /3000 < 1/speed){
+    if((currtime -lastTime) /1000 < 1/speed){
         return;
     }
     lastTime =currtime;
@@ -186,10 +186,10 @@ function getRandomColor() {
 })
 
 function getLevel(ms) {
-    if (ms < 10 && ms >= 0)  {speed =5;  return 1; }
-    if (ms < 20 && ms >= 10) {speed =6;  return 2; }
-    if (ms < 30 && ms >= 20) {speed =7;  return 3; }
-    if (ms < 40 && ms >= 30) {speed =8; return 4;}
+    if (ms < 10 && ms >= 0)  {speed =4;  return 1; }
+    if (ms < 20 && ms >= 10) {speed =5;  return 2; }
+    if (ms < 30 && ms >= 20) {speed =6;  return 3; }
+    if (ms < 40 && ms >= 30) {speed =7; return 4;}
     if (ms < 50 && ms >= 40) {speed =8; return 5;}            
     if (ms < 60 && ms >= 50)  {speed =8;  return 6;}
     if (ms < 70 && ms >= 60)  {speed =9 ; return 7;}

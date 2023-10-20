@@ -84,6 +84,9 @@ body{
     width: 25px;
     height: 40.7px;
 }
+.obstacle img {
+    transform: scaleX(1.1) scaleY(1.3);
+}
 .obstacle{
     justify-self: center;
     align-self: center;
