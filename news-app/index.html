@@ -9,23 +9,38 @@
 </head>
 <body>
     <div class="nav-bar flex">
-        <div class="nav-left flex"> 
-            <li><a href="#"><a href="#"><i>News Wale</i></a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
+        <div > 
+            <div class="logo"><h2><i>News Wale</i></h2></div>
         </div>
-        <div class="nav-right flex">
-            <div>
-                <input class="pointer" type="search" name="" id="" placeholder="Search News ">
-            </div>
-            <div>
-                <p>Trending</p>
-            </div>
-            <div>
-                <p>Sports</p>
-            </div>
-
+        <div id="nav-center" class="flex" >
+            <p class="pointer" >Trending</p>
+            <p class="pointer">Sport</p>
+            <p class="pointer">Finance</p>
+        </div>
+        <div class="nav-search flex">
+            <input type="search" name="" id="searchBox" placeholder="Search News">
+            <div class="search-text" id="searchButton">Search</div>
         </div>
     </div>
+    <div class="container center" id="news-container">
+    
+    </div>
+        
+    <template id="news-template">
+        <div class="card">
+            <div><img id="card-Image" src="../Amazon.co/assets/asset 1.jpeg" alt=""></div>
+            <div><p class="news-title" id="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, nemo!</p></div>
+            <div>
+                <div class="news-info row">
+                    <span class="news-src" id="news-src">BBC News</span>
+                    <span class="news-time" id="news-time">04:12:30 Am</span>
+                </div>
+            </div>
+            <div>
+                <p class="news-brief" id="news-brief">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate omnis quas ex, animi tempore inventore sequi ipsa doloribus illum alias.</p>
+            </div>
+        </div>
+    </template>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
