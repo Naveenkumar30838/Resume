@@ -1,13 +1,24 @@
 const api_Key="65aa624e05334a30a770e983747582cc";
 const url ="https://newsapi.org/v2/everything?q="
 
-window.addEventListener('load' ,fetchNews("India"));
-async function fetchNews(query){
-    console.log("hi");
+const localQueries=["world cup " ,"Cricket" ,"India" , "Global" ,"United States" , "Economics" ,"Politics" ,"Geography","Technology","Bollywood","Hollywood",'Israel-Hamas' ,"Russia -Ukraine"]
+let index=Math.floor(Math.random() * (localQueries.length - 1) + 1)
+
+window.addEventListener('load' ,fetchNews(localQueries[index]));
+
+async function fetchNews(query,toBeSorted){
+    
     const res=await fetch(`${url}${query}&apiKey=${api_Key}`)
     const data=await res.json();
-    console.log(data)
-    bindData(data.articles);
+    if(toBeSorted){
+
+        const ret=data.articles.sort((a, b) => {
+            return b.publishedAt.localeCompare(a.publishedAt);
+        });
+        bindData(ret);
+    }else{
+        bindData(data.articles);
+    }
 }
 function bindData(article){
     const container=document.getElementById('news-container');
@@ -34,8 +45,36 @@ function addData(card , article ){
     news_time.innerHTML=new Date(article.publishedAt).toLocaleString('en-US',{
         timeZone:'Asia/Jakarta'
     });
-    news_brief.innerHTML=article.description ;
+    const desc=article.description;
+    const curtailedDesc=curtailDesc(desc);
+    news_brief.innerHTML=curtailedDesc;
+   
+    card.firstElementChild.addEventListener('click',()=>{
+        window.open(article.url,"_blank")
+    })
+}
 
+
+const navCenter=document.querySelectorAll('#nav-center p');
+let currSelected=""
+navCenter.forEach(e =>{
+    e.addEventListener('click',()=>{
+
+        navCenter.forEach(e =>{
+            if(e.classList.contains('clicked')){
+                e.classList.remove('clicked')
+            }})
+            
+        currSelected=e;
+        const query=e.innerHTML;
+        fetchNews(query);
+        e.classList.add('clicked')
+    })
+})
+function curtailDesc(article){
+    const end=" more ..."
+    if(article.length<120){return article + end;}
+    return article.substring(0,101)+end;
 }
 
 const searchBox=document.getElementById('searchBox');
@@ -43,19 +82,15 @@ const searchButton=document.getElementById('searchButton');
 
 searchButton.addEventListener('click',()=>{
     fetchNews(searchBox.value);
+    if(currSelected!=""){currSelected.classList.remove('clicked')}
 })
 
-const navCenter=document.querySelectorAll('#nav-center p');
-navCenter.forEach(e =>{
-    e.addEventListener('click',()=>{
-
-        navCenter.forEach(e =>{
-            if(e.classList.contains('clicked')){
-                e.classList.remove('clicked')
-        }})
-
-        const query=e.innerHTML;
-        fetchNews(query);
-        e.classList.add('clicked')
-    })
+//Handling Some More Styling Here
+const logo=document.getElementsByClassName('logo')[0];
+logo.addEventListener('click' ,() =>{
+        window.location.reload();
+})
+const recent=document.getElementById('Recent')
+recent.addEventListener('click' ,()=>{
+    fetchNews('India',true)
 })

@@ -80,6 +80,10 @@
    justify-content: center;
    align-content: center;
  }
+ .strong{
+   font-weight: 500;
+   font-size: 1.04rem;
+ }
  .pointer{
     cursor: pointer;
  }
@@ -169,7 +173,7 @@
    font-size: 0.8rem;
  }
  .news-brief{
-   font-family: var(--ubuntu);
+   font-family: var(--popins);
    font-size: 0.95rem;
    color: #121212;
    font-weight: 500;
