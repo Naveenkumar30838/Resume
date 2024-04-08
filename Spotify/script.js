@@ -96,7 +96,7 @@ function playCurrIndex(currIndex , currlist){
         newSong.pause(); 
         songPlaying=false; 
         playingIndex=currIndex;
-        changePpButton();
+        // changePpButton();
         otherChangesOnPlay();
         return; 
     }else if(songPlaying){// song playing and clicked on new Song
@@ -159,7 +159,7 @@ const ppButtonList=makePPButtonList();
             playCurrIndex(currIndex, currlist)
             songPlaying=true;
         }
-        changePpButton();
+        // changePpButton();
         otherChangesOnPlay();
     })
 })
@@ -194,7 +194,7 @@ function otherChangesOnPlay(){
             newSong.pause();
             songPlaying=false;
             otherChangesOnPlay();
-            changePpButton();
+            // changePpButton();
         }
         else if(songPlaying==false && playingIndex==-1){
             playCurrIndex(0 , currlist);
@@ -253,7 +253,7 @@ function activateNameClick(){ ///Here creating func. so that when playlist is ch
                     playCurrIndex(currIndex,currlist);
                     playingIndex=currIndex;
                     otherChangesOnPlay();
-                    changePpButton();
+                    // changePpButton();
                }
                else if (looping){
                    currIndex = 0;
@@ -261,7 +261,7 @@ function activateNameClick(){ ///Here creating func. so that when playlist is ch
                    playCurrIndex(currIndex,currlist);
                    playingIndex=0;
                     otherChangesOnPlay();
-                    changePpButton();
+                    // changePpButton();
                }
                else{
                 currTime=0;
@@ -371,7 +371,7 @@ window.addEventListener('keydown' ,(e) =>{
             newSong.pause();
             songPlaying=false;
             otherChangesOnPlay();
-            changePpButton();
+            // changePpButton();
         }
         else if(songPlaying==false && playingIndex==-1){
             playCurrIndex(0,currlist);
@@ -415,7 +415,7 @@ const sortListElement =document.querySelectorAll(".sortList div")
 function bringChanges(){
     
     activateNameClick();
-    changePpButton();
+    // changePpButton();
     activatePPButtonList();
 }
 all.addEventListener('click',() =>{
@@ -429,7 +429,7 @@ all.addEventListener('click',() =>{
         songPlaying=false;
         newSong.pause();
         otherChangesOnPlay();
-        changePpButton();
+        // changePpButton();
     }
 })
 punjabi.addEventListener('click' ,() =>{
@@ -446,7 +446,7 @@ punjabi.addEventListener('click' ,() =>{
         songPlaying=false;
         newSong.pause();
         otherChangesOnPlay();
-        changePpButton();
+        // changePpButton();
     }
     currlist=punjabiSongList;
     songBase=currlist;
@@ -469,7 +469,7 @@ jubin.addEventListener('click' ,() =>{
         songPlaying=false;
         newSong.pause();
         otherChangesOnPlay();
-        changePpButton();
+        // changePpButton();
     }
     currlist=jubinSongList;
     songBase=currlist;
@@ -492,7 +492,7 @@ Bollywood.addEventListener('click' ,() =>{
         songPlaying=false;
         newSong.pause();
         otherChangesOnPlay();
-        changePpButton();
+        // changePpButton();
     }
     currlist=bollySongList;
     songBase=currlist;
@@ -517,7 +517,7 @@ lofi.addEventListener('click' ,() =>{
         songPlaying=false;
         newSong.pause();
         otherChangesOnPlay();
-        changePpButton();
+        // changePpButton();
     }
     currlist=lofiSongList;
     songBase=currlist;
@@ -541,7 +541,7 @@ happy.addEventListener('click' ,() =>{
         songPlaying=false;
         newSong.pause();
         otherChangesOnPlay();
-        changePpButton();
+        // changePpButton();
     }
     currlist=lofiSongList;
     songBase=currlist;
@@ -565,7 +565,7 @@ cool.addEventListener('click' ,() =>{
         songPlaying=false;
         newSong.pause();
         otherChangesOnPlay();
-        changePpButton();
+        // changePpButton();
     }
     currlist=lofiSongList;
     songBase=currlist;
@@ -589,7 +589,7 @@ sad.addEventListener('click' ,() =>{
         songPlaying=false;
         newSong.pause();
         otherChangesOnPlay();
-        changePpButton();
+        // changePpButton();
     }
     currlist=lofiSongList;
     songBase=currlist;
@@ -613,7 +613,7 @@ single.addEventListener('click' ,() =>{
         songPlaying=false;
         newSong.pause();
         otherChangesOnPlay();
-        changePpButton();
+        // changePpButton();
     }
     currlist=lofiSongList;
     songBase=currlist;
