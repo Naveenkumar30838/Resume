@@ -15,7 +15,10 @@ const punjabi= document.getElementById('punjabi')
 const all= document.getElementById('all')
 const Bollywood= document.getElementById('Bollywood')
 const jubin= document.getElementById('jubin')
-const lofi= document.getElementById('lofi')
+const single= document.getElementById('single')
+const sad= document.getElementById('sad')
+const happy= document.getElementById('happy')
+const cool= document.getElementById('cool')
 
 let currIndex=0;
 let prevPlayIndex=-1;
@@ -57,7 +60,7 @@ function createSongItem(songData) {
 
     const songPlayPause = document.createElement("div");
     songPlayPause.className = "song_pl_pause";
-    songPlayPause.innerHTML = '<i class="fa fa-play-circle pl_pauseButton pointer"></i>';
+    // songPlayPause.innerHTML = '<i class="fa fa-play-circle pl_pauseButton pointer"></i>';
     songInfo.appendChild(songPlayPause);
 
     songItem.appendChild(songInfo);
@@ -82,8 +85,8 @@ window.addEventListener("load", () =>{
     }, 1000);
     setTimeout(() => {
         activateNameClick();
-        changePpButton();
-        activatePPButtonList();
+        // changePpButton();
+        // activatePPButtonList();
     }, 2000);
 })
 // *******************************Above was code to load playList when window Load ********************
@@ -97,10 +100,10 @@ function playCurrIndex(currIndex , currlist){
         otherChangesOnPlay();
         return; 
     }else if(songPlaying){// song playing and clicked on new Song
-        const ppButtonList=makePPButtonList();
+        // const ppButtonList=makePPButtonList();
         nextSong =new Audio(currlist[currIndex].src)
-        ppButtonList[playingIndex].classList.remove('fa-pause-circle')
-        ppButtonList[playingIndex].classList.add('fa-play-circle')
+        // ppButtonList[playingIndex].classList.remove('fa-pause-circle')
+        // ppButtonList[playingIndex].classList.add('fa-play-circle')
         playingIndex=currIndex;
         songPlaying=true;
         newSong.pause();
@@ -120,27 +123,27 @@ function playCurrIndex(currIndex , currlist){
         newSong.play();
         currsongname.innerHTML=`<p>${currlist[currIndex].name}</p>`;  
     }
-    changePpButton();
+    // changePpButton();
     otherChangesOnPlay();
     if(autoplaying){
         autoplay(currlist);
     }
 }
 // Changing play pause button if some song is playing 
-function makePPButtonList(){
-    return Array.from(document.getElementsByClassName('pl_pauseButton'));
-}
-function changePpButton(){
-    const ppButtonList=makePPButtonList();
-    if(songPlaying==true){
-        ppButtonList[currIndex].classList.remove('fa-play-circle')
-        ppButtonList[currIndex].classList.add('fa-pause-circle')
-    }
-    else if (songPlaying==false) {
-        ppButtonList[currIndex].classList.remove('fa-pause-circle')
-        ppButtonList[currIndex].classList.add('fa-play-circle')
-    }
-}
+// function makePPButtonList(){
+//     return Array.from(document.getElementsByClassName('pl_pauseButton'));
+// }
+// function changePpButton(){
+//     const ppButtonList=makePPButtonList();
+//     if(songPlaying==true){
+//         ppButtonList[currIndex].classList.remove('fa-play-circle')
+//         ppButtonList[currIndex].classList.add('fa-pause-circle')
+//     }
+//     else if (songPlaying==false) {
+//         ppButtonList[currIndex].classList.remove('fa-pause-circle')
+//         ppButtonList[currIndex].classList.add('fa-play-circle')
+//     }
+// }
    
 //  playing pausing songs when clicked on pl pause  button 
 function activatePPButtonList() {
@@ -504,6 +507,102 @@ lofi.addEventListener('click' ,() =>{
     songBase=allSongsList();
     const lofiSongList=songBase.filter((element) =>{
         if(element.category=="lofi"){return true;}
+        else {
+            return false;
+        }
+    })
+    if(songPlaying){
+        playingIndex=-1;
+        currTime=0;
+        songPlaying=false;
+        newSong.pause();
+        otherChangesOnPlay();
+        changePpButton();
+    }
+    currlist=lofiSongList;
+    songBase=currlist;
+
+    addSongItemsToPlaylist(currlist)
+    setTimeout(() => {
+        bringChanges()
+    }, 500);
+})
+happy.addEventListener('click' ,() =>{
+    songBase=allSongsList();
+    const lofiSongList=songBase.filter((element) =>{
+        if(element.genre=="happy"){return true;}
+        else {
+            return false;
+        }
+    })
+    if(songPlaying){
+        playingIndex=-1;
+        currTime=0;
+        songPlaying=false;
+        newSong.pause();
+        otherChangesOnPlay();
+        changePpButton();
+    }
+    currlist=lofiSongList;
+    songBase=currlist;
+
+    addSongItemsToPlaylist(currlist)
+    setTimeout(() => {
+        bringChanges()
+    }, 500);
+})
+cool.addEventListener('click' ,() =>{
+    songBase=allSongsList();
+    const lofiSongList=songBase.filter((element) =>{
+        if(element.genre=="cool"){return true;}
+        else {
+            return false;
+        }
+    })
+    if(songPlaying){
+        playingIndex=-1;
+        currTime=0;
+        songPlaying=false;
+        newSong.pause();
+        otherChangesOnPlay();
+        changePpButton();
+    }
+    currlist=lofiSongList;
+    songBase=currlist;
+
+    addSongItemsToPlaylist(currlist)
+    setTimeout(() => {
+        bringChanges()
+    }, 500);
+})
+sad.addEventListener('click' ,() =>{
+    songBase=allSongsList();
+    const lofiSongList=songBase.filter((element) =>{
+        if(element.genre=="sad"){return true;}
+        else {
+            return false;
+        }
+    })
+    if(songPlaying){
+        playingIndex=-1;
+        currTime=0;
+        songPlaying=false;
+        newSong.pause();
+        otherChangesOnPlay();
+        changePpButton();
+    }
+    currlist=lofiSongList;
+    songBase=currlist;
+
+    addSongItemsToPlaylist(currlist)
+    setTimeout(() => {
+        bringChanges()
+    }, 500);
+})
+single.addEventListener('click' ,() =>{
+    songBase=allSongsList();
+    const lofiSongList=songBase.filter((element) =>{
+        if(element.category=="single"){return true;}
         else {
             return false;
         }

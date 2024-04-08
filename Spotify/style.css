@@ -84,9 +84,18 @@ li{
     font-weight: 100;
     font-family: var(--ubuntu);
 }
+.banner-right{
+    display: flex;
+    justify-content: center;
+    z-index: 2000;
+    width: 15px;
+}
 
 .ellipsis{
    font-size: 1.2rem; 
+   width: 100%;
+   float: cen
+   ;
    font-weight: 500;
 
 }
@@ -163,15 +172,19 @@ li{
     text-shadow: 0px 0px 5px yellow , 0px 0px 10px red;
 }
 .sortList{
+    z-index: 100;
     justify-content: space-around;
     position: sticky;
     top: -30px;
-    backdrop-filter: blur(9px);
+    column-gap: 8px;
+    backdrop-filter: blur(99px);
     padding-block: 4px;
     border-radius: 3px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius:20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px;
     overflow: auto;
+
+    background: linear-gradient(to bottom , #ffcc00c3, palegoldenrod , #ffcc00bd);
 }
 .whiteback{
     background-color: #fff;
