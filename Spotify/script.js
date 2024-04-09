@@ -146,24 +146,24 @@ function playCurrIndex(currIndex , currlist){
 // }
    
 //  playing pausing songs when clicked on pl pause  button 
-function activatePPButtonList() {
-const ppButtonList=makePPButtonList();
-    ppButtonList.forEach((element ,idx) => {
-        element.addEventListener('click', () => {
-            if(songPlaying==true && idx==playingIndex){
-                newSong.pause(); 
-                songPlaying=false;
-            }
-            else {
-            currIndex=idx;
-            playCurrIndex(currIndex, currlist)
-            songPlaying=true;
-        }
-        // changePpButton();
-        otherChangesOnPlay();
-    })
-})
-}
+// function activatePPButtonList() {
+// const ppButtonList=makePPButtonList();
+//     ppButtonList.forEach((element ,idx) => {
+//         element.addEventListener('click', () => {
+//             if(songPlaying==true && idx==playingIndex){
+//                 newSong.pause(); 
+//                 songPlaying=false;
+//             }
+//             else {
+//             currIndex=idx;
+//             playCurrIndex(currIndex, currlist)
+//             songPlaying=true;
+//         }
+//         // changePpButton();
+//         otherChangesOnPlay();
+//     })
+// })
+// }
 // Other changes when song is played
 function otherChangesOnPlay(){
     if(songPlaying==true){

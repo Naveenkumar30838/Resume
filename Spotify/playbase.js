@@ -42,7 +42,7 @@ const playbase =[
     { name: "Mera Yaar", src: "Files/Mera Yaar.m4a", duration: "04:20", singer: "Gurnam Bhullar", category:"punjabi",genre:"sad" },
     { name: "Moonlight", src: "Files/Moonlight.mp3", duration: "03:34", singer: "Harnoor", category: "single" , genre:"happy" },
     { name: "Pindan de Jaye", src: "Files/Pindan de Jaye.mp3", duration: "04:57", singer: "sajjan Adeeb", category: "punjabi", genre:"happy" },
-    { name: "System Se System", src: "Files/System Se System.m4a", duration: "03:57", singer: "r Maan", category:"single" , genre:"hifi" },
+    { name: "System pe System", src: "Files/System Pe System.m4a", duration: "03:57", singer: "r Maan", category:"single" , genre:"hifi" },
     { name: "Tenu Na Bol Pawaan", src: "Files/Tenu Na Bol Pawaan.m4a", duration: "05:00", singer: "yasser Desai", category:"bollywood" , genre : "cool" },
 
     ]
